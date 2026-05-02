@@ -182,7 +182,7 @@ export default function ClientSelector() {
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-[11px] font-mono text-white/70 mb-6 tracking-wide">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              GenAI Leadership Enablement Platform &middot; Powered by Claude AI
+              GenAI Leadership Enablement Platform &middot; Powered by Gen-AI and Agentic AI
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
               Enterprise GenAI
@@ -370,7 +370,7 @@ export default function ClientSelector() {
             Enterprise GenAI Playground &middot; Designed &amp; Developed by Harsha Rao | Director - AI Strategy &amp; Consulting | Regenesys School of AI
           </span>
           <span className="font-mono">
-            Powered by Claude AI &middot; Anthropic
+            Powered by Gen-AI and Agentic AI
           </span>
         </div>
       </footer>
