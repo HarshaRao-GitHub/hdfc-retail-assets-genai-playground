@@ -1,0 +1,72 @@
+HDFC RETAIL ASSETS — INCOME ASSESSMENT (SELF-EMPLOYED) — SYNTHETIC DATA
+========================================================================
+
+Application Reference: HL/WR/2025/00102
+Applicant: Ms. Sneha Kulkarni
+Business: Kulkarni Textiles (Proprietorship)
+Business Vintage: 12 years (established 2013)
+Nature: Textile trading and retail
+GST Registration: Active, Regular filing (monthly)
+
+A. ITR-BASED INCOME ASSESSMENT
+-------------------------------
+ITR Type: ITR-3 (Individual Business Income)
+
+| Financial Year | Gross Revenue (INR) | Net Profit (INR) | Depreciation (INR) | Adjusted Income (INR) |
+|----------------|--------------------:|------------------:|--------------------:|----------------------:|
+| FY 2021-22     |        2,85,00,000  |       28,50,000   |         4,20,000    |           32,70,000   |
+| FY 2022-23     |        3,12,00,000  |       34,30,000   |         3,80,000    |           38,10,000   |
+| FY 2023-24     |        3,48,00,000  |       38,40,000   |         3,50,000    |           41,90,000   |
+
+Average Annual Adjusted Income (3-year): INR 37,57,000
+Average Monthly Income (ITR method): INR 3,13,083
+
+B. BANK STATEMENT ASSESSMENT (Primary Account — HDFC Bank)
+-----------------------------------------------------------
+Period Analyzed: July 2024 — December 2024 (6 months)
+
+| Month     | Total Credits (INR) | Salary/Business Credits | Cash Deposits | Transfers In | Avg Balance (INR) |
+|-----------|--------------------:|------------------------:|--------------:|-------------:|-------------------:|
+| Jul 2024  |         18,50,000   |              15,20,000  |     2,00,000  |    1,30,000  |         4,85,000   |
+| Aug 2024  |         16,80,000   |              14,50,000  |     1,50,000  |      80,000  |         3,92,000   |
+| Sep 2024  |         19,20,000   |              16,80,000  |     1,20,000  |    1,20,000  |         5,10,000   |
+| Oct 2024  |         22,50,000   |              18,90,000  |     2,50,000  |    1,10,000  |         6,25,000   |
+| Nov 2024  |         17,90,000   |              15,60,000  |     1,30,000  |    1,00,000  |         4,50,000   |
+| Dec 2024  |         21,30,000   |              17,40,000  |     2,80,000  |    1,10,000  |         5,80,000   |
+
+Average Monthly Business Credits: INR 16,40,000
+Assessed Monthly Income (Banking method @ 20% of avg credits): INR 3,28,000
+
+C. CROSS-VERIFICATION
+-----------------------
+ITR Monthly Income:      INR 3,13,083
+Banking Monthly Income:  INR 3,28,000
+Variance:                4.8% (within acceptable 15% threshold)
+
+Recommendation: Accept INR 3,20,000 as assessed monthly income (average of both methods)
+
+D. RED FLAGS / OBSERVATIONS
+-----------------------------
+1. Cash deposits of INR 2,00,000+ in 3 out of 6 months — source to be verified (retail business cash is normal for textile trading)
+2. No irregular large credits or suspicious patterns detected
+3. GST returns cross-verify with bank credits — consistent
+4. Business vintage of 12 years indicates stability
+5. Year-on-year revenue growth of ~10% indicates healthy business
+
+E. ELIGIBILITY CALCULATION
+----------------------------
+Assessed Monthly Income: INR 3,20,000
+Add: Co-applicant Income (Mr. Vijay Kulkarni): INR 2,10,000
+Total Household Income: INR 5,30,000
+
+Existing EMI Obligations: INR 25,000 (car loan — 18 months remaining)
+Maximum FOIR allowed: 50%
+Maximum allowable EMI: INR 2,40,000 (50% of INR 5,30,000 - existing EMIs)
+Proposed EMI: INR 1,29,600 (for INR 1.2 Cr @ 8.5% for 20 years)
+Proposed FOIR: 29.2% — WELL WITHIN LIMITS
+
+Eligible Loan Amount: Up to INR 1,80,00,000 (based on income)
+Requested Loan Amount: INR 1,20,00,000
+Assessment: COMFORTABLY ELIGIBLE
+
+DISCLAIMER: This is SYNTHETIC data for training purposes only. Does not represent actual customer information.

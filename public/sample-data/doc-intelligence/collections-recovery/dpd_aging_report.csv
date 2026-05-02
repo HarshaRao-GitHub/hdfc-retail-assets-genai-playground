@@ -1,0 +1,9 @@
+Loan_Account,Borrower,Product,Branch,DPD_Bucket,Outstanding_INR,EMI_INR,Last_Payment_Date,Collateral_Type,Collateral_Value_INR,Current_LTV_Percent,Collection_Agent,Action_Plan,Priority,Next_Action_Date,Remarks
+HL/WR/2022/04521,Ramesh Pandey,Home Loan,Dadar,90+ (NPA),4250000,38500,2024-09-15,3BHK Flat Dadar,5200000,81.7,ABC Collections,SARFAESI 13(2) Notice,Critical,2025-01-20,Borrower unresponsive. Section 13(2) notice served.
+HL/WR/2023/05678,Meena Verma,Home Loan,Thane,60 DPD,3180000,28200,2024-11-01,2BHK Flat Thane,4500000,70.7,XYZ Recovery,Restructuring,High,2025-01-18,Job loss. Proposal for 6-month moratorium under review.
+HL/SR/2021/03456,Vinod Menon,LAP,Chennai Main,90+ (NPA),8500000,95600,2024-08-20,Commercial Adyar,12000000,70.8,Legal Team,Section 13(4) Possession,Critical,2025-02-01,Business closure. Possession notice published in newspapers.
+HL/WR/2024/06789,Kavita Jain,Home Loan,Bandra,30 DPD,6200000,55800,2024-12-05,3BHK Bandra,8500000,72.9,In-house,Phone + Visit,Medium,2025-01-19,First delay. Employer salary delay. Committed to pay by Jan 19.
+HL/WR/2023/05890,Arjun Reddy,Home Loan,Hyderabad,60 DPD,2850000,24600,2024-10-20,2BHK Kukatpally,3200000,89.1,ABC Collections,Intensified Collection,High,2025-01-17,Under-water (LTV 89%). Multiple contact attempts.
+HL/ER/2022/04120,Sanjay Ghosh,Home Loan,Kolkata,90+ (NPA),5600000,48200,2024-07-15,Flat Salt Lake,7800000,71.8,Legal Team,OTS Negotiation,Critical,2025-01-25,Borrower offered OTS at 75%. Credit committee approval pending.
+HL/WR/2024/07234,Pooja Choudhary,Home Loan,Pune Main,30 DPD,1980000,18500,2024-12-10,2BHK Hinjewadi,2800000,70.7,In-house,NACH Re-register,Low,2025-01-18,Technical bounce. NACH corrected. Will auto-debit next cycle.
+HL/NR/2023/05345,Arun Kapoor,HL - NRI,Delhi Hub,60 DPD,12500000,112000,2024-10-25,Villa DLF Ph5,18000000,69.4,Premium Collections,Personal Contact,High,2025-01-22,NRI. Rental income not applied. Tenant contact initiated.

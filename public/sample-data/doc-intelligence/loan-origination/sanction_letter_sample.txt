@@ -1,0 +1,91 @@
+HDFC LIMITED — HOME LOAN SANCTION LETTER (SYNTHETIC DATA)
+========================================================
+
+Date: January 10, 2025
+Ref: HL/WR/2025/00102
+
+Dear Ms. Sneha Kulkarni,
+
+We are pleased to inform you that your application for a Home Loan has been sanctioned subject to the following terms and conditions:
+
+1. LOAN DETAILS
+   Loan Amount Sanctioned: INR 1,20,00,000 (Rupees One Crore Twenty Lakhs Only)
+   Loan Type: Home Loan — Purchase of Residential Property
+   Interest Rate: 8.50% p.a. (Floating, linked to HDFC RPLR)
+   RPLR (Reference Prime Lending Rate): 16.70% p.a.
+   Spread: (-) 8.20%
+   Effective Rate: 8.50% p.a.
+   Rate Reset: Annual, on April 1st each year
+   Tenure: 20 years (240 months)
+   EMI: INR 1,04,362 (approximate, subject to rate changes)
+   Processing Fee: INR 11,800 (inclusive of GST, already collected)
+
+2. PROPERTY DETAILS
+   Property: Independent House, Plot No. 45, Kothrud, Pune 411038
+   Carpet Area: 1,850 sq ft
+   Total Property Value (as per valuation): INR 1,84,00,000
+   Loan-to-Value (LTV): 65.2%
+   Property Title: Clear, vested in applicant's name
+   Valuation Done By: M/s PropertyVal India Pvt Ltd (HDFC empaneled valuer)
+   Valuation Date: January 6, 2025
+
+3. BORROWER PROFILE
+   Primary Applicant: Ms. Sneha Kulkarni (Age: 42 years)
+   Occupation: Self-Employed (Proprietor, Kulkarni Textiles)
+   Declared Monthly Income: INR 3,20,000
+   CIBIL Score: 801
+   FOIR (Fixed Obligation to Income Ratio): 38.2%
+   Co-Applicant: Mr. Vijay Kulkarni (Spouse, Age: 45, Salaried, INR 2,10,000/month)
+   Combined Monthly Income: INR 5,30,000
+
+4. DISBURSEMENT SCHEDULE
+   Tranche 1: INR 60,00,000 — On execution of all legal documents and mortgage creation
+   Tranche 2: INR 60,00,000 — On completion of 60% construction (if applicable) or registration
+   Disbursement Validity: 6 months from date of this letter
+
+5. SPECIAL CONDITIONS
+   a) Life insurance cover of at least INR 1,20,00,000 to be maintained throughout the loan tenure
+   b) Property insurance (fire + allied perils) to be maintained with HDFC as beneficiary
+   c) The property shall not be leased, rented, or transferred without prior written consent
+   d) Any change in employment/business status must be intimated within 30 days
+   e) Original property documents to remain in HDFC custody until full repayment
+   f) Post-dated cheques / NACH mandate for the full loan tenure must be submitted
+
+6. PREPAYMENT TERMS
+   Floating Rate: No prepayment penalty for individual borrowers (as per NHB guidelines)
+   Minimum prepayment amount: INR 1,00,000 or 3 EMIs, whichever is higher
+   Part prepayment allowed maximum 4 times per financial year
+
+7. DEFAULT CONSEQUENCES
+   a) Penal interest of 2% p.a. on overdue EMI amount
+   b) HDFC reserves the right to recall the entire outstanding if EMI default exceeds 3 consecutive months
+   c) CIBIL/Bureau reporting will reflect default status
+   d) SARFAESI proceedings may be initiated for persistent defaults
+
+8. GENERAL TERMS
+   a) This sanction is valid for 90 days from the date of this letter
+   b) Interest will be charged from the date of first disbursement
+   c) The borrower must maintain a savings/current account with HDFC Bank for EMI auto-debit
+   d) All statutory charges, stamp duty, and registration fees are the borrower's responsibility
+   e) This sanction is subject to satisfactory legal opinion on the property title
+   f) HDFC may conduct periodic property inspections at its discretion
+
+9. DOCUMENTS REQUIRED FOR DISBURSEMENT
+   - Signed loan agreement and mortgage deed
+   - Original property documents
+   - Registered sale deed / agreement of sale
+   - NOC from society/builder (if applicable)
+   - Post-dated cheques (24 PDCs) or NACH mandate
+   - Property insurance policy
+   - Life insurance policy assignment letter
+   - Photographs of property (all sides)
+
+ACCEPTANCE:
+This sanction letter must be signed and returned within 15 days of receipt to confirm acceptance.
+
+For HDFC Limited,
+[Authorized Signatory]
+Amit Desai
+Branch Manager — Pune Main Branch
+
+DISCLAIMER: This is a SYNTHETIC document created for training purposes only. It does not represent an actual loan sanction. All names, amounts, and details are fictional.

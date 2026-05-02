@@ -1,0 +1,58 @@
+PRADHAN MANTRI AWAS YOJANA (PMAY) — CREDIT LINKED SUBSIDY SCHEME (CLSS)
+HDFC INTERNAL REFERENCE GUIDE — SYNTHETIC DATA
+=======================================================================
+
+1. SCHEME OVERVIEW
+   PMAY-CLSS provides interest subsidy on home loans for purchase/construction of house.
+   Objective: Housing for All — affordable housing for economically weaker sections and middle-income groups.
+
+2. INCOME CATEGORIES & SUBSIDY
+
+   | Category | Annual Income (INR) | Max Loan for Subsidy | Interest Subsidy | Max Carpet Area | Net Present Value (NPV) |
+   |----------|--------------------:|---------------------:|-----------------:|----------------:|------------------------:|
+   | EWS      |     Up to 3,00,000  |          6,00,000    |        6.50%     |     30 sq m     |          Up to 2,67,280 |
+   | LIG      | 3,00,001-6,00,000   |          6,00,000    |        6.50%     |     60 sq m     |          Up to 2,67,280 |
+   | MIG-I    | 6,00,001-12,00,000  |          9,00,000    |        4.00%     |    160 sq m     |          Up to 2,35,068 |
+   | MIG-II   |12,00,001-18,00,000  |         12,00,000    |        3.00%     |    200 sq m     |          Up to 2,30,156 |
+
+3. ELIGIBILITY CRITERIA
+   a) Beneficiary family must not own a pucca house in any part of India
+   b) Beneficiary family must not have availed central government housing scheme benefit
+   c) Family defined as: Husband, wife, unmarried sons, unmarried daughters
+   d) Adult earning members (even if married) treated as separate household for MIG
+   e) Women ownership/co-ownership mandatory for EWS/LIG
+   f) Aadhaar mandatory for all beneficiaries
+
+4. DOCUMENTATION REQUIRED
+   - Self-declaration of income (for EWS/LIG) OR ITR (for MIG)
+   - Aadhaar card of all family members
+   - PAN card
+   - Self-certification: "No pucca house in India" affidavit
+   - Property documents showing carpet area compliance
+   - Bank account details for subsidy credit
+
+5. HDFC OPERATIONAL PROCESS
+   Step 1: Customer applies for home loan with PMAY request
+   Step 2: Branch verifies eligibility (income, first-time buyer, carpet area)
+   Step 3: Loan sanctioned at regular home loan rate
+   Step 4: PMAY claim submitted to NHB via HDFC corporate office
+   Step 5: NHB verifies and releases subsidy to HDFC
+   Step 6: Subsidy credited to customer's loan account (reduces principal)
+   Step 7: EMI recalculated post-subsidy credit
+
+6. IMPORTANT NOTES FOR SALES TEAM
+   - PMAY is a POWERFUL sales tool — subsidy effectively reduces the interest rate by 2-6%
+   - For a INR 30L loan at 8.5%, PMAY MIG-I subsidy saves the customer approximately INR 5.4L over tenure
+   - Many customers are UNAWARE of their eligibility — proactively check for every first-time buyer
+   - Subsidy is credited as lump sum principal reduction — EMI drops immediately
+   - PMAY benefit can be combined with other HDFC schemes (festive offers, women concession)
+
+7. COMMON REJECTION REASONS
+   - Family already owns a pucca house
+   - Carpet area exceeds category limit
+   - Income exceeds category limit
+   - Not a first-time buyer
+   - Property not RERA registered
+   - Incomplete documentation
+
+DISCLAIMER: This is SYNTHETIC training content. Refer to official PMAY guidelines and current NHB circulars for actual scheme details.

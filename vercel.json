@@ -7,8 +7,12 @@
       "maxDuration": 300,
       "memory": 1024
     },
-    "app/api/doc-process/route.ts": {
+    "app/api/doc-intelligence/route.ts": {
       "maxDuration": 300,
+      "memory": 1024
+    },
+    "app/api/upload/route.ts": {
+      "maxDuration": 120,
       "memory": 1024
     }
   },

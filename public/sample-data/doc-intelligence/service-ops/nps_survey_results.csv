@@ -1,0 +1,9 @@
+Survey_ID,Customer_Name,Touchpoint,NPS_Score,Sentiment,Verbatim_Feedback,Category,Branch,Survey_Date,Improvement_Suggestion
+NPS/001,Sneha Kulkarni,Loan Sanctioning,9,Positive,"Very smooth process. Amit from Pune was extremely helpful and kept me informed at every step.",Service Quality,Pune Main,2025-01-12,None — excellent experience
+NPS/002,Mohammed Faisal,Document Collection,5,Neutral,"Too many documents asked. Some were repeated. The checklist was confusing.",Process Complexity,Koramangala,2025-01-13,Simplify document checklist. Avoid duplicate requests.
+NPS/003,Rajesh Sharma,Disbursement,3,Negative,"Disbursement delayed by 3 weeks because of builder NOC. HDFC should manage builder coordination better.",Disbursement Delay,Andheri West,2025-01-16,Builder relationship management needs improvement.
+NPS/004,Priyanka Reddy,Application Login,8,Positive,"Digital login was easy. In-principle approval came in 2 days. Impressed.",Digital Experience,Hitech City,2025-01-14,App UI could be more intuitive for first-time users.
+NPS/005,Kavita Jain,EMI Payment,2,Negative,"Penal interest charged for 1-day delay is unfair. Very disappointed with the rigid policy.",Penalty Policy,Bandra,2025-01-11,Grace period for EMI payment should be at least 3 days.
+NPS/006,Manish Gupta,NRI Processing,7,Positive,"Good NRI support. Power of Attorney process was well guided. Rate could be more competitive.",NRI Service,Delhi Hub,2025-01-15,NRI rates should be at par with domestic salaried.
+NPS/007,Deepika Joshi,Loan Rejection,1,Negative,"Rejected for minor LTV deviation. No one explained alternatives or next steps. Felt abandoned.",Rejection Handling,Hinjewadi,2025-01-17,Post-rejection counseling and alternative product suggestion needed.
+NPS/008,Lakshmi Venkatesh,Balance Transfer,10,Positive,"Seamless BT process. Rate is best in market. The team proactively offered top-up too. Excellent!",BT Experience,JP Nagar,2025-01-16,Perfect experience — replicate for all BT cases.

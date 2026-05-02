@@ -1,0 +1,4 @@
+OTS_ID,Borrower,Loan_Account,Product,Outstanding_INR,Proposed_Amount_INR,Haircut_Percent,Reason_For_OTS,Collateral_Value_INR,Recovery_Through_Auction_Est,Approval_Status,Approver,Deadline,Remarks
+OTS/2025/001,Sanjay Ghosh,HL/ER/2022/04120,Home Loan,5600000,4200000,25.0,Business loss. Willing to settle.,7800000,5500000,Under Review,Zonal Credit Head,2025-02-15,OTS better than auction cost. Legal fees saved.
+OTS/2025/002,Amit Tiwari,HL/NR/2022/03789,Home Loan,2800000,2100000,25.0,Medical emergency. Property disputed.,3200000,1800000,Approved,Credit Committee,2025-01-31,Property has legal dispute. OTS is best recovery option.
+OTS/2025/003,Rekha Saxena,HL/WR/2021/01567,LAP,6500000,5200000,20.0,Divorce settlement. Both parties agreeable.,8500000,6800000,Rejected — Counter Offered,Zonal Credit Head,,HDFC counter: INR 5.8L. Borrower considering.

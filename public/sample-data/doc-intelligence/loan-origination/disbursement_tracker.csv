@@ -1,0 +1,7 @@
+Loan_Account,Applicant,Loan_Amount_INR,Tranche,Tranche_Amount_INR,Stage_Completion,Builder_NOC,Legal_Clear,Valuation_Done,Insurance_Obtained,NACH_Registered,Disbursement_Status,Expected_Date,Remarks
+HL/WR/2025/00101,Rajesh Sharma,7500000,1,4000000,Agreement Registered,Pending,Yes,Yes,No,Yes,Blocked,2025-02-10,Waiting for builder NOC and property insurance
+HL/WR/2025/00102,Sneha Kulkarni,12000000,1,6000000,All Docs Submitted,Yes,Yes,Yes,Yes,Yes,Ready,2025-01-20,All clear — disbursement file moved to treasury
+HL/WR/2025/00102,Sneha Kulkarni,12000000,2,6000000,60% Construction Pending,N/A,Yes,Yes,Yes,Yes,Future,2025-06-30,Pending construction progress certificate
+HL/WR/2025/00105,Suresh Nair,15000000,1,15000000,Registration Complete,Yes,Yes,Yes,Yes,Yes,Ready,2025-01-18,Full disbursement — resale property
+HL/NR/2025/00109,Manish Gupta,25000000,1,12500000,Sale Deed Executed,Yes,Yes,Yes,Pending,Yes,Blocked,2025-02-05,NRI — awaiting insurance assignment from overseas provider
+HL/NR/2025/00109,Manish Gupta,25000000,2,12500000,Possession Pending,N/A,Yes,Yes,Pending,Yes,Future,2025-09-30,Second tranche on possession

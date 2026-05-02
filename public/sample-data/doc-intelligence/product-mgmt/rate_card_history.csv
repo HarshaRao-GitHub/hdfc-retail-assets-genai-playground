@@ -1,0 +1,9 @@
+Effective_Date,Product,Segment,Previous_Rate_Percent,New_Rate_Percent,Change_BPS,Trigger,RBI_Repo_Rate,Remarks
+2025-01-15,Home Loan,Salaried,8.50,8.40,(-10),RBI repo cut 25 bps,6.25,Festive carryover + repo transmission
+2024-10-01,Home Loan,Salaried,8.60,8.50,(-10),Competitive pressure,6.50,Match SBI festive rate
+2024-06-15,Home Loan,Salaried,8.70,8.60,(-10),RBI repo cut 25 bps,6.50,Partial transmission
+2024-02-01,Home Loan,Salaried,8.70,8.70,0,No change,6.75,Market rates stable
+2024-10-01,Home Loan,Self-Employed,8.85,8.65,(-20),Competitive + risk repricing,6.50,Larger cut to attract SE segment
+2024-06-15,LAP - Residential,All,9.75,9.50,(-25),Portfolio growth target,6.50,Strategic rate cut to boost LAP book
+2025-01-15,Balance Transfer,Salaried,8.50,8.35,(-15),Aggressive BT acquisition,6.25,Best-in-market BT rate
+2024-10-01,Top-Up,Existing Customers,8.75,8.60,(-15),Customer retention,6.50,Retain existing customers

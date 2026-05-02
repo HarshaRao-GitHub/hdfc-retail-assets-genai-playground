@@ -10,7 +10,7 @@ const nextConfig = {
   },
 
   experimental: {
-    serverActions: { bodySizeLimit: '50mb' },
+    serverActions: { bodySizeLimit: '100mb' },
     optimizePackageImports: ['react-markdown', 'remark-gfm'],
   },
 

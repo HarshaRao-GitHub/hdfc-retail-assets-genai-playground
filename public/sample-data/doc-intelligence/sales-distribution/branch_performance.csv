@@ -1,0 +1,13 @@
+Branch_Code,Branch_Name,Region,Zone,Logins_Count,Sanctions_Count,Sanctions_Value_Cr,Disbursements_Count,Disbursements_Value_Cr,Avg_Ticket_Size_Lakhs,Conversion_Rate_Percent,YoY_Growth_Percent,Cross_Sell_Count,NPS_Score,RM_Count,Active_Leads,TAT_Days_Avg
+BR001,Andheri West,Mumbai,West,145,118,89.2,102,76.8,75.3,70.3,12.5,38,72,8,45,18
+BR002,Bandra,Mumbai,West,168,142,128.5,125,108.2,86.6,74.4,18.2,52,78,10,62,15
+BR003,Pune Main,Pune,West,132,108,72.4,92,62.8,68.3,69.7,8.3,28,68,7,38,22
+BR004,Koramangala,Bangalore,South,155,130,95.6,112,82.4,73.6,72.3,15.8,42,75,9,52,17
+BR005,Hitech City,Hyderabad,South,98,78,52.8,65,44.2,68.0,66.3,22.4,22,70,6,35,20
+BR006,Chennai Main,Chennai,South,112,92,68.4,78,56.8,72.8,69.6,10.1,30,66,7,40,24
+BR007,Ahmedabad CG Road,Ahmedabad,West,88,72,48.6,60,40.2,67.0,68.2,14.5,18,64,5,28,19
+BR008,Salt Lake,Kolkata,East,75,58,35.2,48,28.6,59.6,64.0,6.2,14,62,5,22,26
+BR009,Delhi Hub,Delhi NCR,North,180,155,145.8,138,125.4,90.9,76.7,20.8,58,76,12,72,16
+BR010,JP Nagar,Bangalore,South,95,80,55.2,68,46.8,68.8,71.6,11.4,25,71,6,32,19
+BR011,Powai,Mumbai,West,125,105,98.5,90,82.4,91.6,72.0,16.8,35,74,8,48,17
+BR012,Hinjewadi,Pune,West,108,85,52.8,72,44.6,61.9,66.7,25.2,20,67,6,35,21

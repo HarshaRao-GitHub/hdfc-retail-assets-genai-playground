@@ -1,0 +1,8 @@
+Agency_Name,Region,Accounts_Assigned,Accounts_Resolved,Resolution_Rate_Percent,Amount_Assigned_Cr,Amount_Recovered_Cr,Recovery_Rate_Percent,Avg_Resolution_Days,Escalation_Count,CSAT_Compliance,Rating,Contract_Expiry,Remarks
+ABC Collections,West,145,92,63.4,18.5,11.2,60.5,28,8,Yes,A,2025-06-30,Top performer West. Strong field team.
+XYZ Recovery,West,120,68,56.7,15.2,8.1,53.3,35,12,Yes,B+,2025-03-31,Good but improving. Higher escalation rate.
+Premium Collections,North,85,58,68.2,22.4,15.8,70.5,22,3,Yes,A+,2025-09-30,Best recovery rate. NRI and HNI specialist.
+Delta Associates,South,110,62,56.4,12.8,6.9,53.9,32,15,Partial,B,2025-03-31,CSAT concerns — customer complaint about aggressive tactics. Warning issued.
+Omega Services,East,65,32,49.2,8.5,3.8,44.7,42,18,No,C,2025-01-31,Underperforming. Contract review scheduled. May not be renewed.
+In-house Collections,All India,250,185,74.0,8.2,6.8,82.9,15,2,Yes,A+,N/A,Best performance for 0-60 DPD bucket. Digital-first approach.
+Legal Team,All India,45,12,26.7,35.8,8.2,22.9,180,0,Yes,N/A,N/A,SARFAESI and legal proceedings. Long cycle. High-value NPA recovery.

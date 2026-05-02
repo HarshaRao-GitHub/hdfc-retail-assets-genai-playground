@@ -1,0 +1,11 @@
+Application_ID,Applicant,Age,Occupation,Employer_Business,Monthly_Income_INR,Co_Applicant_Income_INR,Total_Income_INR,Existing_EMI_INR,Proposed_EMI_INR,FOIR_Percent,Loan_Amount_INR,Property_Value_INR,LTV_Percent,CIBIL_Score,Risk_Rating,Recommendation,Deviation_Required,Remarks
+HL/WR/2025/00101,Rajesh Sharma,35,Salaried,TCS Limited,185000,0,185000,0,67800,36.6,7500000,9500000,78.9,762,Low,Approve,No,Strong salaried profile. Clean credit history.
+HL/WR/2025/00102,Sneha Kulkarni,42,Self-Employed,Kulkarni Textiles,320000,210000,530000,25000,129600,29.2,12000000,18400000,65.2,801,Low,Approve,No,Dual income. Conservative LTV. Excellent CIBIL.
+HL/WR/2025/00103,Mohammed Faisal,29,Salaried,Infosys Ltd,145000,0,145000,15000,42300,39.5,4500000,5480000,82.1,698,Medium,Conditional Approve,Yes,High LTV exceeds 80%. Co-applicant income needed for compliance. CIBIL below 700.
+HL/WR/2025/00104,Anita Patel,38,Professional,Dr. Anita Patel Clinic,280000,0,280000,0,85900,30.7,9500000,13300000,71.4,745,Low,Approve,No,Professional with stable income. Good LTV.
+HL/WR/2025/00105,Suresh Nair,51,Salaried,HDFC Bank Ltd,350000,0,350000,18000,155200,49.5,15000000,21500000,69.8,812,Medium,Approve with conditions,Yes,Age 51 — max tenure 9 years limits to higher EMI. FOIR elevated at 49.5%. Recommend tenure extension waiver.
+HL/WR/2025/00106,Priyanka Reddy,33,Salaried,Amazon India,210000,0,210000,8000,54800,29.9,6000000,7500000,80.0,725,Low,Approve,No,PMAY eligible. Borderline LTV — approved at 80%.
+HL/SR/2025/00107,Karthik Iyer,45,Self-Employed,Iyer Associates CA,450000,0,450000,35000,195600,51.2,20000000,32000000,62.5,788,High,Refer to Credit Head,Yes,LAP on commercial property. High FOIR 51.2%. Large ticket — needs credit committee approval.
+HL/WR/2025/00108,Deepika Joshi,28,Salaried,Wipro Technologies,125000,0,125000,0,32800,26.2,3500000,4100000,85.4,710,High,Conditional Approve,Yes,LTV 85.4% exceeds 80% norm. Needs credit head deviation approval. First-time buyer.
+HL/NR/2025/00109,Manish Gupta,40,NRI,Google Singapore,850000,0,850000,0,232400,27.3,25000000,45000000,55.6,835,Low,Approve,No,NRI with excellent profile. Conservative LTV. Premium property.
+HL/WR/2025/00110,Lakshmi Venkatesh,36,Salaried,State Bank of India,165000,0,165000,12000,50200,37.7,5500000,6930000,79.3,738,Low,Approve BT,No,Balance transfer from ICICI. Rate advantage 0.35%. Good profile.

@@ -1,0 +1,11 @@
+RM_ID,RM_Name,Branch,Region,Leads_Generated,Logins,Sanctions,Disbursements,Disbursement_Value_Lakhs,Avg_Ticket_Size_Lakhs,Conversion_Rate_Percent,Cross_Sell_Count,Cross_Sell_Revenue_Lakhs,CSAT_Score,AUM_Cr,Rank_Zone,Remarks
+RM001,Priya Menon,Andheri West,West,85,42,35,30,2250,75.0,35.3,12,8.4,4.2,18.5,3,Consistent performer. Strong builder relationships.
+RM002,Amit Desai,Pune Main,West,72,38,32,28,1890,67.5,38.9,8,5.2,4.0,15.2,7,Good conversion. Needs cross-sell focus.
+RM003,Deepa Rao,Koramangala,South,95,48,42,38,2850,75.0,40.0,15,10.5,4.5,22.8,1,Top performer South zone. Excellent cross-sell.
+RM004,Rahul Varma,Hitech City,South,65,30,24,20,1360,68.0,30.8,6,3.8,3.8,10.8,12,Developing territory. IT corridor potential.
+RM005,Kavitha Nair,Bandra,West,110,55,48,42,3850,91.7,38.2,18,14.2,4.6,32.5,2,Premium segment specialist. Highest ticket size.
+RM006,Vikram Singh,Ahmedabad CG Road,West,58,28,22,18,1200,66.7,31.0,5,3.0,3.9,9.6,15,New to role (6 months). Improving monthly.
+RM007,Saravanan M,Chennai Main,South,78,35,28,24,1680,70.0,30.8,10,6.5,4.1,13.4,8,Strong in self-employed segment. LAP specialist.
+RM008,Neha Sinha,Delhi Hub,North,120,58,52,45,4200,93.3,37.5,20,16.8,4.4,35.2,1,Top performer North. NRI and HNI specialist.
+RM009,Aniket Bose,Salt Lake,East,55,25,18,15,890,59.3,27.3,4,2.2,3.6,7.1,18,Challenging market. Needs builder connect support.
+RM010,Sarita Kumari,Powai,West,90,45,38,32,2920,91.3,35.6,14,11.2,4.3,24.5,4,Powai-Mulund corridor specialist. Growing AUM.

@@ -1,0 +1,11 @@
+Lender,Product,Rate_Range_Percent,Processing_Fee_Percent,Max_LTV_Percent,Max_Tenure_Years,Prepayment_Penalty,Special_Offers,Strengths,Weaknesses
+HDFC Ltd,Home Loan - Salaried,8.40-9.25,0.50,80,30,Nil (floating),Festive 0.10% concession + fee waiver,Largest HFC. Trust brand. Wide network.,Rate slightly above SBI for top-tier.
+SBI,Home Loan - Salaried,8.25-9.15,0.35,80,30,Nil,Nil processing fee for women. 0.05% rate concession women.,Lowest rates. Government trust.,Slower processing. Limited digital.
+ICICI Bank,Home Loan - Salaried,8.60-9.40,0.50,80,30,Nil (floating),End-to-end digital. 10-min in-principle.,Fast processing. Strong digital.,Rate premium. Cross-sell heavy.
+Kotak Mahindra,Home Loan - Salaried,8.65-9.50,0.50,80,25,Nil (floating),Top-up at same rate. Balance transfer special.,Quick turnaround. Flexible.,Higher rates. Lower tenure max.
+LIC HFL,Home Loan - Salaried,8.45-9.30,0.50,80,30,Nil,PMAY specialist. Subsidy facilitation.,Low rates. Government backing.,Very slow processing (45+ days TAT).
+Bajaj Housing,Home Loan - Salaried,8.55-9.45,0.50,80,30,Nil (floating),Flexi loan option. Part-prepay anytime.,Flexi product. Digital journey.,Brand awareness lower. Network limited.
+PNB Housing,Home Loan - Salaried,8.50-9.40,0.50,75,25,Nil,Zero processing fee for BT.,Competitive BT rates.,Lower LTV. Limited branches.
+HDFC Ltd,LAP - Self Employed,9.50-10.50,1.00,60,15,2% (fixed rate),Overdraft facility on LAP.,Domain expertise. Highest LAP limits.,Premium pricing for LAP segment.
+SBI,LAP,9.25-10.25,0.50,65,15,Nil,Combined with business loan package.,Lowest LAP rates.,Very strict property norms.
+ICICI Bank,LAP,9.40-10.50,1.00,60,15,Nil (floating),Digital LAP in 7 days.,Fast digital LAP processing.,Limited to metro properties only.

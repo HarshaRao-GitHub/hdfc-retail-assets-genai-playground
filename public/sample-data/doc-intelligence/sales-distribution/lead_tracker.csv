@@ -1,0 +1,9 @@
+Lead_ID,Customer_Name,Source,Product_Interest,Estimated_Amount_Lakhs,Property_Location,RM_Assigned,Stage,Next_Action,Probability_Percent,Lead_Date,Last_Contact,Remarks
+LD/2025/0001,Anil Mehta,Walk-in,Home Loan,85,Goregaon Mumbai,Priya Menon,Hot,Site visit scheduled,80,2025-01-02,2025-01-14,Ready to apply. Awaiting property finalization.
+LD/2025/0002,Sunita Rao,DSA - HomeFin,Home Loan,120,Whitefield Bangalore,Deepa Rao,Warm,Follow-up call,60,2025-01-05,2025-01-12,Comparing with SBI and ICICI rates.
+LD/2025/0003,Vijay Krishnan,Digital - Website,LAP,200,Adyar Chennai,Saravanan M,Hot,Document collection,75,2025-01-03,2025-01-15,Business expansion. Property clear title confirmed.
+LD/2025/0004,Meera Shah,Builder Referral,Home Loan,65,Hinjewadi Pune,Amit Desai,Warm,Rate negotiation,55,2025-01-08,2025-01-13,First-time buyer. PMAY eligible. Wants best rate.
+LD/2025/0005,Rajiv Khanna,Existing Customer,Top-Up,30,DLF Phase 4 Gurgaon,Neha Sinha,Hot,Sanction processing,90,2025-01-10,2025-01-16,Existing HL customer. Clean repayment history. Top-up for renovation.
+LD/2025/0006,Priti Agarwal,Cross-sell - CASA,Home Loan,95,Baner Pune,Amit Desai,Cold,Initial outreach,30,2025-01-12,2025-01-12,CASA customer with high balance. Home loan need identified via analytics.
+LD/2025/0007,Siddharth Nair,Digital - App,Balance Transfer,75,Electronic City Bangalore,Deepa Rao,Warm,Rate comparison shared,65,2025-01-06,2025-01-14,Currently with LIC HFL at 9.1%. Our offer 8.5%.
+LD/2025/0008,Ananya Das,Walk-in,Home Loan,45,New Town Kolkata,Aniket Bose,Warm,KYC collection,50,2025-01-09,2025-01-15,Young professional. First home. Budget conscious.

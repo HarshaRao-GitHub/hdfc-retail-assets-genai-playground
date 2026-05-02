@@ -1,0 +1,10 @@
+Product_Code,Product_Name,Category,Target_Segment,Interest_Rate_Range,Processing_Fee,Max_LTV_Percent,Max_Tenure_Years,Min_Loan_Lakhs,Max_Loan_Lakhs,Eligibility,USP,Launch_Date
+HL-SAL,Home Loan - Salaried,Home Loan,Salaried Individuals,8.40% - 9.25%,0.50% of loan amount,80%,30,5,500,Age 21-58. Min income 25K/month. CIBIL 700+,Fastest TAT. 48-hr in-principle approval.,2020-04-01
+HL-SE,Home Loan - Self Employed,Home Loan,Self-Employed / Professionals,8.65% - 9.50%,0.50% of loan amount,75%,20,10,500,Age 25-60. 3yr ITR. Business 3yr vintage.,Flexible income assessment. ITR + banking method.,2020-04-01
+HL-NRI,Home Loan - NRI,Home Loan,NRIs and PIOs,8.75% - 9.50%,1.00% of loan amount,75%,20,25,1000,Valid passport. NRE/NRO account. FEMA compliant.,End-to-end digital. Power of Attorney support.,2021-01-15
+LAP-RES,Loan Against Property - Residential,LAP,All Segments,9.50% - 10.50%,1.00% of loan amount,60%,15,10,1000,Clear title residential property. Min 5yr old.,Overdraft facility available. Multi-purpose usage.,2019-06-01
+LAP-COM,Loan Against Property - Commercial,LAP,Business / Professionals,9.75% - 10.75%,1.00% of loan amount,55%,15,20,2000,Commercial property with OC. Rental income eligible.,Highest ticket size. Business expansion focused.,2019-06-01
+HL-BT,Balance Transfer Home Loan,Balance Transfer,Existing borrowers of other lenders,8.35% - 9.10%,0.25% of loan amount,80%,30,10,500,Min 12 EMIs paid. Good repayment track. CIBIL 720+,Best BT rate. Top-up available. Zero switch cost.,2022-03-01
+HL-TU,Top-Up Loan,Top-Up,Existing HDFC HL customers,8.60% - 9.25%,0.25% of loan amount,80% (combined),15,5,200,Existing HDFC customer. 12+ EMIs paid on time.,No additional property docs. Quick disbursement.,2021-07-01
+HL-PMAY,PMAY Home Loan,Home Loan,EWS / LIG / MIG,6.50% - 8.50%,Nil,90% (for EWS),20,3,100,First-time buyer. Income per PMAY slab. New property.,Interest subsidy up to 2.67L. Zero processing fee.,2020-01-01
+HL-AFF,Affordable Housing Loan,Home Loan,Affordable Segment,8.25% - 8.75%,Nil,90%,25,3,50,Property value under 45L. Carpet area per PMAY norms.,Lowest EMI. Government subsidy eligible.,2023-01-15

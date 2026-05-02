@@ -1,0 +1,9 @@
+SR_ID,Customer_Name,Loan_Account,Request_Type,Description,Filed_Date,SLA_Days,Status,Assigned_To,Completion_Date,TAT_Days,Remarks
+SR/2025/001,Ramesh Kumar,HL/WR/2023/45678,Outstanding Statement,Full outstanding balance and amortization schedule,2025-01-10,3,Completed,Branch Ops,2025-01-11,1,Auto-generated from system
+SR/2025/002,Ramesh Kumar,HL/WR/2023/45678,Prepayment Query,Impact of INR 5L prepayment on EMI and tenure,2025-01-10,5,Completed,Credit Team,2025-01-13,3,Both options (EMI reduction and tenure reduction) shared
+SR/2025/003,Ramesh Kumar,HL/WR/2023/45678,Rate Review,Request for interest rate reduction/RLLR switch,2025-01-10,7,In Progress,Product Team,,,Under review — customer eligible for 0.15% reduction
+SR/2025/004,Ramesh Kumar,HL/WR/2023/45678,Interest Certificate,Tax certificate for FY 2024-25,2025-01-10,5,Completed,Branch Ops,2025-01-12,2,Certificate emailed
+SR/2025/005,Sneha Kulkarni,HL/WR/2025/00102,NOC Request,No objection certificate after full repayment,2025-01-15,15,In Progress,Legal Team,,,Full repayment verified. NOC under preparation.
+SR/2025/006,Anita Patel,HL/WR/2025/00104,Property Release,Release of original property documents,2025-01-14,21,Pending,Vault Team,,,Loan closed. Document retrieval from central vault initiated.
+SR/2025/007,Suresh Nair,HL/WR/2025/00105,Insurance Assignment,Change life insurance assignment to new policy,2025-01-16,10,In Progress,Insurance Desk,,,New policy details received. Assignment letter being prepared.
+SR/2025/008,Priyanka Reddy,HL/WR/2025/00106,PMAY Status,Status of PMAY subsidy application,2025-01-17,5,Pending,PMAY Team,,,Claim submitted to NHB on Jan 8. Typically takes 30-45 days.

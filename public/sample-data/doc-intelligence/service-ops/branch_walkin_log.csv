@@ -1,0 +1,10 @@
+Date,Branch,Customer_Name,Customer_Type,Purpose,Product_Interest,Loan_Amount_Lakhs,Converted_To_Lead,RM_Assigned,Time_Spent_Mins,Referral_Source,Remarks
+2025-01-13,Andheri West,Vikram Mehta,New,Loan Enquiry,Home Loan,75,Yes,Priya Menon,25,Walk-in,IT professional. Interested in Goregaon property.
+2025-01-13,Andheri West,Mrs. Sharma,Existing,Statement Request,N/A,,No,,10,N/A,Collected statement. Upsell attempted — not interested.
+2025-01-13,Andheri West,Rahul Jain,New,Rate Comparison,Home Loan,50,Yes,Priya Menon,35,Builder referral,Comparing HDFC vs SBI. Good profile — PMAY eligible.
+2025-01-13,Bandra,Neelam Khanna,Existing,Prepayment,N/A,,No,,15,N/A,Part prepayment of INR 8L processed.
+2025-01-13,Bandra,Aditya Kapoor,New,LAP Enquiry,LAP,200,Yes,Kavitha Nair,40,DSA,Business owner. Clear property in Juhu. Strong lead.
+2025-01-14,Pune Main,Suresh Patil,New,Loan Enquiry,Home Loan,35,Yes,Amit Desai,20,Walk-in,First-time buyer. Under-construction flat in Wakad.
+2025-01-14,Pune Main,Anjali Deshmukh,Existing,Rate Reduction,N/A,,No,,15,N/A,Requested rate match. Retention offer shared.
+2025-01-14,Koramangala,Pradeep Kumar,New,Balance Transfer,BT,80,Yes,Deepa Rao,30,Digital lead,Currently with Axis. Rate advantage 0.40%.
+2025-01-14,Delhi Hub,Sonia Malhotra,New,NRI Home Loan,Home Loan - NRI,150,Yes,Neha Sinha,45,Referral,NRI in Dubai. Property in Noida. POA query.

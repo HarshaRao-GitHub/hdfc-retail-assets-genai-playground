@@ -1,0 +1,9 @@
+Loan_Account,Borrower,Product,DPD_Bucket,Outstanding_INR,EMI_INR,Last_Payment_Date,Collateral_Value_INR,Current_LTV_Percent,Branch,Collection_Agent,Action_Plan,Priority,Remarks
+HL/WR/2022/04521,Ramesh Pandey,Home Loan,90+ DPD,4250000,38500,2024-09-15,5200000,81.7,Dadar,ABC Collections,SARFAESI Notice Issued,Critical,Borrower unresponsive. Property in Dadar — good market value.
+HL/WR/2023/05678,Meena Verma,Home Loan,60 DPD,3180000,28200,2024-11-01,4500000,70.7,Thane,XYZ Recovery,Restructuring Proposal,High,Job loss reported. Willing to pay reduced EMI for 6 months.
+HL/SR/2021/03456,Vinod Menon,LAP,90+ DPD,8500000,95600,2024-08-20,12000000,70.8,Chennai Main,Legal Team,Legal Proceedings,Critical,Business closure. Possession notice served.
+HL/WR/2024/06789,Kavita Jain,Home Loan,30 DPD,6200000,55800,2024-12-05,8500000,72.9,Bandra,In-house,Reminder + Follow-up,Medium,First-time delay. Employer salary delay reported.
+HL/WR/2023/05890,Arjun Reddy,Home Loan,60 DPD,2850000,24600,2024-10-20,3200000,89.1,Hyderabad,ABC Collections,Intensified Collection,High,Under-water property (LTV 89%). Co-applicant contact attempted.
+HL/ER/2022/04120,Sanjay Ghosh,Home Loan,90+ DPD,5600000,48200,2024-07-15,7800000,71.8,Kolkata,Legal Team,OTS Discussion,Critical,Borrower open to OTS at 75%. Committee approval needed.
+HL/WR/2024/07234,Pooja Choudhary,Home Loan,30 DPD,1980000,18500,2024-12-10,2800000,70.7,Pune Main,In-house,Phone Follow-up,Low,Technical bounce. NACH re-registration done.
+HL/NR/2023/05345,Arun Kapoor,Home Loan - NRI,60 DPD,12500000,112000,2024-10-25,18000000,69.4,Delhi Hub,Premium Collections,Personal Visit to India Residence,High,NRI borrower. Tenant in property. Rental income not being applied to EMI.
