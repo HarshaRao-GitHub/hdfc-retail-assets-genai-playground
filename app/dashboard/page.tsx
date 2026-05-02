@@ -63,7 +63,7 @@ export default function Dashboard() {
             <h2 className="text-2xl md:text-3xl font-bold text-hdfc-blue mt-1">4 Experience Modes</h2>
             <p className="text-hdfc-slate mt-2 max-w-3xl text-[14px] leading-relaxed">
               Each mode is designed for hands-on learning. Pick a prompt, run it live, see the output, tweak, and repeat.
-              All powered by Claude AI with synthetic data only.
+              All powered by Gen-AI with synthetic data only.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -233,7 +233,7 @@ export default function Dashboard() {
             HDFC Retail Assets GenAI Playground &middot; Designed &amp; Developed by Harsha Rao | Director - AI Strategy &amp; Consulting | Regenesys School of AI
           </span>
           <span className="font-mono text-[10px]">
-            {totalUseCases} Use Cases &middot; 6 Domains &middot; 4 Modes &middot; Claude AI
+            {totalUseCases} Use Cases &middot; 6 Domains &middot; 4 Modes &middot; Gen-AI
           </span>
         </div>
       </footer>

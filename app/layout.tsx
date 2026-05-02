@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'GenAI Leadership Playground — HDFC Retail Assets',
   description:
-    'GenAI enablement playground for HDFC Retail Assets leadership — Sales, Product, Portfolio & Service. Hands-on use cases for mortgage business powered by Claude AI.'
+    'GenAI enablement playground for HDFC Retail Assets leadership — Sales, Product, Portfolio & Service. Hands-on use cases for mortgage business powered by Gen-AI.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
