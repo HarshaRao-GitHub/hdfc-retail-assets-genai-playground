@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["bom1"],
+  "functions": {
+    "app/api/chat/route.ts": {
+      "maxDuration": 300,
+      "memory": 1024
+    },
+    "app/api/doc-process/route.ts": {
+      "maxDuration": 300,
+      "memory": 1024
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ]
+}
