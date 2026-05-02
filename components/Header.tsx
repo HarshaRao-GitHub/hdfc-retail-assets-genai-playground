@@ -1,8 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { useDocuments } from '@/lib/document-context';
 
 export default function Header() {
+  const { documents, setTrayOpen } = useDocuments();
+  const docCount = documents.length;
+
   return (
     <header className="bg-hdfc-blue text-white">
       <div className="max-w-7xl mx-auto px-6 pt-3 pb-2 flex items-center justify-between">
@@ -20,12 +24,25 @@ export default function Header() {
           </div>
         </Link>
 
-        <Link
-          href="/"
-          className="px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition border border-white/15"
-        >
-          Switch Client
-        </Link>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setTrayOpen(true)}
+            className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition border border-white/15"
+          >
+            📄 Docs
+            {docCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 bg-hdfc-red text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow">
+                {docCount}
+              </span>
+            )}
+          </button>
+          <Link
+            href="/"
+            className="px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition border border-white/15"
+          >
+            Switch Client
+          </Link>
+        </div>
       </div>
 
       <div className="border-t border-white/10">

@@ -12,6 +12,7 @@ import {
 } from '@/data/doc-intelligence-config';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import DownloadMenu from './DownloadMenu';
+import { useDocuments } from '@/lib/document-context';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -26,6 +27,8 @@ interface UsageStats {
 interface DataViewerState { open: boolean; title: string; content: string; loading: boolean; pdfUrl?: string; }
 
 export default function DocIntelligenceHub() {
+  const { addDocument, addDocuments: addToGlobalStore } = useDocuments();
+
   const [selectedDept, setSelectedDept] = useState(DEPARTMENTS[0].id);
   const [selectedOp, setSelectedOp] = useState<string>(OPERATIONS[0].id);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -73,6 +76,20 @@ export default function DocIntelligenceHub() {
       streamRef.current.scrollTop = streamRef.current.scrollHeight;
     }
   }, [transcript.length, streamBuffer]);
+
+  useEffect(() => {
+    if (uploadedFiles.length > 0) {
+      addToGlobalStore(
+        uploadedFiles.map(f => ({
+          filename: f.filename,
+          text: f.text,
+          images: f.images,
+          source: docSource,
+          department: docSource === 'sample' ? dept?.label : undefined,
+        })),
+      );
+    }
+  }, [uploadedFiles, addToGlobalStore, docSource, dept?.label]);
 
   const loadSampleFile = useCallback(async (sf: SampleFile) => {
     if (uploadedFiles.some(f => f.filename === sf.filename)) return;
@@ -175,7 +192,14 @@ export default function DocIntelligenceHub() {
     } finally {
       setUploading(false);
     }
-    if (newFiles.length) setUploadedFiles(prev => [...prev, ...newFiles]);
+    if (newFiles.length) {
+      setUploadedFiles(prev => [...prev, ...newFiles]);
+      addToGlobalStore(
+        newFiles.map(f => ({
+          filename: f.filename, text: f.text, images: f.images, source: 'upload' as const,
+        })),
+      );
+    }
     if (fileInputRef.current) fileInputRef.current.value = '';
   }
 
