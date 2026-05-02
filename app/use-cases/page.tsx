@@ -6,6 +6,7 @@ import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import { USE_CASES, USE_CASE_CATEGORIES } from '@/data/use-cases';
 import { useDocuments } from '@/lib/document-context';
+import EnhanceToCraft from '@/components/EnhanceToCraft';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -229,6 +230,7 @@ export default function UseCasesPage() {
                   >
                     {streaming ? 'Running...' : 'Run Use Case'}
                   </button>
+                  <EnhanceToCraft prompt={ucPrompt} onEnhanced={setUcPrompt} disabled={streaming} pageContext="Use Case Builder — custom mortgage business use case" />
                   {messages.length > 0 && (
                     <button onClick={resetBuild} disabled={streaming} className="text-sm text-gray-500 hover:text-red-600 font-medium transition disabled:opacity-40">
                       Clear Results
@@ -296,6 +298,9 @@ export default function UseCasesPage() {
                       <button onClick={runCustomUseCase} disabled={streaming || !ucPrompt.trim()} className="bg-hdfc-blue hover:bg-hdfc-blueDeep text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">
                         Send
                       </button>
+                    </div>
+                    <div className="mt-2">
+                      <EnhanceToCraft prompt={ucPrompt} onEnhanced={setUcPrompt} disabled={streaming} pageContext="Use Case Builder follow-up — mortgage business" />
                     </div>
                   </div>
                 </div>

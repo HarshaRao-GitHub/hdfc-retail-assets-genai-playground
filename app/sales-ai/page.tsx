@@ -6,6 +6,7 @@ import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { useDocuments } from '@/lib/document-context';
+import EnhanceToCraft from '@/components/EnhanceToCraft';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -255,6 +256,10 @@ export default function SalesAIPage() {
               <div className="flex gap-3">
                 <textarea ref={inputRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} placeholder="Ask about sales forecasting, upselling, cross-sell, objection handling..." rows={3} disabled={streaming} className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 resize-y focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-40 transition shadow-sm" />
                 <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Send</button>
+              </div>
+              <div className="flex items-center justify-between mt-2">
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Sales & Growth AI — forecasting, upselling, cross-selling for mortgage business" />
+                <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
               </div>
             </div>
           </div>

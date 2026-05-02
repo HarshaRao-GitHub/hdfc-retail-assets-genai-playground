@@ -13,6 +13,7 @@ import {
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import DownloadMenu from './DownloadMenu';
 import { useDocuments } from '@/lib/document-context';
+import EnhanceToCraft from './EnhanceToCraft';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -713,9 +714,12 @@ export default function DocIntelligenceHub() {
               </button>
             </div>
             <div className="flex items-center justify-between mt-2">
-              <p className="text-xs text-gray-500 font-medium">
-                {hasFiles ? `${uploadedFiles.length} document(s) loaded · ${operation?.label} mode` : 'No documents loaded'}
-              </p>
+              <div className="flex items-center gap-3">
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming || !hasFiles} pageContext="Document Intelligence — analyzing mortgage documents" />
+                <p className="text-xs text-gray-500 font-medium">
+                  {hasFiles ? `${uploadedFiles.length} document(s) loaded · ${operation?.label} mode` : 'No documents loaded'}
+                </p>
+              </div>
               <p className="text-xs text-gray-400 font-medium">Press Enter to send</p>
             </div>
           </div>

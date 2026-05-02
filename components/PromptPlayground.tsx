@@ -6,6 +6,7 @@ import DownloadMenu from './DownloadMenu';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { LAB_EXPERIMENTS, PROMPT_LADDERS, DISCLAIMER_TEXT } from '@/data/prompt-templates';
 import { useDocuments } from '@/lib/document-context';
+import EnhanceToCraft from './EnhanceToCraft';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -359,7 +360,10 @@ export default function PromptPlayground() {
                 </div>
               </div>
               <div className="flex items-center justify-between mt-2">
-                <p className="text-[10px] text-gray-400">{messages.length > 0 ? `${Math.ceil(messages.filter(m => m.role === 'user').length)} turn${messages.filter(m => m.role === 'user').length !== 1 ? 's' : ''} in conversation` : 'Start a new conversation or pick a prompt from the library'}</p>
+                <div className="flex items-center gap-3">
+                  <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Prompt Engineering Lab — mortgage business prompt experiments" />
+                  <p className="text-[10px] text-gray-400">{messages.length > 0 ? `${Math.ceil(messages.filter(m => m.role === 'user').length)} turn${messages.filter(m => m.role === 'user').length !== 1 ? 's' : ''} in conversation` : 'Start a new conversation or pick a prompt from the library'}</p>
+                </div>
                 <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
               </div>
             </div>
