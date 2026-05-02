@@ -17,7 +17,7 @@ import { useDocuments } from '@/lib/document-context';
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
 interface ImageAttachment { base64: string; media_type: string; label: string; }
-interface UploadedFile { filename: string; text: string; images: ImageAttachment[]; }
+interface UploadedFile { filename: string; text: string; images: ImageAttachment[]; samplePath?: string; }
 interface UsageStats {
   input_tokens?: number; output_tokens?: number; total_tokens?: number;
   tool_calls?: number; api_turns?: number; model?: string;
@@ -86,6 +86,7 @@ export default function DocIntelligenceHub() {
           images: f.images,
           source: docSource,
           department: docSource === 'sample' ? dept?.label : undefined,
+          samplePath: f.samplePath,
         })),
       );
     }
@@ -98,7 +99,7 @@ export default function DocIntelligenceHub() {
       const res = await fetch(sf.path);
       if (!res.ok) throw new Error(`Failed to load ${sf.filename}`);
       const text = await res.text();
-      setUploadedFiles(prev => [...prev, { filename: sf.filename, text, images: [] }]);
+      setUploadedFiles(prev => [...prev, { filename: sf.filename, text, images: [], samplePath: sf.path }]);
     } catch (err) {
       setUploadError(`Failed to load ${sf.filename}: ${err instanceof Error ? err.message : 'unknown'}`);
     } finally {
@@ -542,10 +543,18 @@ export default function DocIntelligenceHub() {
                             <button
                               onClick={() => viewSampleFile(sf)}
                               title={`View ${sf.label}`}
-                              className="px-2 py-2 text-[10px] font-bold text-hdfc-blue hover:text-hdfc-blueDeep hover:bg-blue-50 border-l border-gray-200 rounded-r-lg transition"
+                              className="px-2 py-2 text-[10px] font-bold text-hdfc-blue hover:text-hdfc-blueDeep hover:bg-blue-50 border-l border-gray-200 transition"
                             >
                               👁
                             </button>
+                            <a
+                              href={sf.path}
+                              download={sf.filename}
+                              title={`Download ${sf.filename}`}
+                              className="px-2 py-2 text-[10px] font-bold text-gray-500 hover:text-emerald-700 hover:bg-emerald-50 border-l border-gray-200 rounded-r-lg transition"
+                            >
+                              ⬇
+                            </a>
                           </div>
                         );
                       })}

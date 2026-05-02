@@ -11,6 +11,7 @@ export interface SharedDocument {
   images: ImageAttachment[];
   source: 'upload' | 'sample';
   department?: string;
+  samplePath?: string;
   addedAt: number;
 }
 
