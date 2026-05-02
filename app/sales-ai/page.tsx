@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
+import { useDocuments } from '@/lib/document-context';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -61,6 +62,7 @@ const SALES_SCENARIOS = [
 ];
 
 export default function SalesAIPage() {
+  const { documents, setTrayOpen } = useDocuments();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [streaming, setStreaming] = useState(false);
@@ -95,13 +97,17 @@ export default function SalesAIPage() {
     setTimeout(scrollToBottom, 50);
 
     try {
+      const docPayload = documents.length > 0
+        ? documents.map(d => ({ filename: d.filename, text: d.text }))
+        : undefined;
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: next.map(m => ({ role: m.role, content: m.content })),
           promptLevel: level,
-          context: 'This is the Sales & Growth AI module. Focus on sales forecasting, upselling, cross-selling, objection handling, and lead conversion for HDFC Retail Assets mortgage business.'
+          context: 'This is the Sales & Growth AI module. Focus on sales forecasting, upselling, cross-selling, objection handling, and lead conversion for HDFC Retail Assets mortgage business.',
+          documentTexts: docPayload,
         })
       });
       if (!res.ok || !res.body) {
@@ -177,6 +183,21 @@ export default function SalesAIPage() {
           <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 flex items-center gap-2 text-[11px] text-amber-800">
             <span className="text-amber-600">⚠️</span>
             <span>All scenarios use synthetic data. Do NOT input actual customer data. Wait for bank policy before production use.</span>
+          </div>
+
+          {/* Document Context Bar */}
+          <div className={`rounded-lg px-4 py-2.5 flex items-center justify-between text-[12px] border ${documents.length > 0 ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-gray-50 border-gray-200 text-gray-500'}`}>
+            <div className="flex items-center gap-2">
+              <span>{documents.length > 0 ? '📄' : '📂'}</span>
+              {documents.length > 0 ? (
+                <span><strong>{documents.length} document{documents.length !== 1 ? 's' : ''}</strong> attached — AI will use them for forecasting &amp; analysis</span>
+              ) : (
+                <span>No documents attached. Load your sales data, MIS reports, or lead trackers via the Document Tray for data-driven insights.</span>
+              )}
+            </div>
+            <button onClick={() => setTrayOpen(true)} className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 px-3 py-1 border border-emerald-300 rounded-md hover:bg-emerald-100 transition">
+              {documents.length > 0 ? 'Manage Docs' : 'Load Docs'}
+            </button>
           </div>
 
           {/* Scenario Cards */}

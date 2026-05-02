@@ -11,10 +11,13 @@ interface IncomingMessage {
   content: string;
 }
 
+interface DocText { filename: string; text: string; }
+
 interface ChatRequest {
   messages: IncomingMessage[];
   promptLevel?: 'L1' | 'L2' | 'L3' | 'L4';
   context?: string;
+  documentTexts?: DocText[];
 }
 
 const SYSTEM_PROMPT = `You are an AI research and strategy assistant for HDFC Retail Assets — the mortgage and retail lending business. Help the user explore ideas, research topics, analyze markets, and build structured thinking through progressively detailed prompts. Be thorough, structured, and cite sources where relevant.
@@ -143,6 +146,12 @@ export async function POST(req: NextRequest) {
 
         let systemPrompt = `${SYSTEM_PROMPT}\n${levelInstructions}`;
         if (body.context) systemPrompt += `\n\nADDITIONAL CONTEXT:\n${body.context}`;
+        if (body.documentTexts?.length) {
+          systemPrompt += `\n\n### ATTACHED DOCUMENTS (${body.documentTexts.length} files)\nThe user has attached the following documents. Use them to ground your response. Cite document names when referencing content.\n`;
+          for (const dt of body.documentTexts) {
+            systemPrompt += `\n--- BEGIN: ${dt.filename} ---\n${dt.text.slice(0, 50000)}\n--- END: ${dt.filename} ---\n`;
+          }
+        }
         if (webContext) systemPrompt += `\n\n${webContext}`;
 
         const maxTokensByLevel: Record<string, number> = { L1: 1024, L2: 4096, L3: 8192, L4: 128000 };

@@ -5,11 +5,13 @@ import Markdown from './Markdown';
 import DownloadMenu from './DownloadMenu';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { LAB_EXPERIMENTS, PROMPT_LADDERS, DISCLAIMER_TEXT } from '@/data/prompt-templates';
+import { useDocuments } from '@/lib/document-context';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
 
 export default function PromptPlayground() {
+  const { documents, setTrayOpen } = useDocuments();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [streaming, setStreaming] = useState(false);
@@ -82,10 +84,17 @@ export default function PromptPlayground() {
     setTimeout(scrollToBottom, 50);
 
     try {
+      const docPayload = documents.length > 0
+        ? documents.map(d => ({ filename: d.filename, text: d.text }))
+        : undefined;
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: next.map(m => ({ role: m.role, content: m.content })), promptLevel: level })
+        body: JSON.stringify({
+          messages: next.map(m => ({ role: m.role, content: m.content })),
+          promptLevel: level,
+          documentTexts: docPayload,
+        })
       });
       if (!res.ok || !res.body) {
         const errText = await res.text().catch(() => 'Request failed');
@@ -194,6 +203,21 @@ export default function PromptPlayground() {
           <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 flex items-center gap-2 text-[11px] text-amber-800">
             <span className="text-amber-600 shrink-0">⚠️</span>
             <span>{DISCLAIMER_TEXT}</span>
+          </div>
+
+          {/* Document Context Bar */}
+          <div className={`rounded-lg px-4 py-2.5 flex items-center justify-between text-[12px] border ${documents.length > 0 ? 'bg-blue-50 border-blue-200 text-blue-800' : 'bg-gray-50 border-gray-200 text-gray-500'}`}>
+            <div className="flex items-center gap-2">
+              <span>{documents.length > 0 ? '📄' : '📂'}</span>
+              {documents.length > 0 ? (
+                <span><strong>{documents.length} document{documents.length !== 1 ? 's' : ''}</strong> attached — AI will reference them in responses</span>
+              ) : (
+                <span>No documents attached. Load docs via the Document Tray or Doc Intelligence to enable document-grounded prompting.</span>
+              )}
+            </div>
+            <button onClick={() => setTrayOpen(true)} className="text-[11px] font-semibold text-hdfc-blue hover:text-hdfc-red px-3 py-1 border border-hdfc-blue/30 rounded-md hover:bg-blue-100 transition">
+              {documents.length > 0 ? 'Manage Docs' : 'Load Docs'}
+            </button>
           </div>
 
           {/* Lab Experiments */}
