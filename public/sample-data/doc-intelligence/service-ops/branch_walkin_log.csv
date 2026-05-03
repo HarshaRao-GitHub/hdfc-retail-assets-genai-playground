@@ -8,3 +8,48 @@ Date,Branch,Customer_Name,Customer_Type,Purpose,Product_Interest,Loan_Amount_Lak
 2025-01-14,Pune Main,Anjali Deshmukh,Existing,Rate Reduction,N/A,,No,,15,N/A,Requested rate match. Retention offer shared.
 2025-01-14,Koramangala,Pradeep Kumar,New,Balance Transfer,BT,80,Yes,Deepa Rao,30,Digital lead,Currently with Axis. Rate advantage 0.40%.
 2025-01-14,Delhi Hub,Sonia Malhotra,New,NRI Home Loan,Home Loan - NRI,150,Yes,Neha Sinha,45,Referral,NRI in Dubai. Property in Noida. POA query.
+2025-01-15,Chennai Main,Karthik Subramanian,New,Loan Enquiry,Home Loan,45,Yes,Saravanan M,30,Walk-in,Software engineer. 2BHK in OMR. Pre-approved offer shared.
+2025-01-15,Chennai Main,Revathi Sundaram,Existing,NOC Pickup,N/A,,No,,10,N/A,Collected NOC and original documents. Loan closed.
+2025-01-15,Andheri West,Deepak Tiwari,New,Top-Up,Top-Up Loan,15,Yes,Priya Menon,20,Existing customer,Existing HL customer. Wants top-up for renovation.
+2025-01-15,Whitefield,Anil Kumar Reddy,New,Loan Enquiry,Home Loan,60,Yes,Deepa Rao,25,Builder referral,Prestige project in Sarjapur. Builder tie-up rate applicable.
+2025-01-15,Gurgaon,Monika Arora,New,Rate Comparison,Home Loan,90,Yes,Rohit Saxena,35,DSA,Comparing with PNB HFL. HDFC rate 0.25% lower.
+2025-01-16,Vashi,Santosh Pawar,New,Loan Enquiry,Home Loan,40,Yes,Branch Ops,20,Walk-in,Railway employee. Good stability. Flat in Kharghar.
+2025-01-16,Vashi,Farhan Qureshi,Existing,Document Submission,N/A,,No,,10,N/A,Submitted occupation certificate for final disbursement.
+2025-01-16,JP Nagar,Meghna Iyengar,New,Balance Transfer,BT,55,Yes,Deepa Rao,30,Friend/Family,Currently with LIC HFL. Rate difference 0.50%.
+2025-01-16,Dwarka,Ritu Aggarwal,New,PMAY Enquiry,Home Loan - PMAY,25,Yes,Rohit Saxena,25,Walk-in,First home buyer. EWS category. PMAY eligible.
+2025-01-17,Andheri West,Sameer Joshi,New,Loan Enquiry,LAP,120,Yes,Priya Menon,40,Corporate tie-up,CA firm partner. LAP against Andheri commercial property.
+2025-01-17,Pune Main,Vaishali Deshpande,Existing,Complaint,N/A,,No,,20,N/A,Unhappy with rate reset. Explained RLLR mechanism. Partially satisfied.
+2025-01-17,Salt Lake Kolkata,Abhijit Banerjee,New,Loan Enquiry,Home Loan,30,Yes,Branch Ops,25,Walk-in,Govt employee. New Town flat. Strong credit profile.
+2025-01-17,Hyderabad Main,Srikanth Vemula,New,Rate Comparison,Home Loan,70,Yes,Srikanth V,30,Digital lead,IT professional. Comparing HDFC vs SBI vs Kotak.
+2025-01-18,Bandra,Nalini Kapoor,Existing,Insurance Query,N/A,,No,,15,N/A,Enquired about home insurance claim process after water damage.
+2025-01-18,Electronic City,Rohan Hegde,New,Loan Enquiry,Home Loan,55,Yes,Deepa Rao,25,Builder referral,Sobha project. Builder subvention scheme.
+2025-01-18,CG Road Ahmedabad,Jayesh Shah,New,LAP Enquiry,LAP,300,Yes,Branch Ops,45,DSA,Diamond merchant. Property in Navrangpura. High-value lead.
+2025-01-18,Delhi Hub,Parveen Akhtar,New,NRI Enquiry,Home Loan - NRI,100,Yes,Neha Sinha,40,Referral,NRI in UK. Property in Greater Noida. POA being executed.
+2025-01-19,Koramangala,Ananya Prasad,New,Loan Enquiry,Home Loan,48,Yes,Deepa Rao,20,Walk-in,Startup founder. Salary + equity compensation. Needs income structuring.
+2025-01-19,Thane,Mangesh Kulkarni,Existing,Prepayment,N/A,,No,,15,N/A,Part prepayment INR 5L processed. Tenure reduced 8 months.
+2025-01-19,Chennai Main,Balaji Krishnamurthy,New,Property Visit Coordination,Home Loan,38,Yes,Saravanan M,30,Walk-in,Needs technical valuation for Porur property before loan sanction.
+2025-01-20,Hinjewadi,Sneha Patil,New,Loan Enquiry,Home Loan,42,Yes,Amit Desai,25,Walk-in,TCS employee. 2BHK in Hinjewadi Phase 3. Good CIBIL.
+2025-01-20,Noida Sector 62,Alok Verma,New,Balance Transfer,BT,65,Yes,Rohit Saxena,35,Digital lead,Currently with Bajaj HF at 9.10%. HDFC offering 8.50%.
+2025-01-20,Indiranagar,Divya Shenoy,New,Rate Comparison,Home Loan,85,Yes,Deepa Rao,30,Friend/Family,Doctor. Apartment in Indiranagar. Comparing 4 lenders.
+2025-01-21,Baner Pune,Tushar Joshi,New,Loan Enquiry,Home Loan,55,Yes,Amit Desai,25,Builder referral,Godrej project in Baner. Pre-approved rate shared.
+2025-01-21,Satellite Ahmedabad,Hetal Mehta,New,Top-Up,Top-Up Loan,20,Yes,Branch Ops,20,Existing customer,Existing customer. Top-up for daughter's education abroad.
+2025-01-21,Howrah,Debashis Roy,New,Loan Enquiry,Home Loan,28,Yes,Branch Ops,25,Walk-in,State govt employee. Flat in Howrah. PMAY eligible.
+2025-01-22,Adyar Chennai,Lakshmi Natarajan,Existing,Statement Request,N/A,,No,,10,N/A,Collected interest certificate for tax filing.
+2025-01-22,Powai,Nikhil Trivedi,New,Loan Enquiry,Home Loan,95,Yes,Priya Menon,35,Corporate tie-up,JP Morgan employee. Premium property in Hiranandani.
+2025-01-22,Madhapur Hyderabad,Sirisha Reddy,New,Loan Enquiry,Home Loan,52,Yes,Srikanth V,25,Walk-in,Infosys employee. Gachibowli apartment. Good profile.
+2025-01-23,Connaught Place,Vibha Khanna,Existing,Prepayment,N/A,,No,,15,N/A,Bulk prepayment INR 25L from fixed deposit maturity.
+2025-01-23,Borivali,Tejas Mehta,New,Loan Enquiry,Home Loan,38,Yes,Priya Menon,20,Walk-in,Bank employee. 1BHK in Dahisar. Staff rate enquiry.
+2025-01-23,Mangalore,Sudarshan Shetty,New,LAP Enquiry,LAP,150,Yes,Branch Ops,40,DSA,Hotel owner. LAP against commercial property on NH66.
+2025-01-24,Pitampura Delhi,Sachin Tandon,New,Loan Enquiry,Home Loan,60,Yes,Rohit Saxena,25,Walk-in,Self-employed professional. Dental clinic. ITR-based income.
+2025-01-24,Jayanagar,Prashant Gowda,Existing,Balance Transfer,BT,45,No,,20,N/A,Enquired about BT rates. Current rate with SBI is already competitive.
+2025-01-24,Kothrud Pune,Manali Kulkarni,New,PMAY Enquiry,Home Loan - PMAY,22,Yes,Amit Desai,25,Walk-in,Teacher. First home. LIG category. PMAY subsidy explained.
+2025-01-25,Andheri West,Pankaj Bhatnagar,New,Loan Enquiry,Home Loan,110,Yes,Priya Menon,30,Referral,Senior VP at pharma company. Villa in Lonavala.
+2025-01-25,Secunderabad,Raj Kumar Yadav,Existing,Document Submission,N/A,,No,,10,N/A,Submitted property tax receipts for annual review.
+2025-01-26,Gomti Nagar Lucknow,Shivani Gupta,New,Loan Enquiry,Home Loan,32,Yes,Branch Ops,25,Walk-in,Chartered accountant. Under-construction flat near Gomti Nagar.
+2025-01-27,Park Street Kolkata,Rituparna Sen,New,Rate Comparison,Home Loan,50,Yes,Branch Ops,30,Digital lead,Comparing HDFC vs PNB vs SBI. Good negotiation profile.
+2025-01-27,Paldi Ahmedabad,Chirag Patel,New,Loan Enquiry,Home Loan,45,Yes,Branch Ops,20,Builder referral,Adani Shantigram project. Builder rate applicable.
+2025-01-28,Dadar,Sarita Naik,Existing,Complaint,N/A,,No,,25,N/A,Original property documents not returned post closure. Escalated to legal.
+2025-01-28,Koramangala,Vivek Nair,New,Top-Up,Top-Up Loan,10,Yes,Deepa Rao,15,Existing customer,Top-up for home interiors. Quick disbursement needed.
+2025-01-29,Chandigarh,Gurpreet Singh,New,Loan Enquiry,Home Loan,40,Yes,Branch Ops,25,Walk-in,Army officer. DLF flat in New Chandigarh. Defence rate applicable.
+2025-01-30,Pune Main,Aditi Marathe,New,Loan Enquiry,Home Loan,36,Yes,Amit Desai,20,Friend/Family,Referred by existing customer. 2BHK in Kharadi. Quick login needed.
+2025-01-31,Whitefield,Naveen Reddy,New,Balance Transfer,BT,72,Yes,Deepa Rao,35,Digital lead,BT from Axis Bank at 9.00%. HDFC offering 8.45%. Strong lead.

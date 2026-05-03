@@ -22,3 +22,97 @@ HL/WR/2025/00103,Mohammed Faisal,ITR (2 years),Income,Yes,No,No,,,Reminder sent 
 HL/WR/2025/00103,Mohammed Faisal,Co-applicant Income Proof,Income,Yes,No,No,,,Co-applicant docs pending — critical for LTV compliance
 HL/WR/2025/00103,Mohammed Faisal,Sale Agreement,Property,Yes,Yes,Pending,,Legal,Under review
 HL/WR/2025/00103,Mohammed Faisal,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-10,System Auto,Score: 698 — Below preferred threshold
+HL/NR/2025/00109,Manish Gupta,PAN Card,KYC,Yes,Yes,Yes,2025-01-03,System Auto,E-KYC verified via NSDL
+HL/NR/2025/00109,Manish Gupta,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-03,System Auto,E-KYC verified via UIDAI
+HL/NR/2025/00109,Manish Gupta,Passport Copy,KYC,Yes,Yes,Yes,2025-01-03,Branch Ops,Singapore passport — valid till 2029
+HL/NR/2025/00109,Manish Gupta,Visa / Work Permit,NRI Compliance,Yes,Yes,Yes,2025-01-03,Branch Ops,Singapore Employment Pass — valid till Dec 2026
+HL/NR/2025/00109,Manish Gupta,FEMA Declaration,NRI Compliance,Yes,Yes,Yes,2025-01-04,Legal,NRI declaration under FEMA executed
+HL/NR/2025/00109,Manish Gupta,Power of Attorney,NRI Compliance,Yes,Yes,Yes,2025-01-04,Legal,POA notarized at Indian High Commission Singapore
+HL/NR/2025/00109,Manish Gupta,NRE/NRO Bank Statement (12 months),Income,Yes,Yes,Yes,2025-01-05,Credit Team,HDFC Bank NRE account — consistent inward remittance
+HL/NR/2025/00109,Manish Gupta,Employment Contract / Appointment Letter,Income,Yes,Yes,Yes,2025-01-05,Credit Team,Google Singapore — senior engineer
+HL/NR/2025/00109,Manish Gupta,Overseas ITR / Tax Returns,Income,Yes,Yes,Yes,2025-01-05,Credit Team,Singapore IRAS filing FY 2023-24
+HL/NR/2025/00109,Manish Gupta,Sale Agreement,Property,Yes,Yes,Yes,2025-01-06,Legal,DLF Phase 5 villa — registered agreement
+HL/NR/2025/00109,Manish Gupta,Title Documents,Property,Yes,Yes,Yes,2025-01-06,Legal,Clear title — DLF conveyance deed
+HL/NR/2025/00109,Manish Gupta,Valuation Report,Property,Yes,Yes,Yes,2025-01-07,Technical,Value: INR 4.5 Cr — LTV 55.6%
+HL/NR/2025/00109,Manish Gupta,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-02,System Auto,Score: 835 — Excellent
+HL/NR/2025/00109,Manish Gupta,Property Insurance,Insurance,Yes,No,No,,,Overseas insurer assignment pending
+HL/NR/2025/00109,Manish Gupta,Life Insurance,Insurance,Yes,No,No,,,Term plan from Singapore provider — assignment pending
+HL/WR/2025/00105,Suresh Nair,PAN Card,KYC,Yes,Yes,Yes,2025-01-04,System Auto,E-KYC verified — internal employee
+HL/WR/2025/00105,Suresh Nair,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-04,System Auto,E-KYC verified via UIDAI
+HL/WR/2025/00105,Suresh Nair,Salary Slips (3 months),Income,Yes,Yes,Yes,2025-01-04,HR Dept,HDFC Bank payroll — auto-verified
+HL/WR/2025/00105,Suresh Nair,Form 16,Income,Yes,Yes,Yes,2025-01-04,HR Dept,FY 2023-24 — internal records
+HL/WR/2025/00105,Suresh Nair,Bank Statement (6 months),Income,Yes,Yes,Yes,2025-01-04,Credit Team,HDFC Bank salary account — auto-pull
+HL/WR/2025/00105,Suresh Nair,Sale Agreement,Property,Yes,Yes,Yes,2025-01-05,Legal,Bandra penthouse — registered sale deed
+HL/WR/2025/00105,Suresh Nair,Title Documents,Property,Yes,Yes,Yes,2025-01-05,Legal,Clear chain of title — 30 years
+HL/WR/2025/00105,Suresh Nair,Valuation Report,Property,Yes,Yes,Yes,2025-01-06,Technical,Value: INR 2.15 Cr — LTV 69.8%
+HL/WR/2025/00105,Suresh Nair,NOC from Society,Property,Yes,Yes,Yes,2025-01-07,Legal,Society NOC for mortgage obtained
+HL/WR/2025/00105,Suresh Nair,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-03,System Auto,Score: 812 — Excellent
+HL/WR/2025/00105,Suresh Nair,Property Insurance,Insurance,Yes,Yes,Yes,2025-01-08,Branch Ops,HDFC ERGO policy assigned
+HL/WR/2025/00105,Suresh Nair,Life Insurance,Insurance,Yes,Yes,Yes,2025-01-08,Branch Ops,HDFC Life term plan — sum assured ₹1.5 Cr
+HL/SR/2025/00107,Karthik Iyer,PAN Card,KYC,Yes,Yes,Yes,2025-01-08,System Auto,E-KYC verified
+HL/SR/2025/00107,Karthik Iyer,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-08,System Auto,E-KYC verified
+HL/SR/2025/00107,Karthik Iyer,GST Registration,Income,Yes,Yes,Yes,2025-01-09,Credit Team,GSTIN active — CA practice
+HL/SR/2025/00107,Karthik Iyer,ITR (3 years),Income,Yes,Yes,Yes,2025-01-09,Credit Team,FY 21-22 to 23-24 — consistent growth
+HL/SR/2025/00107,Karthik Iyer,Business P&L (3 years),Income,Yes,Yes,Yes,2025-01-09,Credit Team,CA firm P&L audited — revenue ₹55L/year
+HL/SR/2025/00107,Karthik Iyer,Bank Statement (12 months),Income,Yes,Yes,Yes,2025-01-10,Credit Team,ICICI current account — business credits verified
+HL/SR/2025/00107,Karthik Iyer,Property Documents,Property,Yes,Yes,Pending,,Legal,LAP property — legal opinion awaited on commercial title
+HL/SR/2025/00107,Karthik Iyer,Valuation Report,Property,Yes,Yes,Yes,2025-01-11,Technical,Commercial property value: ₹3.2 Cr — LTV 62.5%
+HL/SR/2025/00107,Karthik Iyer,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-07,System Auto,Score: 788 — Good
+HL/WR/2025/00124,Shweta Bhonsle,PAN Card,KYC,Yes,Yes,Yes,2025-01-05,System Auto,E-KYC verified via NSDL
+HL/WR/2025/00124,Shweta Bhonsle,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-05,System Auto,E-KYC verified
+HL/WR/2025/00124,Shweta Bhonsle,Salary Slips (3 months),Income,Yes,Yes,Yes,2025-01-06,Credit Team,L&T payroll — consistent salary
+HL/WR/2025/00124,Shweta Bhonsle,Form 16,Income,Yes,Yes,Yes,2025-01-06,Credit Team,FY 2023-24
+HL/WR/2025/00124,Shweta Bhonsle,Bank Statement (6 months),Income,Yes,Yes,Yes,2025-01-07,Credit Team,Kotak Mahindra — salary credits verified
+HL/WR/2025/00124,Shweta Bhonsle,Sale Agreement,Property,Yes,Yes,Yes,2025-01-08,Legal,Resale flat Mulund — registered agreement
+HL/WR/2025/00124,Shweta Bhonsle,Title Documents,Property,Yes,Yes,Yes,2025-01-08,Legal,Clear title — 7/12 extract obtained
+HL/WR/2025/00124,Shweta Bhonsle,Valuation Report,Property,Yes,Yes,Yes,2025-01-09,Technical,Value: INR 92L — LTV 78%
+HL/WR/2025/00124,Shweta Bhonsle,NOC from Society,Property,Yes,Yes,Yes,2025-01-10,Legal,Housing society NOC received
+HL/WR/2025/00124,Shweta Bhonsle,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-04,System Auto,Score: 740 — Good
+HL/WR/2025/00124,Shweta Bhonsle,Property Insurance,Insurance,Yes,Yes,Yes,2025-01-12,Branch Ops,HDFC ERGO fire + allied perils policy
+HL/WR/2025/00124,Shweta Bhonsle,Life Insurance,Insurance,Yes,Yes,Yes,2025-01-12,Branch Ops,HDFC Life term plan ₹75L
+HL/WR/2025/00131,Komal Jain,PAN Card,KYC,Yes,Yes,Yes,2025-01-11,System Auto,E-KYC verified
+HL/WR/2025/00131,Komal Jain,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-11,System Auto,E-KYC verified
+HL/WR/2025/00131,Komal Jain,GST Registration,Income,Yes,Yes,Yes,2025-01-12,Credit Team,GSTIN active — jewellery business
+HL/WR/2025/00131,Komal Jain,ITR (3 years),Income,Yes,Yes,Yes,2025-01-12,Credit Team,FY 21-22 to 23-24. Turnover ₹8 Cr average.
+HL/WR/2025/00131,Komal Jain,Business P&L (3 years),Income,Yes,Yes,Yes,2025-01-12,Credit Team,Audited financials — net profit margin 12%
+HL/WR/2025/00131,Komal Jain,Bank Statement (12 months),Income,Yes,Yes,Yes,2025-01-13,Credit Team,HDFC Bank current account — high turnover
+HL/WR/2025/00131,Komal Jain,Sale Agreement,Property,Yes,Yes,Yes,2025-01-14,Legal,Resale Juhu flat — registered deed
+HL/WR/2025/00131,Komal Jain,Title Documents,Property,Yes,Yes,Yes,2025-01-14,Legal,Clear title — 40-year chain verified
+HL/WR/2025/00131,Komal Jain,Valuation Report,Property,Yes,Yes,Yes,2025-01-15,Technical,Value: INR 2.5 Cr — LTV 64%
+HL/WR/2025/00131,Komal Jain,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-10,System Auto,Score: 810 — Excellent
+HL/WR/2025/00131,Komal Jain,Property Insurance,Insurance,Yes,Yes,Yes,2025-01-16,Branch Ops,New India Assurance — fire + earthquake
+HL/WR/2025/00131,Komal Jain,Life Insurance,Insurance,Yes,Yes,Yes,2025-01-16,Branch Ops,LIC term plan assigned — ₹1.6 Cr
+HL/NR/2025/00140,Vikram Sethi,PAN Card,KYC,Yes,Yes,Yes,2025-01-03,System Auto,E-KYC verified via NSDL
+HL/NR/2025/00140,Vikram Sethi,Passport Copy,KYC,Yes,Yes,Yes,2025-01-03,Branch Ops,Indian passport — valid till 2031
+HL/NR/2025/00140,Vikram Sethi,Visa / Iqama,NRI Compliance,Yes,Yes,Yes,2025-01-03,Branch Ops,Saudi Iqama valid till 2027
+HL/NR/2025/00140,Vikram Sethi,FEMA Declaration,NRI Compliance,Yes,Yes,Yes,2025-01-04,Legal,NRI FEMA declaration signed
+HL/NR/2025/00140,Vikram Sethi,Power of Attorney,NRI Compliance,Yes,Yes,Yes,2025-01-04,Legal,POA attested at Indian Embassy Riyadh
+HL/NR/2025/00140,Vikram Sethi,NRE/NRO Bank Statement (12 months),Income,Yes,Yes,Yes,2025-01-05,Credit Team,SBI NRE account — monthly remittance ₹5L+
+HL/NR/2025/00140,Vikram Sethi,Employment Contract,Income,Yes,Yes,Yes,2025-01-05,Credit Team,Saudi Aramco — Senior Petroleum Engineer
+HL/NR/2025/00140,Vikram Sethi,Sale Agreement,Property,Yes,Yes,Yes,2025-01-06,Legal,Villa Sohna Road — registered
+HL/NR/2025/00140,Vikram Sethi,Valuation Report,Property,Yes,Yes,Yes,2025-01-07,Technical,Value: INR 5.6 Cr — LTV 50%
+HL/NR/2025/00140,Vikram Sethi,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-02,System Auto,Score: 850 — Excellent
+HL/NR/2025/00140,Vikram Sethi,Property Insurance,Insurance,Yes,Yes,Yes,2025-01-08,Branch Ops,ICICI Lombard policy assigned
+HL/NR/2025/00140,Vikram Sethi,Life Insurance,Insurance,Yes,Yes,Yes,2025-01-08,Branch Ops,Max Life term plan ₹3 Cr — NRI eligible
+HL/ER/2025/00145,Arjun Dasgupta,PAN Card,KYC,Yes,Yes,Yes,2025-01-23,System Auto,E-KYC verified
+HL/ER/2025/00145,Arjun Dasgupta,Aadhaar Card,KYC,Yes,Yes,Yes,2025-01-23,System Auto,E-KYC verified
+HL/ER/2025/00145,Arjun Dasgupta,Passport Size Photos,KYC,Yes,Yes,Yes,2025-01-23,Branch Ops,2 photos collected
+HL/ER/2025/00145,Arjun Dasgupta,ITR (3 years),Income,Yes,Yes,Yes,2025-01-24,Credit Team,FY 21-22 to 23-24 — advocate practice income
+HL/ER/2025/00145,Arjun Dasgupta,Bank Statement (12 months),Income,Yes,Yes,Pending,,Credit Team,Multiple accounts — consolidation in progress
+HL/ER/2025/00145,Arjun Dasgupta,Sale Agreement,Property,Yes,Yes,Yes,2025-01-25,Legal,Alipore flat — registered agreement
+HL/ER/2025/00145,Arjun Dasgupta,Title Documents,Property,Yes,Yes,Pending,,Legal,Title search ongoing — old Kolkata property
+HL/ER/2025/00145,Arjun Dasgupta,Valuation Report,Property,Yes,Yes,Yes,2025-01-26,Technical,Value: INR 1.62 Cr — LTV 68%
+HL/ER/2025/00145,Arjun Dasgupta,CIBIL Report,Credit,Yes,Yes,Yes,2025-01-22,System Auto,Score: 785 — Good
+HL/ER/2025/00145,Arjun Dasgupta,Property Insurance,Insurance,Yes,No,No,,,To be obtained post sanction
+HL/ER/2025/00145,Arjun Dasgupta,Life Insurance,Insurance,Yes,Pending,No,,,Existing LIC policy — assignment letter requested
+HL/WR/2025/00144,Ritu Kapoor,PAN Card,KYC,Yes,Yes,Yes,2025-02-02,System Auto,E-KYC verified via NSDL
+HL/WR/2025/00144,Ritu Kapoor,Aadhaar Card,KYC,Yes,Yes,Yes,2025-02-02,System Auto,E-KYC verified
+HL/WR/2025/00144,Ritu Kapoor,Salary Slips (3 months),Income,Yes,Yes,Yes,2025-02-03,Credit Team,Google India payslips — base + variable
+HL/WR/2025/00144,Ritu Kapoor,Form 16,Income,Yes,Yes,Yes,2025-02-03,Credit Team,FY 2023-24 — high variable component
+HL/WR/2025/00144,Ritu Kapoor,Bank Statement (6 months),Income,Yes,Yes,Yes,2025-02-04,Credit Team,HDFC Bank — salary account verified
+HL/WR/2025/00144,Ritu Kapoor,Sale Agreement,Property,Yes,Yes,Yes,2025-02-05,Legal,Indiranagar 2BHK — registered resale
+HL/WR/2025/00144,Ritu Kapoor,Title Documents,Property,Yes,Yes,Yes,2025-02-05,Legal,Clear title — BBMP property
+HL/WR/2025/00144,Ritu Kapoor,Valuation Report,Property,Yes,Yes,Yes,2025-02-06,Technical,Value: INR 1.1 Cr — LTV 76.8%
+HL/WR/2025/00144,Ritu Kapoor,CIBIL Report,Credit,Yes,Yes,Yes,2025-02-01,System Auto,Score: 765 — Good
+HL/WR/2025/00144,Ritu Kapoor,Property Insurance,Insurance,Yes,Yes,Yes,2025-02-07,Branch Ops,Bajaj Allianz policy assigned
+HL/WR/2025/00144,Ritu Kapoor,Life Insurance,Insurance,Yes,Yes,Yes,2025-02-07,Branch Ops,HDFC Life Click2Protect — ₹85L

@@ -7,3 +7,64 @@ Effective_Date,Product,Segment,Previous_Rate_Percent,New_Rate_Percent,Change_BPS
 2024-06-15,LAP - Residential,All,9.75,9.50,(-25),Portfolio growth target,6.50,Strategic rate cut to boost LAP book
 2025-01-15,Balance Transfer,Salaried,8.50,8.35,(-15),Aggressive BT acquisition,6.25,Best-in-market BT rate
 2024-10-01,Top-Up,Existing Customers,8.75,8.60,(-15),Customer retention,6.50,Retain existing customers
+2022-01-15,Home Loan,Salaried,7.05,7.05,0,No change,4.00,Rates at historic low; stable demand
+2022-04-15,Home Loan,Salaried,7.05,7.20,(+15),Cost of funds change,4.00,Deposit rate hike passed on partially
+2022-05-10,Home Loan,Salaried,7.20,7.60,(+40),RBI repo hike 40 bps,4.40,Emergency rate hike; full pass-through
+2022-06-15,Home Loan,Salaried,7.60,8.10,(+50),RBI repo hike 50 bps,4.90,Aggressive transmission; market followed RBI
+2022-08-10,Home Loan,Salaried,8.10,8.45,(+35),RBI repo hike 50 bps,5.40,Partial pass-through to protect volume
+2022-09-30,Home Loan,Salaried,8.45,8.65,(+20),RBI repo hike 50 bps,5.90,Rates nearing cyclical peak
+2022-12-10,Home Loan,Salaried,8.65,8.80,(+15),RBI repo hike 35 bps,6.25,Smaller hike as repo cycle slows
+2023-02-15,Home Loan,Salaried,8.80,8.90,(+10),RBI repo hike 25 bps,6.50,Final repo hike of cycle; partial pass-through
+2023-04-15,Home Loan,Salaried,8.90,8.90,0,No change,6.50,Rates stable at cycle peak
+2023-07-01,Home Loan,Salaried,8.90,8.80,(-10),Competitive pressure,6.50,Industry-wide rate war triggered by SBI cut
+2023-10-01,Home Loan,Salaried,8.80,8.70,(-10),Festive offer,6.50,Q2 festive season tactical reduction
+2022-01-15,Home Loan,Self-Employed,7.35,7.35,0,No change,4.00,SE rate premium maintained at 30 bps
+2022-05-10,Home Loan,Self-Employed,7.35,7.80,(+45),RBI repo hike 40 bps,4.40,Full pass-through plus risk adjustment
+2022-06-15,Home Loan,Self-Employed,7.80,8.30,(+50),RBI repo hike 50 bps,4.90,Rate parity focus with salaried segment
+2022-08-10,Home Loan,Self-Employed,8.30,8.70,(+40),RBI repo hike 50 bps,5.40,Higher transmission for SE risk profile
+2022-12-10,Home Loan,Self-Employed,8.70,8.95,(+25),RBI repo hike 35 bps,6.25,Wider SE premium due to delinquency trends
+2023-02-15,Home Loan,Self-Employed,8.95,9.05,(+10),RBI repo hike 25 bps,6.50,Peak SE rate in cycle
+2023-10-01,Home Loan,Self-Employed,9.05,8.95,(-10),Quarter-end push,6.50,SE festive concession to drive volume
+2024-02-01,Home Loan,Self-Employed,8.95,8.85,(-10),Portfolio growth target,6.75,Narrowing gap to salaried segment
+2022-01-15,LAP - Residential,All,8.75,8.75,0,No change,4.00,LAP rates at cycle bottom
+2022-06-15,LAP - Residential,All,8.75,9.40,(+65),RBI repo hike 50 bps,4.90,LAP rates catch up after delayed transmission
+2022-09-30,LAP - Residential,All,9.40,9.75,(+35),RBI repo hike 50 bps,5.90,Continued upward transmission
+2023-02-15,LAP - Residential,All,9.75,9.90,(+15),RBI repo hike 25 bps,6.50,Peak LAP rate
+2023-07-01,LAP - Residential,All,9.90,9.85,(-5),Competitive pressure,6.50,Marginal reduction to stay competitive
+2023-10-01,LAP - Residential,All,9.85,9.75,(-10),Quarter-end push,6.50,Festive tactical offer on LAP
+2022-01-15,LAP - Commercial,Business,9.25,9.25,0,No change,4.00,Commercial LAP baseline rate
+2022-06-15,LAP - Commercial,Business,9.25,10.00,(+75),RBI repo hike 50 bps,4.90,Higher pass-through for commercial risk
+2022-12-10,LAP - Commercial,Business,10.00,10.50,(+50),RBI repo hike 35 bps,6.25,Risk premium widened amid defaults
+2023-02-15,LAP - Commercial,Business,10.50,10.75,(+25),Risk repricing,6.50,Sector-specific NPA concerns
+2024-06-15,LAP - Commercial,Business,10.75,10.50,(-25),Portfolio growth target,6.50,Strategic cut to revive commercial LAP book
+2024-10-01,LAP - Commercial,Business,10.50,10.25,(-25),Competitive pressure,6.50,Align with Bajaj Housing and LIC HFL
+2022-05-10,NRI,NRI - USA,8.00,8.40,(+40),RBI repo hike 40 bps,4.40,NRI rates track domestic hike
+2022-08-10,NRI,NRI - All Geographies,8.40,8.85,(+45),RBI repo hike 50 bps,5.40,Premium maintained over domestic
+2023-02-15,NRI,NRI - All Geographies,8.85,9.10,(+25),RBI repo hike 25 bps,6.50,Peak NRI rate
+2023-10-01,NRI,NRI - All Geographies,9.10,9.00,(-10),Festive offer,6.50,Diwali NRI campaign concession
+2024-06-15,NRI,NRI - USA,9.00,8.85,(-15),RBI repo cut 25 bps,6.50,Selective cut for USA segment
+2024-10-01,NRI,NRI - All Geographies,8.85,8.75,(-10),Competitive pressure,6.50,Match LIC HFL NRI rate
+2025-01-15,NRI,NRI - All Geographies,8.75,8.60,(-15),RBI repo cut 25 bps,6.25,Broad-based NRI rate reduction
+2022-06-15,Balance Transfer,Salaried,7.15,7.75,(+60),RBI repo hike 50 bps,4.90,BT rate re-aligned with new origination
+2022-12-10,Balance Transfer,Salaried,7.75,8.35,(+60),RBI repo hike 35 bps,6.25,BT rate compressed to attract switching
+2023-07-01,Balance Transfer,Salaried,8.35,8.50,(+15),Cost of funds change,6.50,Marginal increase; BT demand remains high
+2024-02-01,Balance Transfer,Salaried,8.50,8.50,0,No change,6.75,BT rate held to maintain pipeline
+2024-06-15,Balance Transfer,Salaried,8.50,8.50,0,No change,6.50,Retained aggressive BT pricing post repo cut
+2022-01-15,Top-Up,Existing Customers,7.50,7.50,0,No change,4.00,Top-up at historic low; strong utilization
+2022-06-15,Top-Up,Existing Customers,7.50,8.25,(+75),RBI repo hike 50 bps,4.90,Top-up rate catch-up after lag
+2022-12-10,Top-Up,Existing Customers,8.25,8.65,(+40),RBI repo hike 35 bps,6.25,Nearing cycle peak for top-up
+2023-02-15,Top-Up,Existing Customers,8.65,8.75,(+10),RBI repo hike 25 bps,6.50,Peak top-up rate
+2023-10-01,Top-Up,Existing Customers,8.75,8.75,0,No change,6.50,Held steady for customer retention
+2022-05-10,PMAY,EWS/LIG,6.50,6.50,0,No change,4.40,PMAY rate unchanged; subsidy insulates borrowers
+2023-02-15,PMAY,EWS/LIG,6.50,6.75,(+25),Cost of funds change,6.50,Marginal increase; subsidy still provides net benefit
+2024-06-15,PMAY,EWS/LIG,6.75,6.50,(-25),NHB refinance rate change,6.50,Passed through NHB concessional rate
+2022-05-10,PMAY,MIG-I/MIG-II,7.50,7.75,(+25),RBI repo hike 40 bps,4.40,Partial pass-through for MIG segment
+2023-02-15,PMAY,MIG-I/MIG-II,7.75,8.25,(+50),RBI repo hike 25 bps,6.50,Cumulative hike; subsidy still covers gap
+2024-06-15,PMAY,MIG-I/MIG-II,8.25,7.75,(-50),NHB refinance rate change,6.50,Aggressive cut leveraging NHB refinance window
+2022-01-15,Affordable Housing,Affordable Segment,7.25,7.25,0,No change,4.00,Affordable housing rate at floor
+2022-08-10,Affordable Housing,Affordable Segment,7.25,7.80,(+55),RBI repo hike 50 bps,5.40,Affordable segment gets partial insulation
+2023-02-15,Affordable Housing,Affordable Segment,7.80,8.25,(+45),RBI repo hike 25 bps,6.50,Rate approaches standard HL territory
+2023-10-01,Affordable Housing,Affordable Segment,8.25,8.25,0,Festive offer,6.50,Rate held; processing fee waived instead
+2024-06-15,Affordable Housing,Affordable Segment,8.25,8.00,(-25),Portfolio growth target,6.50,Strategic cut to grow affordable book
+2024-10-01,Affordable Housing,Affordable Segment,8.00,7.85,(-15),Competitive pressure,6.50,Match PNB Housing affordable rate
+2025-01-15,Affordable Housing,Affordable Segment,7.85,7.75,(-10),RBI repo cut 25 bps,6.25,Full pass-through for affordable segment

@@ -69,4 +69,163 @@ Eligible Loan Amount: Up to INR 1,80,00,000 (based on income)
 Requested Loan Amount: INR 1,20,00,000
 Assessment: COMFORTABLY ELIGIBLE
 
+
+================================================================================
+HDFC RETAIL ASSETS — INCOME ASSESSMENT (SALARIED) — SYNTHETIC DATA
+================================================================================
+
+Application Reference: HL/WR/2025/00129
+Applicant: Mr. Rahul Mehta
+Employer: Tata Consultancy Services Limited (TCS)
+Designation: Senior Technical Architect
+Employee ID: TCS-BLR-287456
+Employment Type: Permanent, Full-time
+Date of Joining: 15-March-2018 (7 years tenure)
+Work Location: TCS Synergy Park, Hyderabad
+
+A. SALARY-BASED ASSESSMENT (PAYSLIP ANALYSIS)
+-----------------------------------------------
+Payslips Reviewed: July 2024 — December 2024 (6 months)
+
+| Month     | Basic (INR) | HRA (INR) | Special Allow (INR) | Variable Pay (INR) | Gross Salary (INR) | Deductions (INR) | Net Salary (INR) |
+|-----------|------------:|----------:|--------------------:|-------------------:|--------------------:|------------------:|-----------------:|
+| Jul 2024  |      74,000 |    37,000 |            42,000   |                  0 |          1,62,500   |           17,500  |        1,45,000  |
+| Aug 2024  |      74,000 |    37,000 |            42,000   |                  0 |          1,62,500   |           17,500  |        1,45,000  |
+| Sep 2024  |      74,000 |    37,000 |            42,000   |             32,500 |          1,95,000   |           18,200  |        1,76,800  |
+| Oct 2024  |      82,000 |    41,000 |            46,500   |                  0 |          1,79,500   |           19,800  |        1,59,700  |
+| Nov 2024  |      82,000 |    41,000 |            46,500   |                  0 |          1,79,500   |           19,800  |        1,59,700  |
+| Dec 2024  |      82,000 |    41,000 |            46,500   |             36,000 |          2,15,500   |           21,200  |        1,94,300  |
+
+Notes:
+- Salary revision effective October 2024 (Basic: 74K → 82K, ~10.8% increment)
+- Variable pay: Quarterly performance bonus (paid Sep and Dec)
+- Deductions include: PF (12% of Basic), Professional Tax, Income Tax TDS
+
+Fixed Monthly Gross (post-revision): INR 1,79,500
+Average Gross (6 months including variable): INR 1,82,417
+Assessed Monthly Income (fixed component only, per policy): INR 1,85,000
+
+Verification:
+- Form 16 (FY 2023-24): Total CTC INR 21,80,000 → Monthly INR 1,81,667 ✓ (consistent with pre-revision salary)
+- Appointment letter CTC: INR 24,50,000 (revised) → Monthly INR 2,04,167 (includes variable)
+- Employer HR confirmation received via email on 08-Jan-2025
+
+B. BANK STATEMENT ANALYSIS (Primary Salary Account — HDFC Bank)
+----------------------------------------------------------------
+Account Number: XXXX-XXXX-4523 (HDFC Bank, Gachibowli Branch)
+Period Analyzed: July 2024 — December 2024 (6 months)
+
+| Month     | Opening Bal (INR) | Salary Credit (INR) | Other Credits (INR) | Total Debits (INR) | Closing Bal (INR) | Min Bal (INR) |
+|-----------|------------------:|--------------------:|--------------------:|-------------------:|------------------:|--------------:|
+| Jul 2024  |         2,85,000  |          1,45,000   |            12,000   |         1,38,000   |         3,04,000  |     1,92,000  |
+| Aug 2024  |         3,04,000  |          1,45,000   |             8,500   |         1,52,000   |         3,05,500  |     2,15,000  |
+| Sep 2024  |         3,05,500  |          1,76,800   |            15,000   |         1,88,200   |         3,09,100  |     1,78,000  |
+| Oct 2024  |         3,09,100  |          1,59,700   |            10,200   |         1,45,800   |         3,33,200  |     2,42,000  |
+| Nov 2024  |         3,33,200  |          1,59,700   |             9,800   |         1,68,500   |         3,34,200  |     2,18,000  |
+| Dec 2024  |         3,34,200  |          1,94,300   |            22,000   |         2,12,500   |         3,38,000  |     2,05,000  |
+
+Key Observations:
+- Salary credits consistent with payslips — exact match all 6 months ✓
+- Other credits: FD interest (INR 8-12K/month), minor UPI receipts
+- Average Monthly Balance (AMB): INR 3,20,667 — indicates financial discipline
+- No high-value cash deposits or unexplained credits
+- Regular SIP debits: INR 25,000/month (Axis MF), INR 15,000/month (HDFC MF)
+- EMI debit: INR 8,000/month (personal loan — 4 months remaining)
+- No cheque bounces or return entries in 6-month period ✓
+
+C. ITR CROSS-VERIFICATION
+---------------------------
+ITR Type: ITR-1 (Sahaj — Salaried Individual)
+
+| Financial Year | Gross Salary (INR) | Income from Other Sources (INR) | Total Income (INR) | Tax Paid (INR) |
+|----------------|--------------------:|--------------------------------:|-------------------:|---------------:|
+| FY 2021-22     |        16,80,000    |                     1,45,000    |       18,25,000    |      2,85,000  |
+| FY 2022-23     |        18,50,000    |                     1,62,000    |       20,12,000    |      3,28,000  |
+| FY 2023-24     |        21,80,000    |                     1,88,000    |       23,68,000    |      4,12,000  |
+
+ITR-derived Monthly Salary (FY 2023-24): INR 1,81,667
+Payslip-derived Monthly Income (current): INR 1,85,000
+Variance: 1.8% — WITHIN ACCEPTABLE RANGE (salary revision explains upward delta)
+
+Form 26AS Verification:
+- TDS by TCS matches Form 16 and ITR declarations ✓
+- No other employer TDS entries (single employment confirmed) ✓
+- Tax refunds: NIL (accurate TDS computation)
+
+D. RED FLAGS / OBSERVATIONS
+-----------------------------
+1. Personal loan EMI of INR 8,000/month — 4 months remaining (closes April 2025). Low impact on FOIR.
+2. No credit card overdue or missed payments in CIBIL report ✓
+3. Consistent salary growth trajectory: ~10% per annum over 3 years
+4. Other credits are minor and fully explainable (FD interest, UPI refunds)
+5. SIP investments of INR 40,000/month indicate strong savings discipline
+6. No cash deposits in salary account — clean banking pattern ✓
+7. Employer TCS is on approved list. Permanent employment confirmed.
+8. No gaps in employment history in last 7 years.
+
+E. ELIGIBILITY CALCULATION
+----------------------------
+Assessed Monthly Income (Salary — fixed): INR 1,85,000
+Co-applicant Income: NIL (single applicant)
+Total Assessed Income: INR 1,85,000
+
+Existing EMI Obligations:
+  - Personal Loan EMI: INR 8,000/month (closes April 2025)
+  - Total Existing EMIs: INR 8,000
+
+Maximum FOIR allowed: 50% (salaried, CIBIL 742)
+Maximum allowable total EMI: INR 92,500 (50% of INR 1,85,000)
+Available EMI capacity: INR 84,500 (INR 92,500 - INR 8,000)
+Proposed Home Loan EMI: INR 48,200 (for INR 52,00,000 @ 8.6% for 20 years)
+Proposed FOIR (with existing + proposed): 30.4% — WELL WITHIN LIMITS
+
+Eligible Loan Amount (on income): Up to INR 85,00,000
+Requested Loan Amount: INR 52,00,000
+Assessment: COMFORTABLY ELIGIBLE
+
+Post Personal Loan Closure (April 2025):
+- Revised FOIR: 26.1% — EXCELLENT
+- Additional EMI capacity frees up INR 8,000/month
+
+
+F. COMPARATIVE ASSESSMENT SUMMARY
+====================================
+
+| Parameter                        | Ms. Sneha Kulkarni (Self-Employed)  | Mr. Rahul Mehta (Salaried)           |
+|----------------------------------|-------------------------------------|--------------------------------------|
+| Application Reference            | HL/WR/2025/00102                    | HL/WR/2025/00129                     |
+| Occupation Type                   | Self-Employed (Proprietorship)      | Salaried (Permanent)                 |
+| Industry                         | Textile Trading & Retail            | Information Technology               |
+| Employer / Business              | Kulkarni Textiles                   | TCS Limited                          |
+| Years of Experience / Vintage    | 12 years (business)                 | 7 years (employment)                 |
+| Income Assessment Method         | ITR + Banking (avg of both)         | Payslip + ITR (fixed salary)         |
+| ITR Monthly Income               | INR 3,13,083                        | INR 1,81,667 (FY24) / 1,85,000 now  |
+| Banking Monthly Income           | INR 3,28,000                        | INR 1,85,000 (salary credit)         |
+| Final Assessed Income            | INR 3,20,000                        | INR 1,85,000                         |
+| ITR vs Banking Variance          | 4.8%                                | 1.8%                                 |
+| Co-applicant Income              | INR 2,10,000 (spouse)               | NIL                                  |
+| Total Household Income           | INR 5,30,000                        | INR 1,85,000                         |
+| Existing EMIs                    | INR 25,000 (car loan)               | INR 8,000 (personal loan)            |
+| Proposed EMI                     | INR 1,29,600                        | INR 48,200                           |
+| FOIR (Proposed)                  | 29.2%                               | 30.4%                                |
+| FOIR Status                     | Well within limits                  | Well within limits                   |
+| Requested Loan Amount            | INR 1,20,00,000                     | INR 52,00,000                        |
+| Max Eligible Loan Amount         | INR 1,80,00,000                     | INR 85,00,000                        |
+| Property Value                   | INR 1,84,00,000                     | INR 66,00,000                        |
+| LTV Ratio                        | 65.2%                               | 78.8%                                |
+| CIBIL Score                       | 801                                 | 742                                  |
+| Risk Rating                      | Low                                 | Low                                  |
+| Red Flags                        | High cash deposits (explainable)    | Personal loan (closing soon)         |
+| Deviations Required              | None                                | None                                 |
+| Overall Assessment               | COMFORTABLY ELIGIBLE                | COMFORTABLY ELIGIBLE                 |
+| Recommendation                   | APPROVE                             | APPROVE                              |
+
+Key Comparative Insights:
+1. INCOME STABILITY: Ms. Kulkarni's self-employed income shows moderate variability (seasonal textile demand), while Mr. Mehta's salaried income is highly predictable with clear growth trajectory.
+2. DOCUMENTATION ROBUSTNESS: Mr. Mehta's income is easier to verify (payslip-to-bank exact match), whereas Ms. Kulkarni's requires multi-source triangulation (ITR + Banking + GST).
+3. FOIR COMFORT: Both applicants have FOIR well below 50% threshold. Ms. Kulkarni benefits from co-applicant income providing additional cushion.
+4. LTV COMPARISON: Ms. Kulkarni's LTV at 65.2% is more conservative versus Mr. Mehta's 78.8%, providing better collateral coverage.
+5. CREDIT QUALITY: Ms. Kulkarni has superior CIBIL (801 vs 742), reflecting longer and deeper credit history.
+6. RISK PROFILE: Both are low risk. Ms. Kulkarni has higher income but business-dependent volatility. Mr. Mehta has lower income but employer-backed certainty.
+
 DISCLAIMER: This is SYNTHETIC data for training purposes only. Does not represent actual customer information.

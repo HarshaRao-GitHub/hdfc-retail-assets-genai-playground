@@ -80,6 +80,155 @@ We are pleased to inform you that your application for a Home Loan has been sanc
    - Life insurance policy assignment letter
    - Photographs of property (all sides)
 
+10. ESCROW ACCOUNT DETAILS
+    HDFC may, at its discretion, route loan disbursement through a designated escrow account
+    to safeguard borrower interests, particularly for under-construction properties.
+
+    Escrow Account Name: HDFC Ltd — Loan Disbursement Escrow A/c
+    Escrow Bank: HDFC Bank Ltd, Fort Branch, Mumbai
+    Account Number: 50100XXXXXXX4728 (communicated separately via registered communication)
+    IFSC: HDFC0000060
+    Purpose: To hold and release loan funds in tranches directly to builder/seller upon
+             verification of construction milestones or registration of sale deed.
+
+    Escrow Release Conditions:
+    a) First tranche released upon execution of mortgage deed and receipt of all original documents
+    b) Subsequent tranches released upon submission of:
+       - Architect's certificate confirming construction stage completion
+       - Updated photographs of the property showing progress
+       - Builder's written confirmation of stage completion
+    c) Final tranche released upon:
+       - Completion certificate / Occupation certificate from local authority
+       - Possession letter from builder
+       - Registered sale deed (if not already registered)
+
+    Note: The borrower authorizes HDFC to directly release escrow funds to the builder/seller.
+    No funds will be released to the borrower's personal account unless the property is a resale
+    transaction with registered sale deed.
+
+11. TAX BENEFITS OVERVIEW
+    The borrower may be eligible for the following tax benefits under the Income Tax Act, 1961.
+    These are indicative and subject to prevailing tax laws. Borrowers are advised to consult
+    their tax advisor for personalized guidance.
+
+    A) Section 80C — Principal Repayment Deduction
+       - Deduction on principal component of EMI paid during the financial year
+       - Maximum deduction: INR 1,50,000 per annum (shared with other 80C investments)
+       - Applicable from the year of possession / completion of construction
+       - Stamp duty and registration charges paid are also eligible under Section 80C
+         (in the year of payment only)
+       - Condition: The property must not be sold within 5 years of possession, otherwise
+         the deduction claimed shall be reversed in the year of sale
+
+    B) Section 24(b) — Interest on Housing Loan
+       - Deduction on interest component of EMI paid during the financial year
+       - Self-occupied property: Maximum INR 2,00,000 per annum
+         (provided construction is completed within 5 years from the end of the FY in which
+         the loan was taken)
+       - Let-out / deemed let-out property: Entire interest amount is deductible (no upper limit)
+       - Pre-construction interest: Interest paid during the construction period can be claimed
+         in 5 equal installments starting from the year of completion
+       - If construction exceeds 5 years, the maximum deduction reduces to INR 30,000 per annum
+
+    C) Section 80EE / Section 80EEA — Additional Interest Deduction for First-Time Buyers
+       - Section 80EE (applicable for loans sanctioned between 01-Apr-2016 and 31-Mar-2017):
+         Additional deduction of up to INR 50,000 on interest, over and above Section 24(b)
+         Conditions: Loan amount ≤ INR 35,00,000; property value ≤ INR 50,00,000;
+         borrower should not own any other house property on the date of loan sanction
+       - Section 80EEA (applicable for loans sanctioned between 01-Apr-2019 and 31-Mar-2022):
+         Additional deduction of up to INR 1,50,000 on interest
+         Conditions: Stamp duty value of property ≤ INR 45,00,000;
+         borrower should not own any other residential property on the date of loan sanction
+       - Note: Sections 80EE and 80EEA are not simultaneously available. Applicability depends
+         on the date of loan sanction.
+
+    Combined Maximum Annual Tax Benefit (Illustrative):
+    ┌───────────────────────────────────┬──────────────────────┐
+    │ Component                         │ Maximum Deduction    │
+    ├───────────────────────────────────┼──────────────────────┤
+    │ Section 80C (Principal + SD/Reg)  │ INR 1,50,000         │
+    │ Section 24(b) (Interest — Self)   │ INR 2,00,000         │
+    │ Section 80EEA (if applicable)     │ INR 1,50,000         │
+    ├───────────────────────────────────┼──────────────────────┤
+    │ Total Potential Deduction         │ Up to INR 5,00,000   │
+    └───────────────────────────────────┴──────────────────────┘
+
+    HDFC will issue an annual interest certificate (Form 12BA equivalent) by June of each year
+    for the preceding financial year, which can be used for filing income tax returns.
+
+12. CUSTOMER OBLIGATIONS POST-DISBURSEMENT
+    Upon disbursement of the loan, the borrower shall be bound by the following obligations
+    throughout the tenure of the loan:
+
+    A) EMI Payment Discipline
+       - Ensure sufficient balance in the designated HDFC Bank account on/before the EMI due date
+         (5th of every month)
+       - Any EMI bounce will attract a bounce charge of INR 500 per instance plus applicable GST
+       - Three consecutive EMI defaults will trigger the default recovery process
+
+    B) Insurance Maintenance
+       - Property insurance (fire, earthquake, flood, and allied perils) must be renewed annually
+         with HDFC as the loss payee / beneficiary
+       - Life insurance cover (minimum equal to outstanding loan amount) must remain active
+       - Any change in insurance provider must be intimated with new policy assignment
+
+    C) Property Maintenance and Use
+       - The property must be maintained in good habitable condition at all times
+       - The borrower shall not make structural alterations without prior written consent of HDFC
+       - The property shall be used only for the purpose declared at the time of loan application
+       - HDFC or its authorized representatives may inspect the property at reasonable intervals
+         with prior notice
+
+    D) Communication and Disclosure
+       - Any change in residential address, contact number, or email must be updated within 15 days
+       - Change in employment or business shall be intimated within 30 days
+       - Any additional borrowings or guarantees given must be disclosed to HDFC
+       - If the property is rented out, the rental agreement must be furnished to HDFC
+
+    E) Statutory Compliance
+       - All property taxes, maintenance charges, and society dues must be paid on time
+       - The borrower shall comply with all applicable municipal, state, and central government
+         regulations regarding the property
+       - Any legal notice or dispute concerning the property must be immediately communicated to HDFC
+
+    F) Loan Account Management
+       - Annual review of loan account may be conducted by HDFC
+       - The borrower shall cooperate with HDFC for any documentation or information requests
+       - Any request for loan restructuring, tenure change, or rate conversion must be made
+         in writing to the branch
+       - Foreclosure / final repayment requires 15 days' prior written notice
+
+ANNEXURE A: REPAYMENT SCHEDULE (First 12 Months)
+=================================================
+Loan Amount: INR 1,20,00,000 | Rate: 8.50% p.a. | Tenure: 240 months | EMI: INR 1,04,362
+
+┌───────┬────────────┬────────────┬────────────┬─────────────┬───────────────┐
+│ Month │ EMI (INR)  │ Principal  │ Interest   │ Outstanding │ Cumulative    │
+│       │            │  (INR)     │  (INR)     │ Balance     │ Interest Paid │
+├───────┼────────────┼────────────┼────────────┼─────────────┼───────────────┤
+│   1   │ 1,04,362   │  19,362    │  85,000    │ 1,19,80,638 │    85,000     │
+│   2   │ 1,04,362   │  19,499    │  84,863    │ 1,19,61,139 │  1,69,863     │
+│   3   │ 1,04,362   │  19,637    │  84,725    │ 1,19,41,502 │  2,54,588     │
+│   4   │ 1,04,362   │  19,776    │  84,586    │ 1,19,21,726 │  3,39,174     │
+│   5   │ 1,04,362   │  19,916    │  84,446    │ 1,19,01,810 │  4,23,620     │
+│   6   │ 1,04,362   │  20,057    │  84,305    │ 1,18,81,753 │  5,07,925     │
+│   7   │ 1,04,362   │  20,199    │  84,163    │ 1,18,61,554 │  5,92,088     │
+│   8   │ 1,04,362   │  20,342    │  84,020    │ 1,18,41,212 │  6,76,108     │
+│   9   │ 1,04,362   │  20,486    │  83,876    │ 1,18,20,726 │  7,59,984     │
+│  10   │ 1,04,362   │  20,631    │  83,731    │ 1,18,00,095 │  8,43,715     │
+│  11   │ 1,04,362   │  20,778    │  83,584    │ 1,17,79,317 │  9,27,299     │
+│  12   │ 1,04,362   │  20,925    │  83,437    │ 1,17,58,392 │ 10,10,736     │
+├───────┼────────────┼────────────┼────────────┼─────────────┼───────────────┤
+│ Total │ 12,52,344  │ 2,41,608   │10,10,736   │ 1,17,58,392 │ 10,10,736     │
+└───────┴────────────┴────────────┴────────────┴─────────────┴───────────────┘
+
+Notes:
+- EMI amounts are calculated on a reducing balance method at 8.50% p.a.
+- Interest is computed on a monthly rest basis (annual rate / 12)
+- EMI may change upon rate reset on April 1st of each year
+- Prepayments will reduce the outstanding principal and consequently the interest component
+- This schedule is indicative. A detailed amortization for the full tenure is available upon request.
+
 ACCEPTANCE:
 This sanction letter must be signed and returned within 15 days of receipt to confirm acceptance.
 

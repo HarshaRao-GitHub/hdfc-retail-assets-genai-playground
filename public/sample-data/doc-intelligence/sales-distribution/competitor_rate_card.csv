@@ -9,3 +9,54 @@ PNB Housing,Home Loan - Salaried,8.50-9.40,0.50,75,25,Nil,Zero processing fee fo
 HDFC Ltd,LAP - Self Employed,9.50-10.50,1.00,60,15,2% (fixed rate),Overdraft facility on LAP.,Domain expertise. Highest LAP limits.,Premium pricing for LAP segment.
 SBI,LAP,9.25-10.25,0.50,65,15,Nil,Combined with business loan package.,Lowest LAP rates.,Very strict property norms.
 ICICI Bank,LAP,9.40-10.50,1.00,60,15,Nil (floating),Digital LAP in 7 days.,Fast digital LAP processing.,Limited to metro properties only.
+Axis Bank,Home Loan - Salaried,8.50-9.35,0.50,80,30,Nil (floating),Instant approval for pre-qualified customers. Fee waiver on BT.,Strong digital platform. Fast processing.,Slightly higher than SBI. Aggressive cross-sell.
+Axis Bank,Home Loan - Self Employed,8.75-9.60,0.75,75,25,Nil (floating),Simplified ITR-based assessment.,Flexible income assessment.,Lower LTV for self-employed. Higher rate band.
+Axis Bank,LAP,9.35-10.40,1.00,60,15,Nil (floating),LAP overdraft facility. Part-prepay allowed.,Good LAP product suite.,Strict property valuation norms.
+Bank of Baroda,Home Loan - Salaried,8.30-9.20,0.25,80,30,Nil,Lowest processing fee. Women borrower concession.,Very competitive rates. Low fees.,Slow digital adoption. Branch-heavy process.
+Bank of Baroda,Home Loan - Self Employed,8.55-9.45,0.50,75,30,Nil,Combined business + home loan package.,Government bank trust. Low rates.,Lengthy documentation. Slow TAT (35+ days).
+Bank of Baroda,PMAY,8.30-8.60,0.25,80,30,Nil,Full PMAY subsidy facilitation. Zero fee for EWS/LIG.,Best PMAY rates. Government scheme expertise.,Only for affordable housing segment.
+Canara Bank,Home Loan - Salaried,8.35-9.25,0.35,80,30,Nil,Special rate for government employees.,Competitive rates. Wide PSB network.,Limited digital capability. Slow sanctions.
+Canara Bank,LAP,9.30-10.30,0.50,60,15,Nil,LAP combined with OD facility.,Low LAP rates for PSB.,Very slow processing. Heavy documentation.
+Union Bank,Home Loan - Salaried,8.35-9.30,0.35,80,30,Nil,Festive rate concession 0.05%. Women special.,Low base rate. Wide reach.,Poor digital experience. Long TAT.
+Union Bank,Home Loan - Self Employed,8.60-9.55,0.50,70,25,Nil,Cash flow-based assessment available.,Flexible for small business owners.,Lower LTV. Strict ITR requirements.
+Indian Bank,Home Loan - Salaried,8.40-9.30,0.35,80,30,Nil,Nil processing fee for government staff.,Competitive in South India market.,Limited presence outside South. Poor digital.
+Indian Bank,PMAY,8.35-8.65,0.25,80,30,Nil,PMAY + state subsidy combo facilitation.,Strong affordable housing expertise in Tamil Nadu.,Geography limited. Slow processing outside South.
+Federal Bank,Home Loan - Salaried,8.55-9.40,0.50,80,30,Nil (floating),NRI specialist. Kerala diaspora focus.,Best NRI product suite. Kerala strong.,Limited pan-India presence. Rate premium.
+Federal Bank,Home Loan - NRI,8.65-9.50,0.75,75,25,Nil (floating),Dedicated NRI desk. Video KYC. POA facilitation.,Market leader in NRI home loans Kerala.,Only competitive in Kerala and metros.
+IDFC First Bank,Home Loan - Salaried,8.60-9.45,0.50,80,30,Nil (floating),Digital-first journey. Instant sanction for select profiles.,Fastest digital processing. Modern UX.,Newer entrant. Limited branch network.
+IDFC First Bank,Balance Transfer,8.50-9.30,Nil,80,30,Nil (floating),Zero processing fee on BT. Rate match guarantee.,Very aggressive BT pricing.,Limited product depth beyond BT.
+Tata Capital Housing,Home Loan - Salaried,8.70-9.55,0.50,80,30,Nil (floating),Tata brand trust. Bundled home insurance.,Tata group trust. Quick approvals.,Rate premium over banks. Smaller network.
+Tata Capital Housing,Home Loan - Self Employed,8.95-9.80,0.75,70,25,Nil (floating),Simplified self-employed assessment.,Flexible documentation norms.,Higher rates for SE. Lower LTV.
+Tata Capital Housing,LAP,9.50-10.60,1.00,55,15,2% (fixed rate),LAP with OD facility. Pre-approved for existing customers.,Fast LAP processing. Less documentation.,Higher LAP rates. Lower LTV cap.
+Godrej Housing Finance,Home Loan - Salaried,8.55-9.40,0.50,80,30,Nil (floating),Godrej project customers get 0.15% concession.,Godrej ecosystem advantage. Fast for Godrej properties.,Limited to Godrej-heavy cities. Newer player.
+Godrej Housing Finance,Affordable Housing,8.40-9.10,0.25,80,30,Nil (floating),PMAY linkage. Reduced documentation for EWS/LIG.,Good affordable housing product.,Very limited geography and brand recall.
+L&T Housing Finance,Home Loan - Salaried,8.65-9.50,0.50,80,30,Nil (floating),Special rates for L&T and infrastructure employees.,Strong engineering/infrastructure employee base.,Limited retail presence. Higher rates.
+L&T Housing Finance,LAP,9.40-10.50,1.00,60,15,Nil (floating),LAP against commercial property allowed.,Commercial property LAP available.,Premium pricing. Limited branch presence.
+Aditya Birla Housing Finance,Home Loan - Salaried,8.60-9.50,0.50,80,30,Nil (floating),Pre-approved for Birla group employees. Digital journey.,Birla brand. Quick processing.,Limited network outside metros. Higher rates.
+Aditya Birla Housing Finance,Balance Transfer,8.45-9.25,Nil,80,30,Nil (floating),Zero fee BT + 0.10% rate concession on switch.,Competitive BT product.,BT-focused. Limited new HL market share.
+Shriram Housing Finance,Home Loan - Salaried,9.00-10.00,1.00,75,25,Nil (floating),Flexible for informal income. Low documentation.,Serves underbanked segment. Flexible norms.,Higher rates. Limited premium customers.
+Shriram Housing Finance,Affordable Housing,8.80-9.60,0.75,80,25,Nil (floating),Doorstep service. Vernacular documentation support.,Deep tier-2/3 reach. Regional language support.,Brand perception as NBFC. Higher rates.
+Muthoot Housing Finance,Home Loan - Salaried,8.90-9.80,0.75,75,25,Nil (floating),Gold loan customers get preferential HL rates.,Strong Kerala and South India network.,Geography limited. Higher rates vs banks.
+Muthoot Housing Finance,LAP,9.60-10.80,1.00,55,15,2% (fixed rate),LAP against gold + property combo assessment.,Flexible collateral approach.,Very high LAP rates. Limited LTV.
+GIC Housing Finance,Home Loan - Salaried,8.70-9.55,0.50,80,25,Nil (floating),Government-backed institution trust.,Low default rates. Stable institution.,Very slow processing. Outdated systems. Limited digital.
+GIC Housing Finance,PMAY,8.50-9.10,0.35,80,25,Nil,Full PMAY facilitation. State subsidy linkage.,Good PMAY track record.,Only affordable segment. No premium products.
+Repco Home Finance,Home Loan - Salaried,8.80-9.65,0.50,75,25,Nil (floating),Strong in Tamil Nadu and AP. Vernacular service.,Deep South India reach. Trusted locally.,Very limited outside South India. Higher rates.
+Repco Home Finance,Home Loan - Self Employed,9.10-10.00,0.75,70,20,Nil (floating),Informal income consideration. Gold as additional collateral.,Flexible for small traders.,Higher rates. Lower tenure. Geography limited.
+Can Fin Homes,Home Loan - Salaried,8.45-9.30,0.50,80,30,Nil (floating),Canara Bank subsidiary trust. Low rates.,Competitive rates backed by Canara Bank.,Limited marketing. Lower brand awareness vs parent bank.
+Can Fin Homes,Home Loan - Self Employed,8.70-9.55,0.50,75,25,Nil (floating),Simplified SE assessment for professionals.,Good rates for self-employed professionals.,Limited digital journey. Branch-dependent process.
+Sundaram Home Finance,Home Loan - Salaried,8.60-9.45,0.50,80,30,Nil (floating),Sundaram Finance group trust. TVS ecosystem referrals.,Trusted South India brand. Professional service.,Limited outside South. Moderate digital capability.
+Sundaram Home Finance,LAP,9.45-10.50,1.00,60,15,Nil (floating),LAP with flexible repayment options.,Good LAP product for South India business owners.,Limited geography. Higher LAP rates.
+Indiabulls Housing,Home Loan - Salaried,8.75-9.65,0.50,80,30,Nil (floating),Digital-first approach. Quick sanction in 48 hours.,Very fast processing. Good digital experience.,Brand trust issues post-restructuring. Rate premium.
+Indiabulls Housing,Balance Transfer,8.55-9.35,Nil,80,30,Nil (floating),Aggressive BT rates. Zero fee. Cashback on switch.,Competitive BT pricing. Fast BT processing.,Reputation concerns. Limited new customer acquisition.
+Home First Finance,Home Loan - Salaried,9.00-9.90,0.75,80,25,Nil (floating),Tech-enabled underwriting. Affordable housing specialist.,Technology-driven. Fast for affordable segment.,Higher rates. Very new brand. Limited network.
+Home First Finance,Affordable Housing,8.75-9.50,0.50,80,25,Nil (floating),PMAY specialist. Digital doorstep service. Vernacular app.,Best tech for affordable housing segment.,Only affordable segment. No premium or LAP products.
+Kotak Mahindra,Home Loan - Self Employed,8.85-9.70,0.75,75,25,Nil (floating),Banking statements-based assessment. GST-linked evaluation.,Flexible SE assessment.,Higher rates for SE segment. Lower LTV.
+Kotak Mahindra,NRI Home Loan,8.75-9.60,0.75,75,25,Nil (floating),Dedicated NRI desk in UAE and Singapore.,Good NRI service for select geographies.,Limited NRI markets covered. Higher fees.
+LIC HFL,Home Loan - Self Employed,8.65-9.50,0.75,75,25,Nil,Simplified assessment for professionals.,Low rates for self-employed professionals.,Very slow processing. Documentation heavy.
+Bajaj Housing,LAP,9.50-10.60,1.00,55,15,Nil (floating),Flexi LAP with overdraft facility.,Unique flexi LAP product.,Higher LAP rates. Lower LTV cap.
+PNB Housing,Balance Transfer,8.40-9.20,Nil,80,30,Nil,Best BT rates in market. Zero processing fee.,Most competitive BT pricing.,Aggressive only on BT. Core HL rates average.
+HDFC Ltd,Home Loan - NRI,8.50-9.35,0.75,75,30,Nil (floating),Dedicated NRI desks in 8 countries. Video KYC.,Widest NRI network. Brand trust globally.,NRI processing fee higher. Rate premium vs SBI.
+HDFC Ltd,Balance Transfer,8.35-9.15,Nil,80,30,Nil (floating),Rate match + 0.05% beat competitor offer.,Will match or beat competitor rate on BT.,Selective BT approval. Only targets premium BT customers.
+HDFC Ltd,PMAY,8.40-8.75,0.35,80,30,Nil,Full CLSS facilitation. 200+ PMAY branches.,Strongest PMAY network.,PMAY rates slightly above SBI and BoB.
+SBI,Home Loan - NRI,8.35-9.25,0.50,75,30,Nil,NRI branches in 36 countries. Rupee and forex accounts.,Largest global NRI banking network.,Slow NRI processing. Documentation extensive.
+SBI,Balance Transfer,8.20-9.05,Nil,80,30,Nil,Lowest BT rates. Zero fee. Auto rate reduction.,Unbeatable BT rates.,Very slow BT processing (30+ days).
