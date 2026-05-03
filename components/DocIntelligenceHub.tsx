@@ -10,6 +10,7 @@ import {
   type Operation,
   type SampleFile,
 } from '@/data/doc-intelligence-config';
+import { FACILITATION_GUIDE } from '@/data/facilitation-guide';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import DownloadMenu from './DownloadMenu';
 import { useDocuments } from '@/lib/document-context';
@@ -616,6 +617,9 @@ export default function DocIntelligenceHub() {
               ))}
             </div>
           </section>
+
+          {/* Contextual Facilitation Tip for Red Flags */}
+          {selectedOp === 'red-flags' && <DocFacilitationTip guideId="fg-red-flags" />}
         </div>
 
         {/* STEP 3: Results Area */}
@@ -800,6 +804,65 @@ function ResultBubble({ message, isStreaming }: { message: ChatMessage; isStream
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function DocFacilitationTip({ guideId }: { guideId: string }) {
+  const [open, setOpen] = useState(false);
+  const item = FACILITATION_GUIDE.find(g => g.id === guideId);
+  if (!item) return null;
+
+  return (
+    <div className="bg-gradient-to-r from-indigo-50 to-violet-50 border border-indigo-200 rounded-xl overflow-hidden">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-indigo-100/50 transition">
+        <div className="flex items-center gap-2.5">
+          <span className="text-[10px] font-bold text-white bg-indigo-600 px-2 py-0.5 rounded">FACILITATOR</span>
+          <span className="text-[12px] font-semibold text-indigo-800">{item.title} — Workshop Tips &amp; Pushback Responses</span>
+        </div>
+        <svg className={`w-4 h-4 text-indigo-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      {open && (
+        <div className="px-4 pb-4 space-y-3 border-t border-indigo-200">
+          <div className="mt-3 bg-white/70 rounded-lg p-3 border border-indigo-100">
+            <p className="text-[10px] font-bold text-indigo-700 mb-1">Intent</p>
+            <p className="text-[11px] text-gray-700">{item.intent}</p>
+          </div>
+          <div className="bg-white/70 rounded-lg p-3 border border-indigo-100">
+            <p className="text-[10px] font-bold text-indigo-700 mb-1.5">Facilitation Tips</p>
+            <ul className="space-y-1">
+              {item.facilitationTips.map((tip, i) => (
+                <li key={i} className="flex items-start gap-2 text-[11px] text-gray-700">
+                  <span className="text-indigo-400 mt-0.5 shrink-0">•</span>{tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {item.liveExercisePrompt && (
+            <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+              <p className="text-[10px] font-bold text-blue-700 mb-1">Live Exercise Prompt</p>
+              <p className="text-[11px] text-gray-700 font-mono leading-relaxed bg-white/50 rounded p-2 border border-blue-100 whitespace-pre-wrap">{item.liveExercisePrompt}</p>
+            </div>
+          )}
+          <div className="bg-white/70 rounded-lg p-3 border border-red-100">
+            <p className="text-[10px] font-bold text-red-700 mb-1.5">Common Pushback &amp; Your Response</p>
+            <div className="space-y-2">
+              {item.pushbacks.map((pb, i) => (
+                <div key={i} className="bg-white rounded-lg p-2.5 border border-gray-100">
+                  <p className="text-[11px] font-medium text-red-700">&ldquo;{pb.question}&rdquo;</p>
+                  <p className="text-[11px] text-gray-700 mt-1">→ {pb.response}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
+            <p className="text-[10px] font-bold text-emerald-700 mb-1">Key Takeaway</p>
+            <p className="text-[12px] font-semibold text-emerald-800 italic">&ldquo;{item.keyTakeaway}&rdquo;</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

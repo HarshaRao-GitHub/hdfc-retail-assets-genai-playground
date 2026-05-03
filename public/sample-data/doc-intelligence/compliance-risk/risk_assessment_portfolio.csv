@@ -1,0 +1,11 @@
+Segment,Total_Accounts,Outstanding_INR_Cr,Avg_LTV_Percent,Avg_FOIR_Percent,NPA_Percent,SMA1_Percent,SMA2_Percent,Avg_CIBIL,Salaried_Percent,Self_Employed_Percent,Top_City,Avg_Ticket_Size_INR,Credit_Risk_Score,Fraud_Risk_Score,Property_Risk_Score,Market_Risk_Score,Operational_Risk_Score,Regulatory_Risk_Score,Overall_Risk_Rating
+Home Loan - Salaried Metro,12500,6250,72.5,48.2,1.8,3.2,1.5,745,100,0,Mumbai,5000000,Low,Low,Low,Medium,Low,Low,Low
+Home Loan - Salaried Tier1,8200,3280,74.8,50.1,2.3,4.1,2.0,725,100,0,Pune,4000000,Medium,Low,Low,Medium,Low,Low,Medium
+Home Loan - Self Employed,6800,4080,78.2,55.6,3.8,5.8,3.2,695,0,100,Ahmedabad,6000000,High,High,Medium,Medium,Medium,Medium,High
+LAP - Salaried,4500,3150,65.3,52.4,2.1,3.5,1.8,735,100,0,Bangalore,7000000,Medium,Low,Medium,Medium,Low,Low,Medium
+LAP - Self Employed,3200,2880,70.8,58.9,4.5,6.2,3.8,680,0,100,Chennai,9000000,High,High,High,High,Medium,Medium,High
+Affordable Housing PMAY,5600,1680,82.5,54.3,2.8,4.8,2.5,710,65,35,Nagpur,3000000,Medium,Medium,Medium,Low,Medium,Medium,Medium
+Under Construction,3800,2280,76.4,49.8,1.5,2.8,1.2,740,72,28,Hyderabad,6000000,Low,Low,High,Medium,Low,Medium,Medium
+NRI Home Loan,2100,2520,68.2,42.5,1.2,2.1,0.8,760,85,15,Mumbai,12000000,Low,Low,Medium,High,Medium,Low,Medium
+Top-up Loans,4200,1260,55.8,51.2,2.5,3.8,2.0,730,75,25,Delhi,3000000,Medium,Low,Low,Medium,Low,Low,Low
+Balance Transfer In,3100,1860,71.5,47.6,1.9,3.2,1.5,750,80,20,Bangalore,6000000,Low,Low,Low,Medium,Low,Low,Low

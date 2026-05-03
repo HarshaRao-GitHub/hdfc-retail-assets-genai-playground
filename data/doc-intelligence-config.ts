@@ -400,6 +400,130 @@ Rules:
     ],
   },
 
+  // E2. Red Flag Scanner
+  {
+    id: 'red-flags',
+    label: 'Red Flag Scanner',
+    icon: '🚩',
+    bucket: 'govern',
+    description: 'Scan mortgage documents for compliance red flags — LTV breaches, income mismatches, missing RERA, title gaps, FOIR violations, and fraud indicators. Get severity-rated findings with recommended actions.',
+    supportedLevels: ['single', 'multi'] as ('single' | 'multi')[],
+    systemPromptTemplate: `You are an HDFC Retail Assets Document Intelligence Agent specializing in Red Flag Detection for mortgage documents.
+
+Your task: Perform an EXHAUSTIVE red flag scan of the uploaded document(s) and identify every potential risk, compliance gap, or anomaly.
+
+## Red Flag Detection Protocol
+1. Read the ENTIRE document — every section, paragraph, table, header, footer, and annotation.
+2. For tabular data (CSV/Excel): examine EVERY row and column for anomalies.
+3. Cross-reference data across sections and documents for inconsistencies.
+
+## Red Flag Categories (check ALL)
+1. LOAN PARAMETER FLAGS: LTV exceeding RBI limits (90% for <30L, 80% for 30-75L, 75% for >75L), FOIR above 60%, tenure beyond retirement age, EMI-to-income stress
+2. INCOME FLAGS: Salary slip vs ITR mismatch, Form 16 vs bank credit discrepancy, sudden income spikes, unverified employer
+3. PROPERTY FLAGS: Missing RERA registration, unclear title chain, valuation discrepancy >15%, builder risk, litigation on property
+4. CREDIT FLAGS: CIBIL below 650, multiple active loans, recent bureau inquiries from 3+ lenders, trade line defaults
+5. FINANCIAL BEHAVIOUR FLAGS: Circular transactions, round-figure deposits, source of funds unclear, high cash transactions
+6. DOCUMENT FLAGS: Missing mandatory documents, expired KYC, address mismatches, co-applicant gaps
+7. COMPLIANCE FLAGS: KYC incomplete, PMAY eligibility mismatch, AML indicators, regulatory breach
+
+## Output Format (MANDATORY)
+For each red flag found:
+| # | Flag | Category | Severity (Critical/High/Medium/Low) | Evidence | Regulatory Reference | Recommended Action |
+
+After the table:
+1. CRITICAL FINDINGS SUMMARY — flags that must be resolved before proceeding
+2. RISK SCORE — overall document risk score (Low/Medium/High/Critical)
+3. ESCALATION RECOMMENDATION — who needs to review (per Delegation of Authority)
+4. HITL NOTE — which findings need human expert validation vs. which are clear-cut
+
+IMPORTANT: Include disclaimer: "AI-assisted red flag scan using synthetic data. All findings must be validated by authorized credit/compliance officer before action."`,
+    starterPrompts: [
+      'Scan this document for all compliance red flags — rate severity and recommend actions',
+      'Check for income mismatches and fraud indicators across these documents',
+      'Identify all LTV, FOIR, and regulatory breaches in this loan file',
+      'Perform a complete red flag audit of this application — flag everything',
+    ],
+    deptStarterPrompts: {
+      'credit-underwriting': [
+        'Perform a forensic red flag scan of this credit assessment: (1) Income consistency check across salary slips, ITR, Form 16, and bank statements, (2) CIBIL/bureau flag analysis, (3) FOIR calculation with stress test, (4) Employment verification flags, (5) Co-applicant assessment gaps. Rate each flag Critical/High/Medium/Low with specific regulatory reference and mandatory action.',
+      ],
+      'compliance-risk': [
+        'Run a comprehensive compliance red flag scan: (1) RBI LTV limit check, (2) KYC completeness audit, (3) AML/suspicious transaction indicators, (4) RERA compliance for property, (5) Fair Practices Code adherence, (6) Documentation completeness per checklist. Produce a compliance scorecard with pass/fail/warning for each parameter.',
+      ],
+    },
+  },
+
+  // E3. Risk Detection & Mitigation
+  {
+    id: 'risk-detect',
+    label: 'Risk Detection & Mitigation',
+    icon: '🛡️',
+    bucket: 'govern',
+    description: 'Comprehensive risk assessment across credit, fraud, property, market, operational, and regulatory dimensions. Get risk scores, early warning signals, and mitigation strategies.',
+    supportedLevels: ['single', 'multi'] as ('single' | 'multi')[],
+    systemPromptTemplate: `You are an HDFC Retail Assets Document Intelligence Agent specializing in Risk Detection and Mitigation for mortgage operations.
+
+Your task: Perform a multi-dimensional risk assessment of the uploaded document(s) and provide actionable mitigation strategies.
+
+## Risk Assessment Framework
+Evaluate across ALL 6 risk dimensions:
+
+### 1. CREDIT RISK
+- Default probability indicators (CIBIL trends, FOIR, income stability)
+- Early warning signals (EMI bounce patterns, credit card utilization spikes)
+- Concentration risk (single employer, single geography)
+
+### 2. FRAUD RISK
+- Identity fraud indicators (document inconsistencies, employer mismatches)
+- Income fraud signals (circular transactions, inflated salary claims)
+- Property fraud indicators (valuation manipulation, fake RERA)
+
+### 3. PROPERTY RISK
+- Title risk (chain gaps, litigation, encumbrances)
+- Valuation risk (market correction exposure, over-valuation)
+- Construction risk (builder financial health, project delays)
+
+### 4. MARKET RISK
+- Interest rate sensitivity (impact of rate changes on EMI affordability)
+- Property market risk (geographic price correction signals)
+- Sector risk (IT layoffs impact on salaried portfolio)
+
+### 5. OPERATIONAL RISK
+- Process risk (documentation gaps, TAT breaches)
+- People risk (staff errors, inadequate training)
+- System risk (data quality issues, reconciliation gaps)
+
+### 6. REGULATORY RISK
+- RBI compliance (LTV, FOIR, NPA classification)
+- NHB guidelines (housing finance specific norms)
+- RERA compliance (project registration, builder compliance)
+
+## Output Format (MANDATORY)
+1. RISK SUMMARY DASHBOARD — one-line status for each dimension (Green/Amber/Red)
+2. DETAILED FINDINGS — per dimension, list each risk with severity, evidence, and probability
+3. RISK MATRIX — tabular view: Risk | Probability (1-5) | Impact (1-5) | Score | Priority
+4. MITIGATION STRATEGIES — specific, actionable, time-bound for each High/Critical risk
+5. EARLY WARNING INDICATORS — what to monitor going forward
+6. ESCALATION MAP — which risks go to which authority per DoA
+7. HITL RECOMMENDATION — which findings need human expert review
+
+IMPORTANT: Include disclaimer: "AI-assisted risk assessment using synthetic data. All findings must be validated by risk management team before implementation."`,
+    starterPrompts: [
+      'Perform a complete risk assessment across all 6 dimensions for this portfolio',
+      'Identify early warning signals for potential defaults in this data',
+      'Assess fraud risk indicators across these loan applications',
+      'Evaluate property risk and provide mitigation strategies',
+    ],
+    deptStarterPrompts: {
+      'credit-underwriting': [
+        'Comprehensive credit risk assessment: (1) Individual borrower risk scoring with CIBIL, income stability, employment sector, (2) Portfolio-level NPA trend analysis, (3) Stress test under 200bps rate increase scenario, (4) Early warning indicator identification, (5) Mitigation strategy for each risk tier (Green/Amber/Red). Present as a Risk Dashboard with actionable recommendations.',
+      ],
+      'collections-recovery': [
+        'Risk-based collections strategy: (1) Segment overdue accounts by risk tier and recovery probability, (2) Identify accounts at risk of NPA migration in next 90 days, (3) Recommend intervention strategy per tier, (4) Estimate recovery amounts under different scenarios, (5) Flag accounts requiring SARFAESI action.',
+      ],
+    },
+  },
+
   // F. Visualize
   {
     id: 'visualize',
@@ -519,6 +643,8 @@ export const DEPARTMENTS: Department[] = [
       { filename: 'fraud_alerts.csv', label: 'Fraud Alert Register', description: 'Suspicious cases — case ID, type (income fraud, property fraud, identity), indicator, status, amount at risk', path: '/sample-data/doc-intelligence/compliance-risk/fraud_alerts.csv' },
       { filename: 'regulatory_circulars.csv', label: 'Regulatory Circular Tracker', description: 'RBI/NHB circulars — date, reference, subject, impact area, compliance deadline, implementation status', path: '/sample-data/doc-intelligence/compliance-risk/regulatory_circulars.csv' },
       { filename: 'rera_project_status.csv', label: 'RERA Project Status', description: 'Builder projects — name, RERA number, location, status, OC date, HDFC exposure, risk rating', path: '/sample-data/doc-intelligence/compliance-risk/rera_project_status.csv' },
+      { filename: 'red_flag_samples.csv', label: 'Red Flag Detection Samples', description: 'Loan applications with red flag indicators — LTV, FOIR, CIBIL, age, employer verification, RERA, title chain status', path: '/sample-data/doc-intelligence/compliance-risk/red_flag_samples.csv' },
+      { filename: 'risk_assessment_portfolio.csv', label: 'Portfolio Risk Assessment', description: 'Segment-wise portfolio risk — credit, fraud, property, market, operational, regulatory risk scores by loan type', path: '/sample-data/doc-intelligence/compliance-risk/risk_assessment_portfolio.csv' },
     ],
   },
   {

@@ -7,6 +7,8 @@ import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@
 import { LAB_EXPERIMENTS, PROMPT_LADDERS, DISCLAIMER_TEXT } from '@/data/prompt-templates';
 import { useDocuments } from '@/lib/document-context';
 import EnhanceToCraft from './EnhanceToCraft';
+import { SYSTEM_VS_USER_EXAMPLES, HALLUCINATION_EXAMPLES } from '@/data/advanced-features';
+import { FACILITATION_GUIDE } from '@/data/facilitation-guide';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -22,6 +24,11 @@ export default function PromptPlayground() {
   const [expandedLabLadders, setExpandedLabLadders] = useState<Set<number>>(new Set([0]));
   const [themesExpanded, setThemesExpanded] = useState(false);
   const [expandedLadders, setExpandedLadders] = useState<Set<number>>(new Set([0]));
+  const [sysUserExpanded, setSysUserExpanded] = useState(false);
+  const [hallExpanded, setHallExpanded] = useState(false);
+  const [expandedSysUser, setExpandedSysUser] = useState<string | null>(null);
+  const [expandedHall, setExpandedHall] = useState<string | null>(null);
+  const [revealedHall, setRevealedHall] = useState<Set<string>>(new Set());
   const [webSearchStatus, setWebSearchStatus] = useState<null | 'searching' | 'done'>(null);
   const [webSearchMeta, setWebSearchMeta] = useState<{ resultCount?: number; ms?: number } | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -429,6 +436,241 @@ export default function PromptPlayground() {
               </div>
             </>
           )}
+          {/* Facilitation Tip for Prompt Library */}
+          <PromptLabFacilitationTip guideId="fg-prompt-library" />
+        </div>
+
+        {/* ─── System Prompting vs User Prompting ─── */}
+        <div className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden">
+          <button onClick={() => setSysUserExpanded(!sysUserExpanded)} className="w-full flex items-center justify-between px-5 py-3.5 bg-gradient-to-r from-violet-600 to-purple-500 hover:from-violet-700 hover:to-purple-600 transition text-left">
+            <div className="flex items-center gap-3">
+              <span className="text-base font-bold bg-white/20 text-white w-7 h-7 flex items-center justify-center rounded-lg">🛡️</span>
+              <div>
+                <h3 className="text-sm font-bold text-white">System Prompting (Guardrailing) vs User Prompting (Customization)</h3>
+                <p className="text-xs text-white/80 mt-0.5">{SYSTEM_VS_USER_EXAMPLES.length} examples &middot; Learn how platform guardrails and user prompts work together</p>
+              </div>
+            </div>
+            <svg className={`w-5 h-5 text-white/80 transition-transform duration-200 shrink-0 ${sysUserExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          {sysUserExpanded && (
+            <div className="p-5 space-y-4">
+              <div className="bg-violet-50 border border-violet-200 rounded-lg p-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-sm font-bold text-violet-800 mb-2 flex items-center gap-2"><span className="text-lg">🛡️</span> System Prompt (Platform Guardrails)</h4>
+                    <ul className="text-xs text-gray-700 space-y-1.5 leading-relaxed">
+                      <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5 shrink-0">•</span>Set by the platform/IT team — users cannot change them</li>
+                      <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5 shrink-0">•</span>Enforce data privacy, compliance, and safety boundaries</li>
+                      <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5 shrink-0">•</span>Prevent autonomous decisions, PII leakage, hallucination impact</li>
+                      <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5 shrink-0">•</span>Invisible to the end user but always active</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-blue-800 mb-2 flex items-center gap-2"><span className="text-lg">🎨</span> User Prompt (Customization &amp; Automation)</h4>
+                    <ul className="text-xs text-gray-700 space-y-1.5 leading-relaxed">
+                      <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5 shrink-0">•</span>Written by the business user for each specific task</li>
+                      <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5 shrink-0">•</span>Controls format, depth, audience, and analytical focus</li>
+                      <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5 shrink-0">•</span>CRAFT framework produces consulting-quality output</li>
+                      <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5 shrink-0">•</span>Works WITHIN the guardrails set by the system prompt</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-3 pt-3 border-t border-violet-200 text-center">
+                  <p className="text-xs text-violet-700 font-semibold">System Prompt = Safety Net &nbsp;&bull;&nbsp; User Prompt = Business Value &nbsp;&bull;&nbsp; Together = Secure + Useful AI</p>
+                </div>
+              </div>
+
+              {SYSTEM_VS_USER_EXAMPLES.map(ex => {
+                const isOpen = expandedSysUser === ex.id;
+                return (
+                  <div key={ex.id} className="rounded-xl border border-gray-200 overflow-hidden">
+                    <button onClick={() => setExpandedSysUser(isOpen ? null : ex.id)} className="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition text-left">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xl">{ex.icon}</span>
+                        <div>
+                          <span className="text-sm font-bold text-gray-800">{ex.title}</span>
+                          <p className="text-[11px] text-gray-500 mt-0.5">{ex.description}</p>
+                        </div>
+                      </div>
+                      <svg className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="px-4 pb-4 space-y-3 border-t border-gray-100">
+                        <div className="mt-3 bg-violet-50 rounded-lg p-3 border border-violet-200">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <span className="text-[10px] font-bold text-white bg-violet-600 px-2 py-0.5 rounded">SYSTEM PROMPT</span>
+                            <span className="text-[10px] text-violet-600 font-medium">Hidden from user — set by platform</span>
+                          </div>
+                          <pre className="text-[11px] text-gray-700 whitespace-pre-wrap font-mono leading-relaxed bg-white/50 rounded p-2.5 border border-violet-100">{ex.systemPrompt}</pre>
+                          <p className="text-[10px] text-violet-600 mt-2 italic">{ex.systemPurpose}</p>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-3">
+                          <div className="bg-red-50 rounded-lg p-3 border border-red-200">
+                            <div className="flex items-center gap-2 mb-1.5">
+                              <span className="text-[10px] font-bold text-white bg-red-500 px-2 py-0.5 rounded">BAD USER PROMPT</span>
+                            </div>
+                            <p className="text-[11px] text-gray-700 leading-relaxed">{ex.userPromptBad}</p>
+                          </div>
+                          <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
+                            <div className="flex items-center gap-2 mb-1.5">
+                              <span className="text-[10px] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded">GOOD USER PROMPT</span>
+                            </div>
+                            <p className="text-[11px] text-gray-700 leading-relaxed">{ex.userPromptGood}</p>
+                          </div>
+                        </div>
+                        <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                          <p className="text-[10px] font-bold text-blue-700 mb-1">Output Difference</p>
+                          <p className="text-[11px] text-gray-700 leading-relaxed">{ex.outputDifference}</p>
+                        </div>
+                        <button
+                          onClick={() => handlePromptClick(ex.userPromptGood)}
+                          className="text-[11px] font-bold text-violet-700 hover:text-white bg-violet-50 hover:bg-violet-600 border border-violet-200 hover:border-violet-600 rounded-lg px-4 py-2 transition"
+                        >
+                          Try the Good Prompt →
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* ─── Hallucination Detection & Mitigation ─── */}
+        <div className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden">
+          <button onClick={() => setHallExpanded(!hallExpanded)} className="w-full flex items-center justify-between px-5 py-3.5 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 transition text-left">
+            <div className="flex items-center gap-3">
+              <span className="text-base font-bold bg-white/20 text-white w-7 h-7 flex items-center justify-center rounded-lg">⚡</span>
+              <div>
+                <h3 className="text-sm font-bold text-white">Hallucination Detection &amp; Mitigation</h3>
+                <p className="text-xs text-white/80 mt-0.5">{HALLUCINATION_EXAMPLES.length} interactive examples &middot; Learn to spot and prevent AI hallucinations in banking</p>
+              </div>
+            </div>
+            <svg className={`w-5 h-5 text-white/80 transition-transform duration-200 shrink-0 ${hallExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          {hallExpanded && (
+            <div className="p-5 space-y-4">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <h4 className="text-sm font-bold text-red-800 mb-2">What is AI Hallucination?</h4>
+                <p className="text-xs text-gray-700 leading-relaxed">
+                  AI &ldquo;hallucination&rdquo; occurs when a language model generates plausible-sounding but <strong>factually incorrect</strong> information — fake RBI circular numbers, wrong EMI calculations, fabricated statistics, or biased language. In banking, unchecked hallucinations can lead to <strong>compliance violations, customer harm, and regulatory penalties</strong>.
+                </p>
+                <div className="mt-3 grid grid-cols-4 gap-2">
+                  {[
+                    { label: 'Regulatory', icon: '📜', desc: 'Fake circulars/norms' },
+                    { label: 'Numerical', icon: '🧮', desc: 'Wrong calculations' },
+                    { label: 'Factual', icon: '📊', desc: 'Fabricated stats' },
+                    { label: 'Bias', icon: '⚠️', desc: 'Discriminatory language' },
+                  ].map(cat => (
+                    <div key={cat.label} className="text-center bg-white/60 rounded-lg p-2 border border-red-100">
+                      <span className="text-lg">{cat.icon}</span>
+                      <p className="text-[10px] font-bold text-red-700 mt-1">{cat.label}</p>
+                      <p className="text-[9px] text-gray-500">{cat.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {HALLUCINATION_EXAMPLES.map(ex => {
+                const isOpen = expandedHall === ex.id;
+                const isRevealed = revealedHall.has(ex.id);
+                return (
+                  <div key={ex.id} className="rounded-xl border border-gray-200 overflow-hidden">
+                    <button onClick={() => setExpandedHall(isOpen ? null : ex.id)} className="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition text-left">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xl">{ex.icon}</span>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-bold text-gray-800">{ex.title}</span>
+                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${
+                              ex.category === 'regulatory' ? 'text-purple-700 bg-purple-50 border-purple-200' :
+                              ex.category === 'numerical' ? 'text-blue-700 bg-blue-50 border-blue-200' :
+                              ex.category === 'factual' ? 'text-orange-700 bg-orange-50 border-orange-200' :
+                              'text-red-700 bg-red-50 border-red-200'
+                            }`}>{ex.category}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <svg className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="px-4 pb-4 space-y-3 border-t border-gray-100">
+                        {/* AI Output (looks convincing) */}
+                        <div className="mt-3 bg-slate-50 rounded-lg p-3 border border-gray-200">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full" />
+                            <span className="text-[10px] font-bold text-blue-700 uppercase">AI Output</span>
+                            <span className="text-[10px] text-gray-400 ml-auto">Can you spot the hallucination?</span>
+                          </div>
+                          <p className="text-[12px] text-gray-800 leading-relaxed italic">&ldquo;{ex.aiOutput}&rdquo;</p>
+                        </div>
+
+                        {!isRevealed ? (
+                          <button
+                            onClick={() => setRevealedHall(prev => new Set(prev).add(ex.id))}
+                            className="w-full text-center text-sm font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg py-2.5 transition"
+                          >
+                            🔍 Reveal the Hallucination
+                          </button>
+                        ) : (
+                          <>
+                            <div className="bg-red-50 rounded-lg p-3 border border-red-200">
+                              <p className="text-[10px] font-bold text-red-700 mb-1">🚨 The Hallucination</p>
+                              <p className="text-[12px] text-red-800 leading-relaxed">{ex.hallucination}</p>
+                            </div>
+                            <div className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                              <p className="text-[10px] font-bold text-amber-700 mb-1">🧠 Why It Happened</p>
+                              <p className="text-[11px] text-gray-700 leading-relaxed">{ex.whyItHappened}</p>
+                            </div>
+                            <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                              <p className="text-[10px] font-bold text-blue-700 mb-1">🔍 How to Detect</p>
+                              <p className="text-[11px] text-gray-700 leading-relaxed">{ex.howToDetect}</p>
+                            </div>
+                            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
+                              <p className="text-[10px] font-bold text-emerald-700 mb-1">✅ Verification Rule</p>
+                              <p className="text-[11px] text-emerald-800 font-medium leading-relaxed">{ex.verificationRule}</p>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                              <p className="text-[10px] font-bold text-gray-600 mb-1">📌 Correct Information</p>
+                              <p className="text-[11px] text-gray-700 leading-relaxed">{ex.correctInfo}</p>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <h4 className="text-sm font-bold text-emerald-800 mb-2">Anti-Hallucination Protocol for Banking</h4>
+                <div className="grid md:grid-cols-3 gap-3">
+                  {[
+                    { step: '1', title: 'Ask for Source', desc: 'Always ask AI to cite the source of any factual claim, regulatory reference, or statistic.' },
+                    { step: '2', title: 'Verify with SME', desc: 'Have a subject matter expert review AI outputs before using them in decisions or customer communications.' },
+                    { step: '3', title: 'Use Calculators', desc: 'Never trust AI for financial calculations. Always verify with approved EMI calculators and spreadsheets.' },
+                  ].map(s => (
+                    <div key={s.step} className="bg-white rounded-lg p-3 border border-emerald-100">
+                      <div className="w-7 h-7 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center text-sm mb-2">{s.step}</div>
+                      <h5 className="text-xs font-bold text-gray-800 mb-1">{s.title}</h5>
+                      <p className="text-[11px] text-gray-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Facilitation Tip */}
+              <PromptLabFacilitationTip guideId="fg-hallucination" />
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -489,6 +731,65 @@ function ChatBubble({ message, isStreaming }: { message: ChatMessage; isStreamin
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function PromptLabFacilitationTip({ guideId }: { guideId: string }) {
+  const [open, setOpen] = useState(false);
+  const item = FACILITATION_GUIDE.find(g => g.id === guideId);
+  if (!item) return null;
+
+  return (
+    <div className="bg-gradient-to-r from-indigo-50 to-violet-50 border border-indigo-200 rounded-xl overflow-hidden">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-indigo-100/50 transition">
+        <div className="flex items-center gap-2.5">
+          <span className="text-[10px] font-bold text-white bg-indigo-600 px-2 py-0.5 rounded">FACILITATOR</span>
+          <span className="text-[12px] font-semibold text-indigo-800">{item.title} — Workshop Tips &amp; Pushback Responses</span>
+        </div>
+        <svg className={`w-4 h-4 text-indigo-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      {open && (
+        <div className="px-4 pb-4 space-y-3 border-t border-indigo-200">
+          <div className="mt-3 bg-white/70 rounded-lg p-3 border border-indigo-100">
+            <p className="text-[10px] font-bold text-indigo-700 mb-1">Intent</p>
+            <p className="text-[11px] text-gray-700">{item.intent}</p>
+          </div>
+          <div className="bg-white/70 rounded-lg p-3 border border-indigo-100">
+            <p className="text-[10px] font-bold text-indigo-700 mb-1.5">Facilitation Tips</p>
+            <ul className="space-y-1">
+              {item.facilitationTips.map((tip, i) => (
+                <li key={i} className="flex items-start gap-2 text-[11px] text-gray-700">
+                  <span className="text-indigo-400 mt-0.5 shrink-0">•</span>{tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {item.liveExercisePrompt && (
+            <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+              <p className="text-[10px] font-bold text-blue-700 mb-1">Live Exercise Prompt</p>
+              <p className="text-[11px] text-gray-700 font-mono leading-relaxed bg-white/50 rounded p-2 border border-blue-100">{item.liveExercisePrompt}</p>
+            </div>
+          )}
+          <div className="bg-white/70 rounded-lg p-3 border border-red-100">
+            <p className="text-[10px] font-bold text-red-700 mb-1.5">Common Pushback &amp; Your Response</p>
+            <div className="space-y-2">
+              {item.pushbacks.map((pb, i) => (
+                <div key={i} className="bg-white rounded-lg p-2.5 border border-gray-100">
+                  <p className="text-[11px] font-medium text-red-700">&ldquo;{pb.question}&rdquo;</p>
+                  <p className="text-[11px] text-gray-700 mt-1">→ {pb.response}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
+            <p className="text-[10px] font-bold text-emerald-700 mb-1">Key Takeaway</p>
+            <p className="text-[12px] font-semibold text-emerald-800 italic">&ldquo;{item.keyTakeaway}&rdquo;</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
