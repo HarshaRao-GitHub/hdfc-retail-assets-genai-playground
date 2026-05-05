@@ -60,13 +60,13 @@ export default function Dashboard() {
         <section className="max-w-7xl mx-auto px-6 py-10">
           <div className="mb-6">
             <div className="text-[11px] font-mono uppercase tracking-wider text-hdfc-red">Interactive Playground</div>
-            <h2 className="text-2xl md:text-3xl font-bold text-hdfc-blue mt-1">4 Experience Modes</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-hdfc-blue mt-1">5 Experience Modes</h2>
             <p className="text-hdfc-slate mt-2 max-w-3xl text-[14px] leading-relaxed">
               Each mode is designed for hands-on learning. Pick a prompt, run it live, see the output, tweak, and repeat.
               All powered by Gen-AI with synthetic data only.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
               {
                 href: '/prompt-lab',
@@ -99,6 +99,14 @@ export default function Dashboard() {
                 description: `Browse all ${totalUseCases} use cases organized by category, audience, and day. Each with a ready-to-run prompt.`,
                 color: '#D97706',
                 badge: `${totalUseCases} CASES`
+              },
+              {
+                href: '/field-sales-ai',
+                icon: '🚀',
+                title: 'Field Sales AI',
+                description: 'Outward-looking sales enablement — prospect research, competitive positioning, objection handling, pitch personalization & deal closing.',
+                color: '#2563EB',
+                badge: 'NEW'
               }
             ].map(card => (
               <Link
