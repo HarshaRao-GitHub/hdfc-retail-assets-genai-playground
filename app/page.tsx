@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useRef, useEffect, useCallback, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const THERMAX_URL = process.env.NEXT_PUBLIC_THERMAX_URL || 'http://localhost:3001';
 
@@ -48,6 +48,19 @@ const CLIENTS = [
   },
 ];
 
+const CLIENT_BRANDING: Record<string, { heading: string; headingGradient: string; subtitle: string }> = {
+  hdfc: {
+    heading: 'HDFC Retail Assets',
+    headingGradient: 'from-red-400 via-rose-400 to-orange-400',
+    subtitle: 'GenAI Leadership Playground for Retail Asset Sales Leaders. Enter your access key to begin.',
+  },
+  thermax: {
+    heading: 'Thermax',
+    headingGradient: 'from-orange-400 via-amber-400 to-yellow-400',
+    subtitle: 'Agentic AI Operating System for Energy & Environment Solutions. Enter your access key to begin.',
+  },
+};
+
 const SESSION_KEY = 'genai_hub_unlocked';
 
 function getUnlocked(): Set<string> {
@@ -63,8 +76,23 @@ function persistUnlocked(ids: Set<string>) {
   try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(Array.from(ids))); } catch {}
 }
 
-export default function ClientSelector() {
+export default function ClientSelectorPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />}>
+      <ClientSelector />
+    </Suspense>
+  );
+}
+
+function ClientSelector() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const clientParam = searchParams.get('client')?.toLowerCase() || null;
+  const validClient = clientParam && CLIENTS.some(c => c.id === clientParam) ? clientParam : null;
+  const filteredClients = validClient ? CLIENTS.filter(c => c.id === validClient) : CLIENTS;
+  const isSingleClient = filteredClients.length === 1;
+  const branding = validClient ? CLIENT_BRANDING[validClient] : null;
+
   const [unlocked, setUnlocked] = useState<Set<string>>(new Set());
   const [activeClient, setActiveClient] = useState<string | null>(null);
   const [pinDigits, setPinDigits] = useState<string[]>(['', '', '', '', '', '']);
@@ -185,21 +213,21 @@ export default function ClientSelector() {
               GenAI Leadership Enablement Platform &middot; Powered by Gen-AI and Agentic AI
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Enterprise GenAI
+              {branding ? branding.heading : 'Enterprise GenAI'}
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Playground Hub
+              <span className={`bg-gradient-to-r ${branding ? branding.headingGradient : 'from-blue-400 via-purple-400 to-pink-400'} bg-clip-text text-transparent`}>
+                {isSingleClient ? 'GenAI Playground' : 'Playground Hub'}
               </span>
             </h1>
             <p className="mt-5 text-white/60 max-w-2xl mx-auto text-[15px] leading-relaxed">
-              Select your client workspace to access the AI-powered playground. Each workspace is
-              purpose-built with industry-specific use cases, prompt engineering labs, and hands-on
-              GenAI tools for leadership teams.
+              {branding
+                ? branding.subtitle
+                : 'Select your client workspace to access the AI-powered playground. Each workspace is purpose-built with industry-specific use cases, prompt engineering labs, and hands-on GenAI tools for leadership teams.'}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {CLIENTS.map(client => {
+          <div className={`grid gap-8 mx-auto ${isSingleClient ? 'grid-cols-1 max-w-lg' : 'md:grid-cols-2 max-w-4xl'}`}>
+            {filteredClients.map(client => {
               const isUnlocked = unlocked.has(client.id);
               return (
                 <button
@@ -246,7 +274,7 @@ export default function ClientSelector() {
                       {client.letter}
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-white transition" style={{ }}>{client.name}</h2>
+                      <h2 className="text-xl font-bold text-white transition">{client.name}</h2>
                       <p className="text-[11px] text-white/50 font-mono">{client.subtitle}</p>
                     </div>
                   </div>
