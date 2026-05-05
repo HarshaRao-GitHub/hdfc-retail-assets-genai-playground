@@ -4,6 +4,7 @@ import { useRef, useState, useCallback, useEffect } from 'react';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
+import EnhanceToCraft from '@/components/EnhanceToCraft';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_DOC_CATEGORIES, FIELD_SALES_DOC_OPERATIONS } from '@/data/field-sales-doc-config';
@@ -339,7 +340,10 @@ export default function FieldSalesDocIntelligencePage() {
                 <textarea ref={inputRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} placeholder="Ask about loaded data — prospect intelligence, competitive analysis, pipeline priorities..." rows={3} disabled={streaming} className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 resize-y focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 disabled:opacity-40 transition shadow-sm" />
                 <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Analyze</button>
               </div>
-              <p className="text-[10px] text-gray-400 font-mono mt-2 text-right">Ctrl/Cmd + Enter to send</p>
+              <div className="flex items-center justify-between mt-2">
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales AI — document intelligence, prospect research, competitive analysis, pipeline prioritization for HDFC retail asset sales" />
+                <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
+              </div>
             </div>
           </div>
         </div>
