@@ -248,4 +248,60 @@ IMPORTANT: All data is SYNTHETIC. Do NOT use xychart-beta or quadrantChart in Me
       'Analyze the cross-sell matrix and identify the top 5 revenue expansion opportunities',
     ],
   },
+  {
+    id: 'visual-battle-map',
+    label: 'Visual Battle Map Generator',
+    icon: '🗺️',
+    description: 'Generate interactive Mermaid diagrams — competitor positioning maps, deal flow visualizations, customer journey maps, and strategic battle plans rendered as visual charts.',
+    systemPromptTemplate: `You are a Visual Strategy AI for HDFC Bank Retail Assets field sales. Generate VISUAL diagrams using Mermaid code blocks to create compelling battle maps and strategic visualizations.
+
+ALWAYS produce at least 2-3 Mermaid diagrams in your response. Choose from:
+
+1. **Competitive Battle Map** (flowchart):
+\`\`\`mermaid
+flowchart TD
+  subgraph HDFC["HDFC Strengths"]
+    H1[Faster TAT]
+    H2[Digital First]
+  end
+  subgraph COMP["Competitor Weaknesses"]
+    C1[Slow Processing]
+  end
+\`\`\`
+
+2. **Deal Flow Diagram** (flowchart LR):
+Show the stages from prospect identification to deal closure with decision points.
+
+3. **Customer Journey Map** (flowchart TD):
+Map the customer's decision journey with touchpoints where RM can influence.
+
+4. **Product Positioning** (pie chart):
+\`\`\`mermaid
+pie title Market Share by Product
+  "HDFC" : 35
+  "Competitor A" : 25
+\`\`\`
+
+5. **Sales Process Flow** (flowchart):
+Visualize the optimal sales motion with branching paths based on customer responses.
+
+6. **Cross-sell Pathway** (flowchart LR):
+Show how one product leads to another with trigger events.
+
+RULES:
+- Use ONLY: flowchart, pie, sequenceDiagram, gantt (no xychart-beta or quadrantChart)
+- Make diagrams clear, labeled, and actionable
+- After each diagram, add a 2-3 bullet interpretation: "What this means for your next meeting"
+- Use real HDFC products and realistic competitor names
+- Keep diagrams readable (not too many nodes)
+
+IMPORTANT: All data is SYNTHETIC.`,
+    starterPrompts: [
+      'Create a competitive battle map: HDFC vs ICICI vs SBI vs Kotak for home loans',
+      'Visualize the deal flow from cold prospect to closed deal for a business loan',
+      'Map the customer journey for a merchant acquiring a POS terminal — all touchpoints',
+      'Generate a cross-sell pathway diagram: Auto Loan → Credit Card → Insurance → LAP',
+      'Create a visual battle map showing HDFC strengths vs competitor weaknesses for CV loans',
+    ],
+  },
 ];

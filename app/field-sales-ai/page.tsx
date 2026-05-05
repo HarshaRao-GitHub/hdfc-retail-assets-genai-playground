@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
+import IndustryNewsPulse from '@/components/IndustryNewsPulse';
 import { FIELD_SALES_USE_CASE_CATEGORIES } from '@/data/field-sales-use-cases';
 import { BEFORE_DURING_AFTER_FRAMEWORK } from '@/data/field-sales-scenarios';
 import { FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
@@ -47,6 +48,41 @@ const SUB_MODULES = [
     gradient: 'from-amber-600 to-amber-500',
     borderColor: 'border-amber-300',
     tag: 'Library',
+  },
+];
+
+const ADVANCED_TOOLS = [
+  {
+    href: '/field-sales-ai/lobby-mode',
+    icon: '⚡',
+    title: 'Lobby Mode — 60s Briefing',
+    description: 'One click = instant meeting briefing with company intel, talking points, objection counters & opening lines.',
+    color: 'from-orange-500 to-amber-500',
+    badge: 'INSTANT',
+  },
+  {
+    href: '/field-sales-ai/role-play',
+    icon: '🎭',
+    title: 'AI Role-Play Simulator',
+    description: 'Practice sales conversations with AI customers. Get scored on persuasion, product knowledge & closing.',
+    color: 'from-rose-500 to-pink-500',
+    badge: 'INTERACTIVE',
+  },
+  {
+    href: '/field-sales-ai/deal-scorer',
+    icon: '🎯',
+    title: 'Deal Win Probability',
+    description: 'AI scores your deal\'s win probability with breakdown, risks, and specific actions to increase odds.',
+    color: 'from-indigo-500 to-violet-500',
+    badge: 'SCORER',
+  },
+  {
+    href: '/field-sales-ai/debrief',
+    icon: '📋',
+    title: 'Post-Meeting Debrief',
+    description: 'Type raw notes → get CRM update, follow-up email, risk analysis & next-best-actions instantly.',
+    color: 'from-cyan-500 to-teal-500',
+    badge: 'AI DEBRIEF',
   },
 ];
 
@@ -134,6 +170,36 @@ export default function FieldSalesAIPage() {
               </Link>
             ))}
           </div>
+        </div>
+
+        {/* Advanced AI Tools */}
+        <div className="max-w-7xl mx-auto px-6 pb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Advanced AI Sales Tools</h2>
+          <p className="text-[12px] text-gray-500 mb-4">High-impact tools that bring the &ldquo;wow factor&rdquo; — instant briefings, live role-play, deal scoring & post-meeting debrief.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {ADVANCED_TOOLS.map(tool => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group relative bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-0.5 overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-5 transition`} />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <span className="text-[8px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white">{tool.badge}</span>
+                  </div>
+                  <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-blue-700 transition">{tool.title}</h4>
+                  <p className="text-[10px] text-gray-500 mt-1 leading-relaxed">{tool.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Industry News Pulse */}
+        <div className="max-w-7xl mx-auto px-6 pb-8">
+          <IndustryNewsPulse />
         </div>
 
         {/* Before / During / After Framework */}
