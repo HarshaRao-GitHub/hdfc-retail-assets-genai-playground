@@ -184,26 +184,33 @@ export default function FieldSalesPromptingPage() {
             </div>
 
             {/* Prompt Levels */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+            <div className="grid sm:grid-cols-2 gap-3">
               {experiment.levels.map((level, i) => {
                 const persona = LEVEL_PERSONAS[i];
-                const glowColors = ['ring-emerald-200', 'ring-blue-200', 'ring-purple-200', 'ring-amber-200'];
+                const glowColors = ['ring-emerald-300', 'ring-blue-300', 'ring-purple-300', 'ring-amber-300'];
+                const borderAccent = ['border-l-emerald-400', 'border-l-blue-400', 'border-l-purple-400', 'border-l-amber-400'];
                 return (
                   <button
                     key={i}
                     onClick={() => { setInput(level.prompt); inputRef.current?.focus(); }}
-                    className="text-left group bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 hover:shadow-md transition"
+                    className={`text-left group bg-white border border-gray-200 border-l-[3px] ${borderAccent[i]} rounded-xl p-4 hover:border-blue-300 hover:shadow-lg transition-all`}
                   >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <div className="shrink-0 relative">
-                        <div className={`w-8 h-8 rounded-full overflow-hidden ring-2 ${glowColors[i]} shadow-sm`}>
-                          <Image src={persona.image} alt={persona.title} width={32} height={32} className="w-full h-full object-cover" />
+                    <div className="flex items-start gap-3">
+                      <div className="shrink-0 relative mt-0.5">
+                        <div className={`w-12 h-12 rounded-full overflow-hidden ring-2 ${glowColors[i]} shadow-md`}>
+                          <Image src={persona.image} alt={persona.title} width={48} height={48} className="w-full h-full object-cover" />
                         </div>
-                        <span className={`absolute -bottom-0.5 -right-0.5 text-[7px] font-extrabold px-1 py-0.5 rounded-full border ${level.color} shadow-sm`}>{level.tag}</span>
+                        <span className={`absolute -bottom-1 -right-1 text-[8px] font-extrabold px-1.5 py-0.5 rounded-full border ${level.color} shadow-sm`}>{level.tag}</span>
                       </div>
-                      <span className="text-[11px] font-semibold text-gray-700">{level.label}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[13px] font-bold text-gray-800 group-hover:text-blue-700 transition">{level.label}</span>
+                          <span className="text-[10px] text-gray-400 font-medium">{persona.title}</span>
+                          {i === 3 && <span className="text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded-full border border-amber-200">C·R·A·F·T</span>}
+                        </div>
+                        <p className="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line">{level.prompt}</p>
+                      </div>
                     </div>
-                    <p className="text-[10px] text-gray-500 leading-snug line-clamp-3">{level.prompt.slice(0, 120)}...</p>
                   </button>
                 );
               })}
