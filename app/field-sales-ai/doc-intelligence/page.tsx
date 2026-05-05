@@ -85,7 +85,7 @@ export default function FieldSalesDocIntelligencePage() {
 
   async function send(textOverride?: string) {
     const text = (textOverride ?? input).trim();
-    if (!text || streaming) return;
+    if (!text || streaming || documents.length === 0) return;
     const next: ChatMessage[] = [...messages, { role: 'user', content: text }];
     setMessages(next);
     setInput('');
@@ -385,14 +385,29 @@ export default function FieldSalesDocIntelligencePage() {
               <div ref={chatEndRef} />
             </div>
             <div className="border-t border-gray-200 bg-slate-50 p-4">
-              <div className="flex gap-3">
-                <textarea ref={inputRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} placeholder="Ask about loaded data — prospect intelligence, competitive analysis, pipeline priorities..." rows={3} disabled={streaming} className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 resize-y focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 disabled:opacity-40 transition shadow-sm" />
-                <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Analyze</button>
-              </div>
-              <div className="flex items-center justify-between mt-2">
-                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales AI — document intelligence, prospect research, competitive analysis, pipeline prioritization for HDFC retail asset sales" />
-                <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
-              </div>
+              {documents.length === 0 ? (
+                <div className="flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
+                  <span className="text-xl">📂</span>
+                  <div className="flex-1">
+                    <p className="text-[12px] font-semibold text-amber-800">No documents loaded</p>
+                    <p className="text-[11px] text-amber-600">Upload a document or load a pre-provided sample above to enable AI analysis.</p>
+                  </div>
+                  <button onClick={() => setTrayOpen(true)} className="text-[11px] font-bold text-purple-700 bg-white border border-purple-300 px-3 py-1.5 rounded-md hover:bg-purple-50 transition shrink-0">
+                    Upload Docs
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="flex gap-3">
+                    <textarea ref={inputRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} placeholder="Ask about loaded data — prospect intelligence, competitive analysis, pipeline priorities..." rows={3} disabled={streaming} className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 resize-y focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 disabled:opacity-40 transition shadow-sm" />
+                    <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Analyze</button>
+                  </div>
+                  <div className="flex items-center justify-between mt-2">
+                    <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales AI — document intelligence, prospect research, competitive analysis, pipeline prioritization for HDFC retail asset sales" />
+                    <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
