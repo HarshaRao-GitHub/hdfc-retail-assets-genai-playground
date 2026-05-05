@@ -184,18 +184,19 @@ export default function FieldSalesPromptingPage() {
             </div>
 
             {/* Prompt Levels */}
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="space-y-3">
               {experiment.levels.map((level, i) => {
                 const persona = LEVEL_PERSONAS[i];
                 const glowColors = ['ring-emerald-300', 'ring-blue-300', 'ring-purple-300', 'ring-amber-300'];
                 const borderAccent = ['border-l-emerald-400', 'border-l-blue-400', 'border-l-purple-400', 'border-l-amber-400'];
+                const bgHover = ['hover:bg-emerald-50/40', 'hover:bg-blue-50/40', 'hover:bg-purple-50/40', 'hover:bg-amber-50/40'];
                 return (
                   <button
                     key={i}
                     onClick={() => { setInput(level.prompt); inputRef.current?.focus(); }}
-                    className={`text-left group bg-white border border-gray-200 border-l-[3px] ${borderAccent[i]} rounded-xl p-4 hover:border-blue-300 hover:shadow-lg transition-all`}
+                    className={`w-full text-left group bg-white border border-gray-100 border-l-[3px] ${borderAccent[i]} rounded-xl p-4 ${bgHover[i]} hover:shadow-md transition-all`}
                   >
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3.5">
                       <div className="shrink-0 relative mt-0.5">
                         <div className={`w-12 h-12 rounded-full overflow-hidden ring-2 ${glowColors[i]} shadow-md`}>
                           <Image src={persona.image} alt={persona.title} width={48} height={48} className="w-full h-full object-cover" />
@@ -207,8 +208,9 @@ export default function FieldSalesPromptingPage() {
                           <span className="text-[13px] font-bold text-gray-800 group-hover:text-blue-700 transition">{level.label}</span>
                           <span className="text-[10px] text-gray-400 font-medium">{persona.title}</span>
                           {i === 3 && <span className="text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded-full border border-amber-200">C·R·A·F·T</span>}
+                          <svg className="w-4 h-4 text-gray-300 group-hover:text-blue-500 ml-auto transition shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                         </div>
-                        <p className="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line">{level.prompt}</p>
+                        <p className="text-[12px] text-gray-600 leading-relaxed whitespace-pre-line">{level.prompt}</p>
                       </div>
                     </div>
                   </button>
