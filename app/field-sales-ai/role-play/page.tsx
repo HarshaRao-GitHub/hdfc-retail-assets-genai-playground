@@ -2,10 +2,20 @@
 
 import { useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import { ROLE_PLAY_PERSONAS } from '@/data/field-sales-advanced';
+
+const PERSONA_AVATARS: Record<string, string> = {
+  'skeptical-cfo': '/personas/persona-rajesh-mehta.png',
+  'busy-entrepreneur': '/personas/persona-priya-sharma.png',
+  'price-shopper': '/personas/persona-amit-patel.png',
+  'farmer-landowner': '/personas/persona-harinder-singh.png',
+  'fleet-owner': '/personas/persona-suresh-reddy.png',
+  'merchant-owner': '/personas/persona-kavita-desai.png',
+};
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -256,8 +266,17 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                       </span>
                       <span className="text-[10px] text-gray-400">{p.industry}</span>
                     </div>
-                    <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-rose-700 transition">{p.name}</h4>
-                    <p className="text-[10px] text-gray-500 mt-1">{p.company}</p>
+                    <div className="flex items-center gap-3 mb-2">
+                      {PERSONA_AVATARS[p.id] && (
+                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-200 shadow-sm shrink-0">
+                          <Image src={PERSONA_AVATARS[p.id]} alt={p.name} width={48} height={48} className="w-full h-full object-cover object-top" />
+                        </div>
+                      )}
+                      <div>
+                        <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-rose-700 transition">{p.name}</h4>
+                        <p className="text-[10px] text-gray-500">{p.company}</p>
+                      </div>
+                    </div>
                     <p className="text-[10px] text-gray-600 mt-2 leading-relaxed line-clamp-2">{p.personality}</p>
                     <div className="mt-2 pt-2 border-t border-gray-100">
                       <p className="text-[9px] text-purple-600 font-semibold">Product: {p.product_interest}</p>
@@ -275,8 +294,12 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                   <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-b border-rose-200 px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-lg font-bold text-rose-700">
-                          {persona.name.charAt(0)}
+                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-200 shadow-sm shrink-0">
+                          {PERSONA_AVATARS[persona.id] ? (
+                            <Image src={PERSONA_AVATARS[persona.id]} alt={persona.name} width={40} height={40} className="w-full h-full object-cover object-top" />
+                          ) : (
+                            <div className="w-full h-full bg-rose-100 flex items-center justify-center text-lg font-bold text-rose-700">{persona.name.charAt(0)}</div>
+                          )}
                         </div>
                         <div>
                           <h4 className="text-[13px] font-bold text-gray-900">{persona.name}</h4>
@@ -299,9 +322,16 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                             <div className="bg-gradient-to-r from-blue-700 to-blue-600 text-white rounded-2xl rounded-tr-md px-4 py-3 text-sm leading-relaxed shadow-md whitespace-pre-wrap">{msg.content}</div>
                           </div>
                         ) : (
-                          <div className="max-w-[80%]">
-                            <p className="text-[9px] text-gray-400 mb-0.5 font-medium">{persona.name.split(' — ')[0]}</p>
-                            <div className="bg-rose-50 border border-rose-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm text-gray-900 leading-relaxed shadow-sm whitespace-pre-wrap">{msg.content}</div>
+                          <div className="max-w-[80%] flex items-start gap-2">
+                            {PERSONA_AVATARS[persona.id] && (
+                              <div className="w-7 h-7 rounded-full overflow-hidden border border-rose-200 shadow-sm shrink-0 mt-4">
+                                <Image src={PERSONA_AVATARS[persona.id]} alt={persona.name} width={28} height={28} className="w-full h-full object-cover object-top" />
+                              </div>
+                            )}
+                            <div>
+                              <p className="text-[9px] text-gray-400 mb-0.5 font-medium">{persona.name.split(' — ')[0]}</p>
+                              <div className="bg-rose-50 border border-rose-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm text-gray-900 leading-relaxed shadow-sm whitespace-pre-wrap">{msg.content}</div>
+                            </div>
                           </div>
                         )}
                       </div>

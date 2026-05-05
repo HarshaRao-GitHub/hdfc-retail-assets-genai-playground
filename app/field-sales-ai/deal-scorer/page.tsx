@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
@@ -129,15 +130,20 @@ OUTPUT FORMAT (follow exactly):
               <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
               Back to Field Sales AI
             </Link>
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
-                <span className="w-2 h-2 bg-indigo-300 rounded-full animate-pulse" />
-                Field Sales — Deal Win Probability
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-lg shrink-0 hidden sm:block">
+                <Image src="/personas/persona-compliance-officer.png" alt="Deal Scorer AI" width={56} height={56} className="w-full h-full object-cover object-top" />
               </div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">Deal Win Probability Scorer</h1>
-              <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
-                Paste your deal details — AI instantly scores win probability, identifies risks, and recommends specific actions to increase your odds.
-              </p>
+              <div>
+                <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
+                  <span className="w-2 h-2 bg-indigo-300 rounded-full animate-pulse" />
+                  Field Sales — Deal Win Probability
+                </div>
+                <h1 className="text-2xl font-bold tracking-tight text-white">Deal Win Probability Scorer</h1>
+                <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
+                  Paste your deal details — AI instantly scores win probability, identifies risks, and recommends specific actions to increase your odds.
+                </p>
+              </div>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 import IndustryNewsPulse from '@/components/IndustryNewsPulse';
@@ -18,6 +19,7 @@ const SUB_MODULES = [
     gradient: 'from-blue-600 to-blue-500',
     borderColor: 'border-blue-300',
     tag: 'Hands-on',
+    persona: '/personas/persona-user-prompter.png',
   },
   {
     href: '/field-sales-ai/doc-intelligence',
@@ -28,6 +30,7 @@ const SUB_MODULES = [
     gradient: 'from-purple-600 to-purple-500',
     borderColor: 'border-purple-300',
     tag: 'Interactive',
+    persona: '/personas/persona-doc-intel.png',
   },
   {
     href: '/field-sales-ai/sales-growth',
@@ -38,6 +41,7 @@ const SUB_MODULES = [
     gradient: 'from-emerald-600 to-emerald-500',
     borderColor: 'border-emerald-300',
     tag: 'AI-Powered',
+    persona: '/personas/persona-sales-growth.png',
   },
   {
     href: '/field-sales-ai/use-cases',
@@ -48,6 +52,7 @@ const SUB_MODULES = [
     gradient: 'from-amber-600 to-amber-500',
     borderColor: 'border-amber-300',
     tag: 'Library',
+    persona: '/personas/persona-use-cases.png',
   },
 ];
 
@@ -59,6 +64,7 @@ const ADVANCED_TOOLS = [
     description: 'One click = instant meeting briefing with company intel, talking points, objection counters & opening lines.',
     color: 'from-orange-500 to-amber-500',
     badge: 'INSTANT',
+    persona: '/personas/persona-lobby-rm.png',
   },
   {
     href: '/field-sales-ai/role-play',
@@ -67,6 +73,7 @@ const ADVANCED_TOOLS = [
     description: 'Practice sales conversations with AI customers. Get scored on persuasion, product knowledge & closing.',
     color: 'from-rose-500 to-pink-500',
     badge: 'INTERACTIVE',
+    persona: '/personas/persona-facilitator.png',
   },
   {
     href: '/field-sales-ai/deal-scorer',
@@ -75,6 +82,7 @@ const ADVANCED_TOOLS = [
     description: 'AI scores your deal\'s win probability with breakdown, risks, and specific actions to increase odds.',
     color: 'from-indigo-500 to-violet-500',
     badge: 'SCORER',
+    persona: '/personas/persona-compliance-officer.png',
   },
   {
     href: '/field-sales-ai/debrief',
@@ -83,6 +91,7 @@ const ADVANCED_TOOLS = [
     description: 'Type raw notes → get CRM update, follow-up email, risk analysis & next-best-actions instantly.',
     color: 'from-cyan-500 to-teal-500',
     badge: 'AI DEBRIEF',
+    persona: '/personas/persona-debrief-rm.png',
   },
 ];
 
@@ -150,17 +159,24 @@ export default function FieldSalesAIPage() {
               <Link
                 key={mod.href}
                 href={mod.href}
-                className={`group relative bg-white border ${mod.borderColor} rounded-xl p-6 hover:shadow-lg transition-all hover:-translate-y-0.5`}
+                className={`group relative bg-white border ${mod.borderColor} rounded-xl p-6 hover:shadow-lg transition-all hover:-translate-y-0.5 overflow-hidden`}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-11 h-11 bg-gradient-to-br ${mod.gradient} rounded-lg flex items-center justify-center text-xl shadow-md`}>
-                    {mod.icon}
+                  <div className="relative">
+                    <div className={`w-11 h-11 bg-gradient-to-br ${mod.gradient} rounded-lg flex items-center justify-center text-xl shadow-md`}>
+                      {mod.icon}
+                    </div>
+                    {mod.persona && (
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                        <Image src={mod.persona} alt="" width={24} height={24} className="w-full h-full object-cover object-top" />
+                      </div>
+                    )}
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h3 className="text-[15px] font-bold text-gray-900 group-hover:text-blue-700 transition">{mod.title}</h3>
                     <p className="text-[11px] text-gray-500">{mod.subtitle}</p>
                   </div>
-                  <span className="ml-auto text-[9px] font-bold px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">{mod.tag}</span>
+                  <span className="ml-auto text-[9px] font-bold px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200 shrink-0">{mod.tag}</span>
                 </div>
                 <p className="text-[12px] text-gray-600 leading-relaxed">{mod.description}</p>
                 <div className="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 group-hover:gap-2.5 transition-all">
@@ -186,7 +202,14 @@ export default function FieldSalesAIPage() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-5 transition`} />
                 <div className="relative">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl">{tool.icon}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">{tool.icon}</span>
+                      {tool.persona && (
+                        <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-200 shadow-sm group-hover:border-blue-300 transition">
+                          <Image src={tool.persona} alt="" width={32} height={32} className="w-full h-full object-cover object-top" />
+                        </div>
+                      )}
+                    </div>
                     <span className="text-[8px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white">{tool.badge}</span>
                   </div>
                   <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-blue-700 transition">{tool.title}</h4>

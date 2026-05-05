@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
@@ -154,7 +155,11 @@ Keep it PUNCHY. This person has 60 seconds to read this. No fluff.`;
           {!result && !streaming ? (
             <>
               <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6 text-center">
-                <div className="text-5xl mb-3">🏢</div>
+                <div className="flex items-center justify-center gap-4 mb-3">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-orange-300 shadow-lg">
+                    <Image src="/personas/persona-lobby-rm.png" alt="Sales RM" width={64} height={64} className="w-full h-full object-cover object-top" />
+                  </div>
+                </div>
                 <h2 className="text-xl font-black text-gray-900">You&apos;re in the lobby. Meeting in 60 seconds.</h2>
                 <p className="text-sm text-gray-600 mt-2 max-w-md mx-auto">Select a scenario below or type your own — AI generates an instant briefing card you can read before walking in.</p>
               </div>

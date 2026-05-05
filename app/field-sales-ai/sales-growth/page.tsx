@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
@@ -128,15 +129,20 @@ export default function FieldSalesSalesGrowthPage() {
               Back to Field Sales AI
             </Link>
             <div className="flex items-center justify-between">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
-                  <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
-                  Field Sales — Sales &amp; Growth AI
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-lg shrink-0 hidden sm:block">
+                  <Image src="/personas/persona-sales-growth.png" alt="Sales AI" width={56} height={56} className="w-full h-full object-cover object-top" />
                 </div>
-                <h1 className="text-2xl font-bold tracking-tight text-white">Sales & Growth AI Engine</h1>
-                <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
-                  AI-powered tools for prospect research, objection handling, deal closing, and pitch personalization — anchored to HDFC retail asset products.
-                </p>
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
+                    <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
+                    Field Sales — Sales &amp; Growth AI
+                  </div>
+                  <h1 className="text-2xl font-bold tracking-tight text-white">Sales & Growth AI Engine</h1>
+                  <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
+                    AI-powered tools for prospect research, objection handling, deal closing, and pitch personalization — anchored to HDFC retail asset products.
+                  </p>
+                </div>
               </div>
               {messages.length > 0 && <button onClick={clearChat} disabled={streaming} className="text-sm text-red-300 hover:text-red-200 border border-red-400/30 px-4 py-2 rounded-lg font-medium transition disabled:opacity-40">Clear</button>}
             </div>
