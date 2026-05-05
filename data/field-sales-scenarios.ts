@@ -132,6 +132,66 @@ export const FIELD_OBJECTION_SCENARIOS: FieldObjectionScenario[] = [
     competitorMentioned: 'American Express Platinum',
     suggestedApproach: 'Acceptance width in India (AMEX rejected at many places) + domestic benefits (fuel, grocery, movie) + companion card features + SmartBuy portal value'
   },
+  {
+    id: 'obj-cc-corporate-rebate',
+    icon: '💳',
+    category: 'rate',
+    product: 'Corporate Credit Cards',
+    objection: 'Axis gives us 1.2% rebate on annual spend of ₹15 Cr. Your proposal shows 0.9%. That is a difference of ₹4.5 lakh per year. Our CFO will never approve a downgrade in rebates.',
+    customerContext: 'IT company, 4,000 employees, annual T&E spend ₹15 Cr, Axis corporate cards for 5 years, renewing in 60 days.',
+    competitorMentioned: 'Axis Bank (1.2% rebate, established program)',
+    suggestedApproach: 'Rebate is only one part of total value — show: (a) spend control savings (unauthorized spend blocked = 8-10% saving), (b) API integration reducing reconciliation cost, (c) higher per-card limits reducing number of cards needed, (d) fleet/fuel card bundled savings, (e) path to 1.2% at higher volume tier within 12 months'
+  },
+  {
+    id: 'obj-ecom-api',
+    icon: '🛒',
+    category: 'competitor',
+    product: 'Payment Gateway (E-Commerce)',
+    objection: 'Our dev team says HDFC PG documentation is outdated and integration takes 3 weeks versus 2 days with Razorpay. We cannot afford that developer time.',
+    customerContext: 'D2C fashion brand, 120 Cr revenue, 50-person tech team, CTO is the decision blocker. Currently on Razorpay, considering HDFC for cheaper rates.',
+    competitorMentioned: 'Razorpay (2-day integration, superior developer docs)',
+    suggestedApproach: 'Acknowledge developer experience gap honestly + counter with: (a) dedicated integration engineer provided by HDFC, (b) new SmartHub PG with modern REST APIs, (c) sandbox environment for testing, (d) 30 bps cheaper on MDR = ₹36L annual savings that justifies developer time, (e) instant settlement vs T+2 = better cash flow'
+  },
+  {
+    id: 'obj-ecom-settlement',
+    icon: '⏱️',
+    category: 'timing',
+    product: 'ECOM Settlement / Nodal Account',
+    objection: 'Cashfree gives us real-time settlement to sellers. If you take T+1 or T+2, my sellers will leave the platform. They are small businesses who need cash daily.',
+    customerContext: 'Online marketplace, 8,000 sellers, mostly small retailers, platform retains 15% commission, processing 200 Cr/year.',
+    competitorMentioned: 'Cashfree (real-time seller settlement)',
+    suggestedApproach: 'Offer same-day/T+0 settlement for eligible sellers + show: (a) RBI-compliant nodal account is mandatory — we handle compliance, (b) auto-split (commission retention + seller payout) reduces manual reconciliation, (c) seller lending program based on transaction data = higher seller retention, (d) phased migration with parallel run'
+  },
+  {
+    id: 'obj-las-margin',
+    icon: '📉',
+    category: 'product',
+    product: 'Loan Against Securities',
+    objection: 'ICICI LAS allows 60% LTV on mutual funds and gives me a 3-day grace period on margin calls. Your LTV is only 50% and you sell my units on the same day if margin is breached. That is unacceptable.',
+    customerContext: 'HNI, ₹5 Cr in MF, needs ₹2.5 Cr overdraft, has LAS with ICICI but exploring HDFC for better rates.',
+    competitorMentioned: 'ICICI Bank (60% LTV, 3-day margin call grace)',
+    suggestedApproach: 'Correct the misconception (HDFC does offer 65% LTV on approved MFs) + show: (a) grace period of 2 business days for margin shortfall, (b) proactive alerts before margin breach (SMS + RM call), (c) OD interest-only model = pay only on what you draw, (d) rate advantage (8.75% vs 9.5%), (e) pledge process is fully digital — no physical DIS required'
+  },
+  {
+    id: 'obj-dpps-migration',
+    icon: '🏦',
+    category: 'process',
+    product: 'Salary Accounts / Direct Payment Products',
+    objection: 'We have 10,000 salary accounts with SBI. Every employee has auto-debit mandates, EMIs, and insurance linked to SBI accounts. Switching will cause chaos. Last time we tried with Kotak, 300 employees complained.',
+    customerContext: 'Manufacturing conglomerate, 10,000 employees, SBI salary accounts for 8 years, Group HR Head is risk-averse about disruption.',
+    competitorMentioned: 'SBI (10,000 salary accounts, 8-year relationship)',
+    suggestedApproach: 'Don\'t propose full migration — offer "dual salary" approach: (a) new joiners start with HDFC, (b) existing employees given choice with incentive to switch (credit card pre-approved, higher OD limit), (c) dedicated migration desk handles NACH/mandate transfers, (d) 90-day parallel run where salary goes to both accounts, (e) show Kotak failure was due to no migration support — HDFC provides dedicated SPOC team'
+  },
+  {
+    id: 'obj-dbc-compliance',
+    icon: '🔒',
+    category: 'trust',
+    product: 'Digital Banking / BaaS / API Banking',
+    objection: 'RBI has been cracking down on fintech-bank partnerships. What if regulations change and you pull the plug on our integration? We have 2 million users depending on this.',
+    customerContext: 'Fintech, 2M users, wants to embed HDFC products (FD, lending, cards) via API, worried about regulatory risk.',
+    competitorMentioned: 'N/A (regulatory environment)',
+    suggestedApproach: 'Acknowledge concern as valid + show: (a) HDFC has the largest fintech partnership ecosystem — not pulling back, (b) partnership agreement includes 12-month wind-down clause, (c) HDFC has dedicated Digital Banking Channel team for compliance co-management, (d) RBI digital lending guidelines actually favor bank-led partnerships, (e) risk-sharing model aligns incentives — we succeed when partner succeeds'
+  },
 ];
 
 export const PROSPECT_RESEARCH_SCENARIOS: ProspectResearchScenario[] = [
@@ -201,6 +261,61 @@ export const PROSPECT_RESEARCH_SCENARIOS: ProspectResearchScenario[] = [
     meetingContext: 'Referred by existing customer. Merchant has lost 12L in contracts due to cash-only operations.',
     researchPrompt: 'Meeting a cash-heavy catering business owner (38L/month, 90% cash) who just lost 12L in corporate contracts because they couldn\'t provide digital payment. He fears: GST scrutiny, MDR eating margins, technology complexity. Prepare: (1) Revenue growth model showing digital brings NEW customers, (2) GST myth-busting (input credit actually saves money), (3) MDR cost vs revenue uplift math, (4) Simplest possible technology setup, (5) Business loan pathway after 6 months of digital history, (6) Conversation approach for a traditional business owner who fears change.'
   },
+  {
+    id: 'pr-cc-corporate-bulk',
+    icon: '💳',
+    category: 'corporate',
+    title: 'IT Giant — Corporate Card Program Renewal',
+    description: 'Prepare for a corporate credit card RFP from a large IT services company with 5,000+ employees',
+    customerProfile: 'Vertex Infotech, Mumbai, 2,400 Cr revenue, 5,200 employees, current Axis corporate cards expiring in 90 days, annual T&E spend ₹18 Cr',
+    productFocus: 'Corporate Credit Cards (bulk) + Purchase Cards + Prepaid Travel Cards + Fleet Cards',
+    meetingContext: 'RFP stage — competing against Axis (incumbent) and SBI. Meeting Head of Procurement.',
+    researchPrompt: 'Vertex Infotech (Mumbai, 2,400 Cr revenue, 5,200 employees) is renewing their corporate card program. Axis is the incumbent with 18 Cr annual T&E spend. Pain: poor spend analytics, no API integration with their SAP S/4HANA, and low rebates. SBI also pitching. Meeting Head of Procurement in 1 hour. Prepare: (1) HDFC Corporate Card program features vs Axis/SBI comparison, (2) Spend analytics and control dashboard advantages (grade-wise limits, category blocks, real-time alerts), (3) Rebate structure for 18 Cr annual volume, (4) API integration capability with SAP/ERP, (5) Purchase card value for vendor payments, (6) Fleet card bundling for company vehicles, (7) Migration plan from Axis — zero-disruption employee card reissuance.'
+  },
+  {
+    id: 'pr-ecom-marketplace',
+    icon: '🛒',
+    category: 'corporate',
+    title: 'E-Commerce Marketplace — Unified Payment Stack',
+    description: 'Research a high-volume online marketplace seeking to consolidate payment infrastructure',
+    customerProfile: 'ShopNow India, Bangalore, 800 Cr GMV, 18,000 sellers, split between Razorpay & Cashfree, growing 40% YoY',
+    productFocus: 'Payment Gateway + Nodal Account + Auto-Split Settlement + Seller Lending',
+    meetingContext: 'Meeting CTO and CFO together. They want one partner for everything payments.',
+    researchPrompt: 'ShopNow India (Bangalore, 800 Cr GMV, 18,000 sellers) is consolidating their payment stack from Razorpay + Cashfree split to a single partner. Growing 40% YoY. Meeting CTO (cares about API/uptime) and CFO (cares about settlement speed/cost) together. Prepare: (1) How HDFC PG handles marketplace model (auto-split between platform commission and seller payout), (2) Nodal/escrow account structure for RBI compliance, (3) Settlement speed comparison (T+0 for sellers vs T+2 from Razorpay), (4) Transaction-data-based lending to sellers (HDFC lending as revenue share opportunity for marketplace), (5) API documentation quality and developer support, (6) Uptime SLA guarantees (99.99%), (7) Cross-border payment capability for international sellers, (8) Cost comparison: bank PG vs aggregator PG at 800 Cr volume.'
+  },
+  {
+    id: 'pr-dbc-fintech',
+    icon: '📱',
+    category: 'corporate',
+    title: 'Fintech Startup — Banking-as-a-Service Partnership',
+    description: 'Explore a digital banking co-creation deal with a payments fintech company',
+    customerProfile: 'PayZen Technologies, Bangalore, Series C funded, 2M users, neo-banking app, wants to offer lending and deposits via banking partner',
+    productFocus: 'BankOne API Platform + Co-branded Cards + UPI as PSP + Lending API + FD Partnership',
+    meetingContext: 'Strategic meeting with CEO and CTO. They want to embed banking into their app.',
+    researchPrompt: 'PayZen Technologies (Bangalore, Series C, 2M users, neo-banking app) wants to embed real banking products into their consumer app. Currently working with small banks but want a tier-1 partner. Meeting CEO (business vision) and CTO (API integration). Prepare: (1) HDFC BankOne API platform — what it offers (accounts, cards, lending, deposits via API), (2) How co-branded debit/credit cards work and revenue sharing model, (3) UPI PSP partnership — what it means for PayZen users, (4) Lending API — how PayZen can offer HDFC pre-approved loans in their app, (5) FD-in-app: how fintech users can open HDFC FDs within PayZen, (6) Regulatory considerations (RBI digital lending guidelines, FLDG norms), (7) Competitor analysis — what ICICI/Kotak/Yes offer to fintechs, (8) Revenue model for both parties.'
+  },
+  {
+    id: 'pr-las-hni-wealth',
+    icon: '💎',
+    category: 'individual',
+    title: 'HNI Portfolio Owner — LAS + Wealth Management',
+    description: 'Prepare for a high-net-worth individual seeking liquidity against investment portfolio',
+    customerProfile: 'Anand Malhotra, 55, ex-CEO, ₹12 Cr portfolio (MF ₹6 Cr, equities ₹4 Cr, bonds ₹2 Cr), ICICI Private Banking customer',
+    productFocus: 'Loan Against Securities (OD facility ₹4 Cr) + Education Loan (son at MIT) + Wealth Advisory',
+    meetingContext: 'Referred by existing customer. HNI comparing HDFC vs ICICI Private Banking LAS terms.',
+    researchPrompt: 'Meeting Anand Malhotra (55, ex-CEO, ₹12 Cr portfolio) who wants: (a) ₹4 Cr OD facility against his mutual funds and equities without selling, (b) ₹60L education loan for son going to MIT. Currently with ICICI Private Banking — LAS at 9.5%, 50% LTV, no flexi-drawdown. Prepare: (1) HDFC LAS product features — LTV by asset class (MF vs equity vs bonds), interest rates, margin call mechanism, (2) Comparison with ICICI Private Banking LAS terms, (3) OD vs term loan — why OD is better for HNIs (pay interest only on utilized amount), (4) Education loan cross-sell (concessional rate for existing LAS customer), (5) How to position HDFC Private Banking vs ICICI Private Banking, (6) Wealth advisory as value-add — portfolio restructuring for better LTV, (7) Grace period and flexible margin call handling.'
+  },
+  {
+    id: 'pr-dpps-salary',
+    icon: '🏢',
+    category: 'corporate',
+    title: 'Conglomerate — Salary Account + Prepaid + Treasury',
+    description: 'Research a large corporate for salary account bulk acquisition and direct payment products',
+    customerProfile: 'Vikram Group (diversified conglomerate), Delhi, 12,000 employees across 5 subsidiaries, currently SBI + ICICI for salaries',
+    productFocus: 'Salary Accounts (bulk) + Corporate Prepaid Cards + FD/Sweep + Direct Payment Products',
+    meetingContext: 'Annual banking review — Group CFO consolidating treasury operations. RFP for salary banking.',
+    researchPrompt: 'Vikram Group (Delhi, 12,000 employees, 5 subsidiaries) is consolidating from 3 salary banks to 1-2. Group CFO meeting in 2 hours. They pay 1,200 Cr annual salaries, park 200 Cr in short-term FDs, and issue 500 prepaid cards/quarter for vendor advances. Prepare: (1) HDFC Salary Account program — benefits by employee grade (junior/mid/senior/CXO), (2) Competitive comparison with SBI and ICICI salary programs, (3) Prepaid card for vendor advance payments — controls, limits, reconciliation, (4) Treasury products — sweep-in FD, flexi FD, overnight FD rates, (5) Single dashboard for multi-subsidiary HR payroll, (6) Employee retention impact of premium salary account (home loan preferential, insurance, credit card pre-approved), (7) Migration plan for 12,000 accounts with zero payroll disruption.'
+  },
 ];
 
 export const CLOSING_SCENARIOS: ClosingScenario[] = [
@@ -248,6 +363,42 @@ export const CLOSING_SCENARIOS: ClosingScenario[] = [
     products: ['Payment Gateway', 'Business Loan', 'Current Account', 'Corporate Credit Cards'],
     challenge: 'Razorpay has superior API/developer experience. How to compete with a fintech on technology while leveraging banking strengths?',
     prompt: 'Close a 540 Cr SaaS company away from Razorpay (PG) and Axis (banking). They process 200 Cr annually. Pain points: T+2 settlement from Razorpay, no lending from their PG provider, Axis is slow on trade finance. Create: (1) Integrated banking + PG proposition (instant settlement, TDS management, automatic compliance), (2) Transaction data-backed lending (200 Cr throughput = high business loan eligibility), (3) Competitive comparison: HDFC PG vs Razorpay (where we win: settlement speed, lending, compliance), (4) Migration sweetener (fee waiver first 6 months, dedicated integration support), (5) Relationship bundle: PG + CA + BL + Corporate CC as ecosystem play, (6) Meeting strategy with CEO who cares about growth, not just API docs.'
+  },
+  {
+    id: 'close-cc-corporate-rfp',
+    icon: '💳',
+    title: 'IT Company — Corporate Card Program (5,000 cards) Against Axis',
+    situation: 'DataTech Solutions (3,200 Cr revenue, 5,200 employees) is renewing its Axis corporate card program (₹18 Cr annual T&E spend). Axis offering 1.2% rebate. HDFC proposal at 0.95%. SBI also in the race.',
+    products: ['Corporate Credit Cards', 'Purchase Cards', 'Fleet Cards', 'Prepaid Travel Cards'],
+    challenge: 'Axis incumbent with higher rebate. How to win on total value, not just rebate rate?',
+    prompt: 'Close a 5,200-employee corporate card deal against Axis incumbent. DataTech spends ₹18 Cr/year on T&E. Axis gives 1.2% rebate (₹21.6L/year). Our rebate: 0.95% (₹17.1L/year) — a ₹4.5L gap. Create: (1) Total Value Proposition beyond rebate — spend analytics saving 8-10% on unauthorized expenses (₹1.4 Cr+ saved), (2) API integration with SAP that Axis cannot offer, (3) Purchase card for vendor payments — reduce check/RTGS processing cost, (4) Fleet card bundling for 200 company vehicles (fuel savings ₹8-12L/year), (5) Tiered rebate roadmap showing path to 1.2% within 18 months at higher volume, (6) Migration plan: zero disruption, same-week card reissuance, (7) Procurement Head presentation deck covering TCO over 3 years.'
+  },
+  {
+    id: 'close-ecom-unified',
+    icon: '🛒',
+    title: 'E-Commerce Marketplace — PG + Settlement + Seller Lending',
+    situation: 'MegaMart Online (600 Cr GMV, 15,000 sellers) split between Razorpay & Cashfree. Growing 45% YoY. Needs unified PG, compliant nodal account, and seller lending. CTO wants APIs, CFO wants cheaper rates.',
+    products: ['Payment Gateway', 'Nodal Account', 'Seller Lending', 'BBPS Integration'],
+    challenge: 'Two decision-makers with different priorities (CTO: technology, CFO: cost). How to create a unified pitch that wins both?',
+    prompt: 'Close a 600 Cr marketplace away from Razorpay + Cashfree dual setup. 15,000 sellers, growing 45% YoY. Meeting CTO and CFO together. Create: (1) Unified stack pitch: PG + nodal account + auto-split settlement + seller lending as ONE integrated platform, (2) CTO-targeted: API quality comparison, sandbox access, webhook reliability, uptime SLA guarantee, (3) CFO-targeted: cost comparison at 600 Cr volume (bank PG vs aggregator PG — we are cheaper), (4) Seller lending revenue share model (HDFC lends to sellers based on transaction data — marketplace earns fee), (5) Compliance advantage: RBI nodal account guidelines — we handle everything, (6) Migration roadmap: 4-week phased transition with parallel run, (7) The "grow with us" pitch — as they scale to 2,000 Cr, only a bank can handle settlement compliance at that volume.'
+  },
+  {
+    id: 'close-las-portfolio',
+    icon: '💎',
+    title: 'HNI — ₹4 Cr LAS + Education Loan Against ICICI Private',
+    situation: 'Sunil Malhotra (₹12 Cr portfolio, ex-CEO) wants ₹4 Cr OD against securities + ₹60L education loan for son at Wharton. ICICI Private Banking offers LAS at 9.5%, 50% LTV. HDFC can offer 8.75%, 65% LTV on approved MFs.',
+    products: ['Loan Against Securities (OD)', 'Education Loan', 'Private Banking', 'NRI Services'],
+    challenge: 'Long-standing ICICI Private Banking relationship. How to win on product superiority while building trust for a premium client?',
+    prompt: 'Close an HNI away from ICICI Private Banking. Sunil Malhotra has ₹12 Cr portfolio — ₹6 Cr in MF, ₹4 Cr in equities, ₹2 Cr in bonds. Wants: (a) ₹4 Cr OD facility, (b) ₹60L education loan for son at Wharton. ICICI offers: 9.5% rate, 50% LTV, no grace period on margin calls. Create: (1) Product superiority pitch: 8.75% rate, 65% LTV on approved MFs = ₹7.8L more accessible without selling, (2) OD vs term loan math showing interest savings of ₹3-5L/year, (3) Digital pledge process — no physical DIS, done in 2 hours vs 3 days, (4) Education loan cross-sell at concessional 8.5% (vs standalone 10.5%), (5) Margin call handling: 2-day grace + proactive RM alert before breach, (6) Private Banking experience — dedicated RM + wealth advisory + priority services, (7) Closing strategy: "Don\'t leave ICICI, add HDFC for your liquidity needs" positioning.'
+  },
+  {
+    id: 'close-dpps-salary-treasury',
+    icon: '🏢',
+    title: 'Conglomerate — 12,000 Salary Accounts + Treasury Consolidation',
+    situation: 'Vikram Industries (12,000 employees, 5 subsidiaries) is consolidating from SBI + ICICI + Kotak to 1-2 salary bankers. Also parks ₹200 Cr in short-term FDs and issues 500 prepaid cards/quarter for vendor advances. Group CFO meeting.',
+    products: ['Salary Accounts', 'Corporate Prepaid Cards', 'Fixed Deposits', 'Direct Payment Products'],
+    challenge: 'Risk-averse Group HR Head fears migration disruption. Group CFO wants better treasury returns. Two different stakeholders, two agendas.',
+    prompt: 'Close a 12,000-employee salary account deal + treasury consolidation. Vikram Industries splits across SBI/ICICI/Kotak. Group CFO wants: better FD rates, single treasury dashboard, prepaid card controls. Group HR Head wants: zero payroll disruption, no employee complaints (burned by failed Kotak migration). Create: (1) Dual-stakeholder strategy — how to align CFO (money) and HR (risk) interests, (2) Zero-disruption migration plan: new joinees on HDFC immediately, existing employees voluntary switch with incentives, 90-day parallel run, (3) Treasury value: sweep-in FD rates vs competitors, overnight FD option, liquidity management, (4) Prepaid card for vendor advances: instant issuance, spend controls, auto-reconciliation, (5) Salary account benefits by grade (junior/mid/senior/CXO tier) — credit card pre-approved, home loan preferential, insurance bundle, (6) The "earn more, risk nothing" positioning, (7) ROI model: annual savings from treasury optimization + reduced employee attrition from premium salary benefits.'
   },
 ];
 

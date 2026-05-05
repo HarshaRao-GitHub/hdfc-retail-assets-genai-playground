@@ -15,6 +15,10 @@ const PERSONA_AVATARS: Record<string, string> = {
   'farmer-landowner': '/personas/persona-harinder-singh.png',
   'fleet-owner': '/personas/persona-suresh-reddy.png',
   'merchant-owner': '/personas/persona-kavita-desai.png',
+  'cc-corporate-hr': '/personas/persona-cc-corporate.png',
+  'ecom-platform-ceo': '/personas/persona-ecom-founder.png',
+  'las-hni-investor': '/personas/persona-las-hni.png',
+  'dpps-treasurer': '/personas/persona-dpps-corporate.png',
 };
 
 type Role = 'user' | 'assistant';

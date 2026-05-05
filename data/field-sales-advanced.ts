@@ -71,6 +71,54 @@ export const ROLE_PLAY_PERSONAS = [
     hidden_triggers: ['T+1 settlement', 'unified dashboard for all outlets', 'QR + card acceptance', 'working capital based on transactions'],
     difficulty: 'Medium',
   },
+  {
+    id: 'cc-corporate-hr',
+    name: 'Neha Kapoor — Corporate HR Director',
+    company: 'Nexus Technologies (3,500 employees)',
+    industry: 'IT Services / BPO',
+    personality: 'Process-driven, vendor-evaluation mindset. Currently using Axis corporate cards. Under board pressure to optimize T&E spending. Wants analytics.',
+    product_interest: 'Corporate Credit Cards (bulk) + Commercial Payment Solutions (CPS) + Prepaid Cards for contractor payments',
+    objection_style: 'Benchmarks everything against current provider SLAs, asks about spend analytics, needs bulk issuance guarantees',
+    opening: "We manage travel and expense cards for 3,500 employees. Axis gives us a dedicated portal and spend analytics. Our CFO wants better rebates and more granular controls. What can HDFC offer that Axis can't at this scale?",
+    hidden_triggers: ['spend-category controls per employee grade', 'real-time expense reporting API integration with SAP', 'higher rebate tiers above 5 Cr annual spend', 'fleet fuel card integration'],
+    difficulty: 'Hard',
+  },
+  {
+    id: 'ecom-platform-ceo',
+    name: 'Vikram Nair — E-Commerce Platform CEO',
+    company: 'QuickKart (online marketplace, 12K sellers)',
+    industry: 'E-Commerce / Digital Marketplace',
+    personality: 'Fast-moving, growth-obsessed, data-driven. Currently using Razorpay + Cashfree split. Processing 400 Cr annually. Needs unified payment stack.',
+    product_interest: 'Payment Gateway + Merchant Acquiring (for sellers) + Nodal Account + ECOM Settlement',
+    objection_style: 'Focused on uptime SLA, API latency, split settlement capability, and developer experience',
+    opening: "We process 400 Cr annually across 12,000 sellers. Right now we split between Razorpay and Cashfree — it's a mess. I need one partner who can do acquiring, payment gateway, and seller settlement under one roof. Can HDFC actually handle our scale, or is this going to be another bank with clunky APIs?",
+    hidden_triggers: ['same-day seller settlement', 'auto-split between marketplace and sellers', 'transaction-data-based lending to sellers', 'white-label checkout page', 'multi-currency for cross-border'],
+    difficulty: 'Hard',
+  },
+  {
+    id: 'las-hni-investor',
+    name: 'Mohan Krishnamurthy — HNI Investor',
+    company: 'Retired CTO, portfolio worth ₹8 Cr in MF + equities',
+    industry: 'High Net Worth Individual / Investments',
+    personality: 'Sophisticated, analytical, understands financial products well. Wants liquidity without selling portfolio. Has existing LAS with ICICI at 9.5%.',
+    product_interest: 'Loan Against Securities (LAS) + Education Loan (daughter at Wharton)',
+    objection_style: 'Compares LTV ratios, margin triggers, wants flexible drawdown, concerned about forced liquidation',
+    opening: "I have 8 crore across mutual funds and direct equities. ICICI gives me LAS at 9.5% with 50% LTV. I need 2 crore — partly for my daughter's MBA at Wharton and partly as a standby credit line. What's your LTV and can you do better than 9.5%?",
+    hidden_triggers: ['higher LTV on blue-chip MFs (up to 65%)', 'no forced liquidation below margin — grace period', 'overdraft facility against securities', 'education loan at concessional rate as cross-sell'],
+    difficulty: 'Medium',
+  },
+  {
+    id: 'dpps-treasurer',
+    name: 'Deepak Joshi — Corporate Treasurer',
+    company: 'Reliance-tier Conglomerate (subsidiary)',
+    industry: 'Conglomerate / Corporate Treasury',
+    personality: 'Strategic, process-driven, manages ₹200 Cr+ treasury. Needs prepaid solutions for vendor payments, salary disbursement channels, and FD optimization.',
+    product_interest: 'Corporate Prepaid Cards + Salary Accounts (Bulk) + Fixed Deposits + Direct Payment Products',
+    objection_style: 'Demands SLA guarantees, bulk pricing, API integration, and audit-trail compliance',
+    opening: "We disburse salaries to 8,000 employees, make vendor advance payments worth 40 Cr/month, and park 200 Cr in short-term deposits. Currently split across SBI, Kotak, and ICICI. I'm consolidating to two banks. Convince me HDFC should be one of them.",
+    hidden_triggers: ['sweep-in FD with auto-breakage', 'instant prepaid card issuance for vendor advances', 'salary account benefits that reduce employee attrition', 'single treasury dashboard across products', 'competitive FD rates for 3-6 month tenures'],
+    difficulty: 'Hard',
+  },
 ];
 
 export const DEAL_SCORER_TEMPLATES = [
@@ -94,6 +142,21 @@ export const DEAL_SCORER_TEMPLATES = [
     label: 'Merchant Acquiring / PG',
     template: `Business: [Name, Type, Outlets count]\nMonthly Turnover: ₹[X] Lakh\nCurrent Provider: [Paytm / Pine Labs / Razorpay / Other]\nPain Point: [Downtime / Settlement delay / High MDR / No dashboard]\nProducts Needed: [POS / QR / Payment Gateway / All]\nDecision Timeline: [Immediate / 1 month / Exploring]\nVolume: [Transactions per month]\nBundling Opportunity: [Business loan / Current account / Credit card]`,
   },
+  {
+    id: 'corporate-cc',
+    label: 'Corporate Credit Cards / CPS',
+    template: `Company: [Name]\nIndustry: [Sector]\nEmployee Count: [X]\nAnnual T&E Spend: ₹[X] Cr\nCurrent Card Provider: [Axis / Citi / AMEX / SBI / None]\nCards Needed: [Corporate / Purchase / Fleet / Prepaid]\nKey Requirement: [Spend controls / Analytics / Rebates / API integration]\nDecision Maker: [CFO / Head Procurement / HR Head]\nCompetitor Threat: [Which bank, their offering]\nTimeline: [Renewal cycle / New requirement / Consolidation]`,
+  },
+  {
+    id: 'ecom-pg',
+    label: 'E-Commerce / Payment Gateway',
+    template: `Company: [Name, Type - Marketplace/D2C/Aggregator]\nMonthly GMV: ₹[X] Cr\nCurrent PG Provider: [Razorpay / Cashfree / PayU / CCAvenue]\nSeller/Merchant Count: [X]\nPain Point: [Settlement speed / Split payments / Uptime / Developer experience / Compliance]\nProducts Needed: [PG / Nodal Account / BBPS / VPA / UPI]\nIntegration Complexity: [Simple / Multi-party / Cross-border]\nDecision Maker: [CTO / CFO / CEO]\nTimeline: [Immediate migration / Contract renewal / New launch]`,
+  },
+  {
+    id: 'las-el',
+    label: 'Loan Against Securities / Education Loan',
+    template: `Customer: [Name, Age, Profession]\nPortfolio: [MF / Equities / Bonds / Insurance — value ₹X Cr]\nLoan Purpose: [Liquidity / Business opportunity / Education / Property]\nAmount Needed: ₹[X] Cr\nExisting LAS Provider: [ICICI / Kotak / None]\nLTV Expectation: [50% / 60% / 65%+]\nFacility Type: [Term Loan / Overdraft / Flexi]\nEducation Details: [If EL — University, Country, Course, Duration]\nUrgency: [Immediate / 1-3 months / Planning]`,
+  },
 ];
 
 export const LOBBY_MODE_SCENARIOS = [
@@ -104,6 +167,13 @@ export const LOBBY_MODE_SCENARIOS = [
   { id: 'agri-business', label: 'Agri Business — Fleet + Tractor', industry: 'Agriculture/Agribusiness', company_type: 'Large farm collective', product: 'Tractor Finance + CV Loan' },
   { id: 'hospital', label: 'Hospital Chain — Equipment + PG', industry: 'Healthcare', company_type: 'Multi-specialty hospital', product: 'Business Loan + Payment Gateway' },
   { id: 'logistics', label: 'Logistics Company — CV Fleet', industry: 'Logistics/Transportation', company_type: 'Growing fleet operator', product: 'CV Loan (bulk) + Fuel Card' },
+  { id: 'cc-corporate', label: 'IT Company — Corporate Cards + CPS', industry: 'IT Services', company_type: 'Large IT company (5,000+ employees)', product: 'Corporate Credit Cards + Commercial Payment Solutions' },
+  { id: 'ecom-aggregator', label: 'E-Commerce Aggregator — PG + Settlement', industry: 'E-Commerce/Marketplace', company_type: 'Online marketplace with 10K+ sellers', product: 'Payment Gateway + Nodal Account + Seller Settlement' },
+  { id: 'dbc-fintech', label: 'Fintech — Digital Banking Co-Creation', industry: 'Fintech/Digital Payments', company_type: 'Payments fintech (Series C)', product: 'BankOne API + Co-branded Cards + UPI Rails' },
+  { id: 'las-hni', label: 'HNI Client — Loan Against Securities', industry: 'Wealth Management/HNI', company_type: 'High net worth individual (₹10 Cr+ portfolio)', product: 'LAS (OD facility) + Education Loan' },
+  { id: 'dpps-corporate', label: 'Conglomerate — Prepaid + Salary Accounts', industry: 'Corporate/Conglomerate', company_type: 'Large corporate (8,000+ employees)', product: 'Prepaid Cards + Salary Accounts + FD + Direct Payments' },
+  { id: 'ecom-utility', label: 'Utility/BFSI — Bill Collection + PG', industry: 'Utilities/BFSI', company_type: 'Power distribution or insurance company', product: 'Bill Collection + Payment Gateway + BBPS Integration' },
+  { id: 'abcp-channel', label: 'Insurance Firm — Channel Partnership', industry: 'Insurance/Wealth Management', company_type: 'Life insurance or AMC company', product: 'ABCP Co-branded Products + Distribution Alliance' },
   { id: 'custom', label: 'Custom — Enter Your Own', industry: '', company_type: '', product: '' },
 ];
 
@@ -127,4 +197,9 @@ export const INDUSTRY_NEWS_ITEMS = [
   { sector: 'Healthcare', headline: 'Government announces 200 new medical colleges; private hospital chains expand to tier-3', implication: 'Hospital equipment financing + Payment Gateway for OPD/IPD billing', timestamp: '16 hours ago', sentiment: 'positive' },
   { sector: 'Manufacturing', headline: 'PLI scheme disbursements cross ₹5,000 Cr; electronics and textile sectors lead', implication: 'Manufacturers scaling up — Business Loan + LAP for capacity expansion', timestamp: '18 hours ago', sentiment: 'positive' },
   { sector: 'Fintech / Payments', headline: 'UPI transactions cross 16B/month; merchant digital adoption at 67% in urban India', implication: 'Remaining 33% = greenfield Merchant Acquiring opportunity. Target non-digital merchants.', timestamp: '1 day ago', sentiment: 'positive' },
+  { sector: 'Credit Cards / CPS', headline: 'Corporate T&E spending rebounds 22% post-COVID; enterprises demand spend analytics and API integration', implication: 'Corporate card renewals up — pitch spend control analytics + SAP integration + purchase cards to IT/BFSI companies', timestamp: '1 day ago', sentiment: 'positive' },
+  { sector: 'E-Commerce', headline: 'ONDC crosses 10M monthly orders; D2C brands seek direct payment integrations', implication: 'Marketplace and D2C PG opportunities rising — pitch unified PG + nodal account + seller lending', timestamp: '1 day ago', sentiment: 'positive' },
+  { sector: 'Digital Banking / BaaS', headline: 'RBI finalizes SRO for fintechs; digital lending guidelines clarified for bank-fintech partnerships', implication: 'Regulatory clarity = more fintechs seeking tier-1 bank partners for embedded banking. DBC partnership pipeline grows.', timestamp: '2 days ago', sentiment: 'positive' },
+  { sector: 'Wealth / LAS', headline: 'MF AUM crosses ₹65 lakh Cr; HNI investors increasingly leveraging portfolio for liquidity via LAS', implication: 'LAS demand rising — target HNIs with ₹2 Cr+ MF holdings for OD facility + cross-sell education loan', timestamp: '2 days ago', sentiment: 'positive' },
+  { sector: 'Salary Banking / DPPS', headline: 'India Inc salary account switching accelerates; 35% of corporates reviewed salary banking partner in FY26', implication: 'Salary account acquisition window open — pitch premium benefits, zero-disruption migration, treasury bundling', timestamp: '2 days ago', sentiment: 'positive' },
 ];
