@@ -52,7 +52,7 @@ export default function Header() {
             <ModeLink href="/doc-intelligence" icon="📄" label="Doc Intelligence" />
             <ModeLink href="/sales-ai" icon="📈" label="Sales & Growth AI" />
             <ModeLink href="/use-cases" icon="🎯" label="Use Case Library" />
-            <ModeLink href="/field-sales-ai" icon="🚀" label="Field Sales AI" />
+            <ModeLink href="/field-sales-ai" icon="🚀" label="Retail Assets/Field Sales AI" />
           </nav>
           <nav className="hidden md:flex items-center justify-center gap-1 pb-2 -mt-0.5">
             <NavLink href="/dashboard">Dashboard</NavLink>

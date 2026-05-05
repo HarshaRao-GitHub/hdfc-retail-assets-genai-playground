@@ -10,6 +10,7 @@ import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_USE_CASE_CATEGORIES, FIELD_SALES_USE_CASES, getFieldSalesUseCasesByCategory } from '@/data/field-sales-use-cases';
 import { FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
+import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -145,6 +146,9 @@ function FieldSalesUseCasesContent() {
             <span className="text-amber-600">⚠️</span>
             <span>{FIELD_SALES_DISCLAIMER}</span>
           </div>
+
+          {/* Sales Reference Documents */}
+          <SalesDocumentsPanel />
 
           {/* Category Tabs */}
           <div className="flex flex-wrap gap-2">

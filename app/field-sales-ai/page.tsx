@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Header from '@/components/Header';
+import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 import { FIELD_SALES_USE_CASE_CATEGORIES } from '@/data/field-sales-use-cases';
 import { BEFORE_DURING_AFTER_FRAMEWORK } from '@/data/field-sales-scenarios';
 import { FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
@@ -178,6 +179,11 @@ export default function FieldSalesAIPage() {
               </Link>
             ))}
           </div>
+        </div>
+
+        {/* Sales Reference Documents */}
+        <div className="max-w-7xl mx-auto px-6 pb-6">
+          <SalesDocumentsPanel />
         </div>
 
         {/* Strategic Objectives */}

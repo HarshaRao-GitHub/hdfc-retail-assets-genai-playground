@@ -9,6 +9,7 @@ import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_OBJECTION_SCENARIOS, PROSPECT_RESEARCH_SCENARIOS, CLOSING_SCENARIOS } from '@/data/field-sales-scenarios';
 import { FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
+import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -157,6 +158,9 @@ export default function FieldSalesSalesGrowthPage() {
               🎯 Pitch Builder
             </button>
           </div>
+
+          {/* Sales Reference Documents */}
+          <SalesDocumentsPanel />
 
           {/* Document Context Bar */}
           <div className={`rounded-lg px-4 py-2.5 flex items-center justify-between text-[12px] border ${documents.length > 0 ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-gray-50 border-gray-200 text-gray-500'}`}>

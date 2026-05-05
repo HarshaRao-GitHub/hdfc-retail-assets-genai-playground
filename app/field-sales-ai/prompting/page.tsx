@@ -8,6 +8,7 @@ import EnhanceToCraft from '@/components/EnhanceToCraft';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_LAB_EXPERIMENTS, FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
+import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -180,6 +181,9 @@ export default function FieldSalesPromptingPage() {
               ))}
             </div>
           </div>
+
+          {/* Sales Reference Documents */}
+          <SalesDocumentsPanel />
 
           {/* Chat */}
           <div className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col" style={{ minHeight: '500px' }}>
