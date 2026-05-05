@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useCallback, useEffect } from 'react';
+import Image from 'next/image';
 import Markdown from './Markdown';
 import DownloadMenu from './DownloadMenu';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
@@ -9,6 +10,13 @@ import { useDocuments } from '@/lib/document-context';
 import EnhanceToCraft from './EnhanceToCraft';
 import { SYSTEM_VS_USER_EXAMPLES, HALLUCINATION_EXAMPLES } from '@/data/advanced-features';
 import { FACILITATION_GUIDE } from '@/data/facilitation-guide';
+
+const LEVEL_PERSONAS = [
+  { image: '/personas/prompt-level-l1.png', title: 'Junior Executive', subtitle: 'Entry-level RM' },
+  { image: '/personas/prompt-level-l2.png', title: 'Relationship Manager', subtitle: 'Mid-level Professional' },
+  { image: '/personas/prompt-level-l3.png', title: 'Senior Strategist', subtitle: 'Analytics Expert' },
+  { image: '/personas/prompt-level-l4.png', title: 'Leadership Architect', subtitle: 'C-Suite Thought Leader' },
+];
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -239,14 +247,16 @@ export default function PromptPlayground() {
                 </div>
               </div>
               <div className="flex items-center gap-3 shrink-0">
-                <div className="hidden md:flex items-center gap-2 bg-white/15 backdrop-blur rounded-full px-4 py-1.5">
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-400/30 text-white">L1</span>
-                  <span className="text-white/60 text-sm">&rarr;</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-blue-400/30 text-white">L2</span>
-                  <span className="text-white/60 text-sm">&rarr;</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-purple-400/30 text-white">L3</span>
-                  <span className="text-white/60 text-sm">&rarr;</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-amber-400/30 text-white">L4</span>
+                <div className="hidden md:flex items-center gap-1.5 bg-white/15 backdrop-blur rounded-full px-3 py-1.5">
+                  {LEVEL_PERSONAS.map((p, i) => (
+                    <span key={i} className="flex items-center gap-1">
+                      <span className="w-6 h-6 rounded-full overflow-hidden ring-1 ring-white/40 shadow-sm">
+                        <Image src={p.image} alt={p.title} width={24} height={24} className="w-full h-full object-cover" />
+                      </span>
+                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${['bg-emerald-400/30','bg-blue-400/30','bg-purple-400/30','bg-amber-400/30'][i]} text-white`}>L{i+1}</span>
+                      {i < 3 && <span className="text-white/50 text-xs mx-0.5">&rarr;</span>}
+                    </span>
+                  ))}
                 </div>
                 <svg className={`w-5 h-5 text-white/80 transition-transform duration-300 ${labExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -285,20 +295,32 @@ export default function PromptPlayground() {
                           </div>
                         </button>
                         {isOpen && (
-                          <div className="px-5 pb-4 pt-1 border-t border-gray-100 space-y-2.5">
+                          <div className="px-5 pb-4 pt-1 border-t border-gray-100 space-y-3">
                             {exp.levels.map((level, lvi) => {
                               const stepColors = ['border-l-emerald-400 hover:bg-emerald-50/50', 'border-l-blue-400 hover:bg-blue-50/50', 'border-l-purple-400 hover:bg-purple-50/50', 'border-l-amber-400 hover:bg-amber-50/50'];
+                              const persona = LEVEL_PERSONAS[lvi];
+                              const glowColors = ['ring-emerald-200', 'ring-blue-200', 'ring-purple-200', 'ring-amber-200'];
                               return (
-                                <button key={lvi} onClick={() => handlePromptClick(level.prompt, level.tag)} className={`w-full text-left group rounded-lg border border-gray-100 border-l-[3px] ${stepColors[lvi]} bg-white p-3.5 transition-all hover:shadow-sm`}>
-                                  <div className="flex items-center gap-2.5 mb-2">
-                                    <span className={`text-xs font-bold px-2.5 py-1 rounded-md border ${level.color}`}>{level.tag}</span>
-                                    <span className="text-sm font-semibold text-gray-800 group-hover:text-hdfc-blue transition">{level.label}</span>
-                                    {lvi === 3 && <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">C &middot; R &middot; A &middot; F &middot; T</span>}
-                                    <svg className="w-4 h-4 text-gray-300 group-hover:text-hdfc-blue ml-auto transition shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                    </svg>
+                                <button key={lvi} onClick={() => handlePromptClick(level.prompt, level.tag)} className={`w-full text-left group rounded-lg border border-gray-100 border-l-[3px] ${stepColors[lvi]} bg-white p-4 transition-all hover:shadow-md`}>
+                                  <div className="flex items-start gap-3.5">
+                                    <div className="shrink-0 relative">
+                                      <div className={`w-12 h-12 rounded-full overflow-hidden ring-2 ${glowColors[lvi]} shadow-md`}>
+                                        <Image src={persona.image} alt={persona.title} width={48} height={48} className="w-full h-full object-cover" />
+                                      </div>
+                                      <span className={`absolute -bottom-1 -right-1 text-[9px] font-extrabold px-1.5 py-0.5 rounded-full border ${level.color} shadow-sm`}>{level.tag}</span>
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-sm font-bold text-gray-900 group-hover:text-hdfc-blue transition">{level.label}</span>
+                                        <span className="text-[10px] text-gray-400 font-medium">{persona.title}</span>
+                                        {lvi === 3 && <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">C &middot; R &middot; A &middot; F &middot; T</span>}
+                                        <svg className="w-4 h-4 text-gray-300 group-hover:text-hdfc-blue ml-auto transition shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                        </svg>
+                                      </div>
+                                      <p className="text-[13px] text-gray-700 leading-relaxed whitespace-pre-line">{level.prompt}</p>
+                                    </div>
                                   </div>
-                                  <p className="text-[13px] text-gray-700 leading-relaxed transition whitespace-pre-line">{level.prompt}</p>
                                 </button>
                               );
                             })}
