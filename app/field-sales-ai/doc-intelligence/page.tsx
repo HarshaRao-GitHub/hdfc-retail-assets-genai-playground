@@ -35,6 +35,7 @@ export default function FieldSalesDocIntelligencePage() {
   const [loadingSample, setLoadingSample] = useState<string | null>(null);
   const [previewDoc, setPreviewDoc] = useState<PreviewData | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatSectionRef = useRef<HTMLDivElement>(null);
   const streamThrottleRef = useRef<number>(0);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -50,6 +51,7 @@ export default function FieldSalesDocIntelligencePage() {
   }, [messages, streaming]);
 
   const scrollToBottom = useCallback(() => { chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }); }, []);
+  const scrollToChat = useCallback(() => { chatSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, []);
 
   async function loadSampleFile(path: string, filename: string) {
     setLoadingSample(filename);
@@ -248,6 +250,7 @@ export default function FieldSalesDocIntelligencePage() {
             const bgColor = isStandard ? 'bg-blue-50 border-blue-200' : 'bg-purple-50 border-purple-200';
             const textColor = isStandard ? 'text-blue-700' : 'text-purple-700';
             const btnBorder = isStandard ? 'border-blue-200 text-blue-800 hover:bg-blue-100' : 'border-purple-200 text-purple-800 hover:bg-purple-100';
+            const accentColor = isStandard ? 'border-blue-500 text-blue-700 hover:bg-blue-600 hover:text-white' : 'border-purple-500 text-purple-700 hover:bg-purple-600 hover:text-white';
             return (
               <div className={`${bgColor} border rounded-lg p-4`}>
                 <div className="flex items-center gap-2 mb-2">
@@ -255,12 +258,18 @@ export default function FieldSalesDocIntelligencePage() {
                   <span className={`text-[12px] font-bold ${textColor}`}>{activeOperation.label}</span>
                 </div>
                 <p className={`text-[11px] ${textColor} font-medium mb-3`}>{activeOperation.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 items-center">
                   {activeOperation.starterPrompts.map((sp, i) => (
-                    <button key={i} onClick={() => { setInput(sp); inputRef.current?.focus(); }} className={`text-[10px] bg-white border ${btnBorder} px-3 py-1.5 rounded-md transition font-medium`}>
+                    <button key={i} onClick={() => { setInput(sp); inputRef.current?.focus(); scrollToChat(); }} className={`text-[10px] bg-white border ${btnBorder} px-3 py-1.5 rounded-md transition font-medium`}>
                       {sp}
                     </button>
                   ))}
+                  <button
+                    onClick={() => { setInput(''); inputRef.current?.focus(); scrollToChat(); }}
+                    className={`text-[10px] font-bold border-2 ${accentColor} px-3 py-1.5 rounded-md transition flex items-center gap-1`}
+                  >
+                    ✏️ Custom Prompt
+                  </button>
                 </div>
               </div>
             );
@@ -335,7 +344,7 @@ export default function FieldSalesDocIntelligencePage() {
           </div>
 
           {/* Chat */}
-          <div className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col" style={{ minHeight: '500px' }}>
+          <div ref={chatSectionRef} className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col" style={{ minHeight: '500px' }}>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {transcript.length === 0 && !streaming && (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
