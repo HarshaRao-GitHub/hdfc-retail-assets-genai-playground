@@ -9,7 +9,7 @@ import EnhanceToCraft from '@/components/EnhanceToCraft';
 import HallucinationDetector from '@/components/HallucinationDetector';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
-import { FIELD_SALES_DOC_CATEGORIES, FIELD_SALES_DOC_OPERATIONS } from '@/data/field-sales-doc-config';
+import { FIELD_SALES_DOC_CATEGORIES, FIELD_SALES_DOC_OPERATIONS, FIELD_SALES_STANDARD_OPERATIONS } from '@/data/field-sales-doc-config';
 import { FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
 
 type Role = 'user' | 'assistant';
@@ -93,7 +93,7 @@ export default function FieldSalesDocIntelligencePage() {
     setStreamBuffer('');
     setTimeout(scrollToBottom, 50);
 
-    const operation = FIELD_SALES_DOC_OPERATIONS.find(op => op.id === selectedOperation);
+    const operation = FIELD_SALES_DOC_OPERATIONS.find(op => op.id === selectedOperation) ?? FIELD_SALES_STANDARD_OPERATIONS.find(op => op.id === selectedOperation);
     const systemContext = operation?.systemPromptTemplate ?? 'You are a Field Sales Intelligence AI for HDFC Bank Retail Assets. Analyze uploaded documents (prospect profiles, competitor data, pipeline, industry research) and provide actionable sales intelligence — pre-meeting briefs, competitive battle cards, deal prioritization, cross-sell mapping, and objection responses. Focus on making the sales professional more prepared, credible, and persuasive.';
 
     try {
@@ -150,7 +150,7 @@ export default function FieldSalesDocIntelligencePage() {
 
   function clearChat() { setMessages([]); setStreamBuffer(''); setInput(''); clearChatHistory(CHAT_KEY as keyof typeof CHAT_KEYS); }
 
-  const activeOperation = FIELD_SALES_DOC_OPERATIONS.find(op => op.id === selectedOperation);
+  const activeOperation = FIELD_SALES_DOC_OPERATIONS.find(op => op.id === selectedOperation) ?? FIELD_SALES_STANDARD_OPERATIONS.find(op => op.id === selectedOperation);
 
   return (
     <>
@@ -199,35 +199,72 @@ export default function FieldSalesDocIntelligencePage() {
             </button>
           </div>
 
-          {/* Operations Selection */}
-          <div>
-            <h3 className="text-[13px] font-bold text-gray-800 mb-2">Select Analysis Operation</h3>
-            <div className="flex flex-wrap gap-2">
-              {FIELD_SALES_DOC_OPERATIONS.map(op => (
-                <button
-                  key={op.id}
-                  onClick={() => setSelectedOperation(selectedOperation === op.id ? null : op.id)}
-                  className={`px-4 py-2 rounded-lg text-[11px] font-bold border transition ${selectedOperation === op.id ? 'bg-purple-600 text-white border-purple-600 shadow-md' : 'bg-white text-gray-600 border-gray-200 hover:border-purple-400'}`}
-                >
-                  {op.icon} {op.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Active Operation Starter Prompts */}
-          {activeOperation && (
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-              <p className="text-[11px] text-purple-700 font-medium mb-2">{activeOperation.description}</p>
+          {/* Operations Selection — Two Tiers */}
+          <div className="space-y-4">
+            {/* Sales-Specific Analysis Operations */}
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">1</span>
+                <h3 className="text-[13px] font-bold text-gray-800">Sales Analysis Operations</h3>
+                <span className="text-[10px] text-gray-400 font-medium">— Pre-built for field sales intelligence</span>
+              </div>
               <div className="flex flex-wrap gap-2">
-                {activeOperation.starterPrompts.map((sp, i) => (
-                  <button key={i} onClick={() => { setInput(sp); inputRef.current?.focus(); }} className="text-[10px] bg-white border border-purple-200 text-purple-800 px-3 py-1.5 rounded-md hover:bg-purple-100 transition font-medium">
-                    {sp}
+                {FIELD_SALES_DOC_OPERATIONS.map(op => (
+                  <button
+                    key={op.id}
+                    onClick={() => setSelectedOperation(selectedOperation === op.id ? null : op.id)}
+                    className={`px-4 py-2 rounded-lg text-[11px] font-bold border transition ${selectedOperation === op.id ? 'bg-purple-600 text-white border-purple-600 shadow-md' : 'bg-white text-gray-600 border-gray-200 hover:border-purple-400'}`}
+                  >
+                    {op.icon} {op.label}
                   </button>
                 ))}
               </div>
             </div>
-          )}
+
+            {/* Standard Document Operations */}
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">2</span>
+                <h3 className="text-[13px] font-bold text-gray-800">Standard Document Operations</h3>
+                <span className="text-[10px] text-gray-400 font-medium">— General-purpose document intelligence</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {FIELD_SALES_STANDARD_OPERATIONS.map(op => (
+                  <button
+                    key={op.id}
+                    onClick={() => setSelectedOperation(selectedOperation === op.id ? null : op.id)}
+                    className={`px-4 py-2 rounded-lg text-[11px] font-bold border transition ${selectedOperation === op.id ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-600 border-gray-200 hover:border-blue-400'}`}
+                  >
+                    {op.icon} {op.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Active Operation Starter Prompts */}
+          {activeOperation && (() => {
+            const isStandard = FIELD_SALES_STANDARD_OPERATIONS.some(op => op.id === selectedOperation);
+            const bgColor = isStandard ? 'bg-blue-50 border-blue-200' : 'bg-purple-50 border-purple-200';
+            const textColor = isStandard ? 'text-blue-700' : 'text-purple-700';
+            const btnBorder = isStandard ? 'border-blue-200 text-blue-800 hover:bg-blue-100' : 'border-purple-200 text-purple-800 hover:bg-purple-100';
+            return (
+              <div className={`${bgColor} border rounded-lg p-4`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-base">{activeOperation.icon}</span>
+                  <span className={`text-[12px] font-bold ${textColor}`}>{activeOperation.label}</span>
+                </div>
+                <p className={`text-[11px] ${textColor} font-medium mb-3`}>{activeOperation.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {activeOperation.starterPrompts.map((sp, i) => (
+                    <button key={i} onClick={() => { setInput(sp); inputRef.current?.focus(); }} className={`text-[10px] bg-white border ${btnBorder} px-3 py-1.5 rounded-md transition font-medium`}>
+                      {sp}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Sample Data Categories */}
           <div>
