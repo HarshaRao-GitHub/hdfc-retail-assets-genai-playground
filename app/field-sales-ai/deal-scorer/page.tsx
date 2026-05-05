@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
+import HallucinationDetector from '@/components/HallucinationDetector';
 import { DEAL_SCORER_TEMPLATES } from '@/data/field-sales-advanced';
 
 export default function DealScorerPage() {
@@ -226,6 +227,10 @@ OUTPUT FORMAT (follow exactly):
                   {!streaming && (
                     <div className="mt-3 pt-2 border-t border-gray-200">
                       <DownloadMenu content={displayResult} filenamePrefix="deal-score" />
+                      <HallucinationDetector
+                        content={displayResult}
+                        originalPrompt={input}
+                      />
                     </div>
                   )}
                 </div>

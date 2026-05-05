@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
+import HallucinationDetector from '@/components/HallucinationDetector';
 import { LOBBY_MODE_SCENARIOS } from '@/data/field-sales-advanced';
 
 export default function LobbyModePage() {
@@ -216,11 +217,17 @@ Keep it PUNCHY. This person has 60 seconds to read this. No fluff.`;
                   <Markdown isStreaming={streaming}>{result}</Markdown>
                 </div>
                 {!streaming && result && (
-                  <div className="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between">
-                    <DownloadMenu content={result} filenamePrefix="lobby-briefing" />
-                    <button onClick={reset} className="text-[11px] font-semibold text-orange-700 hover:text-orange-900 px-3 py-1.5 border border-orange-300 rounded-md hover:bg-orange-50 transition">
-                      New Briefing
-                    </button>
+                  <div className="mt-4 pt-3 border-t border-gray-200 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <DownloadMenu content={result} filenamePrefix="lobby-briefing" />
+                      <button onClick={reset} className="text-[11px] font-semibold text-orange-700 hover:text-orange-900 px-3 py-1.5 border border-orange-300 rounded-md hover:bg-orange-50 transition">
+                        New Briefing
+                      </button>
+                    </div>
+                    <HallucinationDetector
+                      content={result}
+                      originalPrompt={selectedScenario === 'custom' ? customInput : `Lobby briefing for ${LOBBY_MODE_SCENARIOS.find(s => s.id === selectedScenario)?.label ?? 'scenario'}`}
+                    />
                   </div>
                 )}
               </div>

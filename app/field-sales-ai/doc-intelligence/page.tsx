@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import EnhanceToCraft from '@/components/EnhanceToCraft';
+import HallucinationDetector from '@/components/HallucinationDetector';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_DOC_CATEGORIES, FIELD_SALES_DOC_OPERATIONS } from '@/data/field-sales-doc-config';
@@ -322,6 +323,12 @@ export default function FieldSalesDocIntelligencePage() {
                       {!streaming && msg.content && (
                         <div className="mt-3 pt-2.5 border-t border-gray-200">
                           <DownloadMenu content={msg.content} filenamePrefix="field-sales-intel" />
+                          <HallucinationDetector
+                            content={msg.content}
+                            originalPrompt={messages[i - 1]?.content ?? ''}
+                            context={documents.length > 0 ? `Documents loaded: ${documents.map(d => d.filename).join(', ')}` : undefined}
+                            onRegenerate={(instructions) => { setInput(`[Regenerate with less hallucination]: ${instructions}\n\nOriginal request: ${messages[i - 1]?.content ?? ''}`); }}
+                          />
                         </div>
                       )}
                     </div>

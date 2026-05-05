@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
+import HallucinationDetector from '@/components/HallucinationDetector';
 import { DEBRIEF_TEMPLATES } from '@/data/field-sales-advanced';
 
 export default function DebriefPage() {
@@ -263,14 +264,20 @@ IMPORTANT: All data is SYNTHETIC. Generate realistic but fictional details.`;
 
                   {/* Footer */}
                   {!streaming && (
-                    <div className="border-t border-gray-200 bg-gray-50 px-5 py-3 flex items-center justify-between">
-                      <DownloadMenu content={result} filenamePrefix="meeting-debrief" />
-                      <button
-                        onClick={() => { navigator.clipboard.writeText(result); }}
-                        className="text-[11px] font-semibold text-gray-700 hover:text-cyan-700 px-3 py-1.5 border border-gray-300 rounded-md hover:bg-white transition"
-                      >
-                        📋 Copy All
-                      </button>
+                    <div className="border-t border-gray-200 bg-gray-50 px-5 py-3 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <DownloadMenu content={result} filenamePrefix="meeting-debrief" />
+                        <button
+                          onClick={() => { navigator.clipboard.writeText(result); }}
+                          className="text-[11px] font-semibold text-gray-700 hover:text-cyan-700 px-3 py-1.5 border border-gray-300 rounded-md hover:bg-white transition"
+                        >
+                          📋 Copy All
+                        </button>
+                      </div>
+                      <HallucinationDetector
+                        content={result}
+                        originalPrompt={notes}
+                      />
                     </div>
                   )}
                 </div>

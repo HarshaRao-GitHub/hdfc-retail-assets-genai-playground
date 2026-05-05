@@ -10,6 +10,7 @@ import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_LAB_EXPERIMENTS, FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
 import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
+import HallucinationDetector from '@/components/HallucinationDetector';
 
 type Role = 'user' | 'assistant';
 interface ChatMessage { role: Role; content: string; }
@@ -216,6 +217,11 @@ export default function FieldSalesPromptingPage() {
                       {!streaming && msg.content && (
                         <div className="mt-3 pt-2.5 border-t border-gray-200">
                           <DownloadMenu content={msg.content} filenamePrefix="field-sales-prompt" />
+                          <HallucinationDetector
+                            content={msg.content}
+                            originalPrompt={messages[i - 1]?.content ?? ''}
+                            onRegenerate={(instructions) => { setInput(`[Regenerate with less hallucination]: ${instructions}\n\nOriginal request: ${messages[i - 1]?.content ?? ''}`); }}
+                          />
                         </div>
                       )}
                     </div>
