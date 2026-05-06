@@ -206,43 +206,6 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Program Structure */}
-        <section className="max-w-7xl mx-auto px-6 py-10">
-          <div className="mb-6">
-            <h2 className="text-xl font-bold text-hdfc-blue">2-Day Program Structure</h2>
-            <p className="text-[13px] text-hdfc-slate mt-1">
-              8 hours/day | Audience: n-1, n-2 Leaders — Sales, Product, Portfolio, Service
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <DayCard
-              day={1}
-              theme="GenAI Fundamentals + Retail Asset Lifecycle"
-              focus="Awareness, Automation, Prompt Engineering"
-              sessions={[
-                { time: '9:00-10:30', title: 'AI & GenAI Fundamentals for Business Leaders' },
-                { time: '10:45-12:30', title: 'Prompt Engineering + Automation — STAR SESSION' },
-                { time: '1:30-3:00', title: 'GenAI in Retail Asset Lifecycle' },
-                { time: '3:15-4:45', title: 'Document Processing — Extended Session' },
-                { time: '4:45-5:30', title: 'Customer Engagement & Personalization' },
-                { time: '5:30-6:00', title: 'Day 1 Debrief + Case Studies' },
-              ]}
-            />
-            <DayCard
-              day={2}
-              theme="Advanced Use Cases + Capstone"
-              focus="Upselling, Cross-sell, Service, Roadmaps"
-              sessions={[
-                { time: '9:00-10:45', title: 'AI for Operational Efficiency' },
-                { time: '11:00-12:00', title: 'Fraud Detection & Compliance — Awareness Only' },
-                { time: '12:00-1:30', title: 'Sales Forecasting & Upselling — Extended' },
-                { time: '2:30-3:30', title: 'Service Branch Use Cases' },
-                { time: '3:45-4:45', title: 'Creating AI Roadmap for Teams' },
-                { time: '4:45-6:00', title: 'Capstone Group Activity + Presentation' },
-              ]}
-            />
-          </div>
-        </section>
       </main>
 
       <footer className="border-t border-hdfc-line bg-white">
@@ -256,32 +219,5 @@ export default function Dashboard() {
         </div>
       </footer>
     </>
-  );
-}
-
-function DayCard({ day, theme, focus, sessions }: {
-  day: number;
-  theme: string;
-  focus: string;
-  sessions: { time: string; title: string }[];
-}) {
-  return (
-    <div className="bg-white rounded-xl border border-hdfc-line overflow-hidden">
-      <div className={`px-5 py-4 ${day === 1 ? 'bg-hdfc-blue' : 'bg-hdfc-slate'} text-white`}>
-        <div className="text-[10px] font-mono uppercase tracking-wider text-white/60">Day {day}</div>
-        <h3 className="text-[15px] font-bold mt-1">{theme}</h3>
-        <p className="text-[11px] text-white/70 mt-0.5">{focus}</p>
-      </div>
-      <div className="divide-y divide-hdfc-line">
-        {sessions.map((s, i) => (
-          <div key={i} className="flex items-start gap-3 px-5 py-3">
-            <span className="text-[11px] font-mono text-hdfc-slate whitespace-nowrap mt-0.5">{s.time}</span>
-            <span className={`text-[13px] ${s.title.includes('STAR') || s.title.includes('Extended') ? 'font-bold text-hdfc-red' : 'text-hdfc-blue font-medium'}`}>
-              {s.title}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
