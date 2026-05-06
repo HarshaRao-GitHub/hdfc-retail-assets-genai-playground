@@ -36,12 +36,6 @@ export default function Header() {
               </span>
             )}
           </button>
-          <Link
-            href="/"
-            className="px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition border border-white/15"
-          >
-            Switch Client
-          </Link>
         </div>
       </div>
 
