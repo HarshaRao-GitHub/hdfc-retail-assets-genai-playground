@@ -6,6 +6,7 @@ import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import HITLReviewPanel from '@/components/HITLReviewPanel';
 import type { HITLEvent } from '@/components/HITLReviewPanel';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { useDocuments } from '@/lib/document-context';
 import EnhanceToCraft from '@/components/EnhanceToCraft';
@@ -457,6 +458,10 @@ export default function SalesAIPage() {
                       {!streaming && msg.content && (
                         <div className="mt-3 pt-2.5 border-t border-gray-200">
                           <DownloadMenu content={msg.content} filenamePrefix="hdfc-sales-analysis" />
+                          <AIOutputReviewPanel
+                            content={msg.content}
+                            originalPrompt={messages[i - 1]?.content ?? ''}
+                          />
                         </div>
                       )}
                     </div>

@@ -6,6 +6,7 @@ import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
 import HITLReviewPanel from '@/components/HITLReviewPanel';
 import type { HITLEvent } from '@/components/HITLReviewPanel';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 import { USE_CASES, USE_CASE_CATEGORIES } from '@/data/use-cases';
 import { MYTHS_VS_REALITY, HITL_SCENARIOS, HITL_APPROVER_ROLES } from '@/data/advanced-features';
 import { FACILITATION_GUIDE, THIRTY_DAY_PLAN_TEMPLATE, BUILD_BUY_EXAMPLES } from '@/data/facilitation-guide';
@@ -749,6 +750,10 @@ export default function UseCasesPage() {
                             {!streaming && msg.content && (
                               <div className="mt-3 pt-2.5 border-t border-gray-200">
                                 <DownloadMenu content={msg.content} filenamePrefix="hdfc-custom-usecase" />
+                                <AIOutputReviewPanel
+                                  content={msg.content}
+                                  originalPrompt={messages[i - 1]?.content ?? ''}
+                                />
                               </div>
                             )}
                           </div>

@@ -10,7 +10,7 @@ import EnhanceToCraft from '@/components/EnhanceToCraft';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_LAB_EXPERIMENTS, FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
-import HallucinationDetector from '@/components/HallucinationDetector';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 
 const LEVEL_PERSONAS = [
   { image: '/personas/prompt-level-l1.png', title: 'Junior Executive' },
@@ -244,7 +244,7 @@ export default function FieldSalesPromptingPage() {
                       {!streaming && msg.content && (
                         <div className="mt-3 pt-2.5 border-t border-gray-200">
                           <DownloadMenu content={msg.content} filenamePrefix="field-sales-prompt" />
-                          <HallucinationDetector
+                          <AIOutputReviewPanel
                             content={msg.content}
                             originalPrompt={messages[i - 1]?.content ?? ''}
                             onRegenerate={(instructions) => { setInput(`[Regenerate with less hallucination]: ${instructions}\n\nOriginal request: ${messages[i - 1]?.content ?? ''}`); }}

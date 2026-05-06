@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
-import HallucinationDetector from '@/components/HallucinationDetector';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 import { DEBRIEF_TEMPLATES } from '@/data/field-sales-advanced';
 
 export default function DebriefPage() {
@@ -280,7 +280,7 @@ IMPORTANT: All data is SYNTHETIC. Generate realistic but fictional details.`;
                           📋 Copy All
                         </button>
                       </div>
-                      <HallucinationDetector
+                      <AIOutputReviewPanel
                         content={result}
                         originalPrompt={notes}
                       />

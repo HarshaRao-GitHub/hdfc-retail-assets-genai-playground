@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
-import HallucinationDetector from '@/components/HallucinationDetector';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 import { LOBBY_MODE_SCENARIOS } from '@/data/field-sales-advanced';
 
 export default function LobbyModePage() {
@@ -229,7 +229,7 @@ Keep it PUNCHY. This person has 60 seconds to read this. No fluff.`;
                         New Briefing
                       </button>
                     </div>
-                    <HallucinationDetector
+                    <AIOutputReviewPanel
                       content={result}
                       originalPrompt={selectedScenario === 'custom' ? customInput : `Lobby briefing for ${LOBBY_MODE_SCENARIOS.find(s => s.id === selectedScenario)?.label ?? 'scenario'}`}
                     />

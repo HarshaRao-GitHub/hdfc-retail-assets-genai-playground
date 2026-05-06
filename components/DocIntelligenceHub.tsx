@@ -13,6 +13,7 @@ import {
 import { FACILITATION_GUIDE } from '@/data/facilitation-guide';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import DownloadMenu from './DownloadMenu';
+import AIOutputReviewPanel from './AIOutputReviewPanel';
 import { useDocuments } from '@/lib/document-context';
 import EnhanceToCraft from './EnhanceToCraft';
 
@@ -678,7 +679,7 @@ export default function DocIntelligenceHub() {
               </div>
             ) : (
               transcript.map((msg, i) => (
-                <ResultBubble key={i} message={msg} isStreaming={streaming && msg.role === 'assistant' && i === transcript.length - 1} />
+                <ResultBubble key={i} message={msg} isStreaming={streaming && msg.role === 'assistant' && i === transcript.length - 1} originalPrompt={msg.role === 'assistant' ? transcript[i - 1]?.content : undefined} />
               ))
             )}
 
@@ -733,7 +734,7 @@ export default function DocIntelligenceHub() {
   );
 }
 
-function ResultBubble({ message, isStreaming }: { message: ChatMessage; isStreaming: boolean }) {
+function ResultBubble({ message, isStreaming, originalPrompt }: { message: ChatMessage; isStreaming: boolean; originalPrompt?: string }) {
   const [copied, setCopied] = useState(false);
   const [expanded, setExpanded] = useState(false);
   if (message.role === 'user') {
@@ -785,16 +786,22 @@ function ResultBubble({ message, isStreaming }: { message: ChatMessage; isStream
               </div>
             )}
             {!isStreaming && message.content && (
-              <div className="mt-3 pt-2.5 border-t border-gray-200 flex items-center gap-3">
-                <DownloadMenu content={message.content} filenamePrefix="hdfc-doc-intelligence" />
-                <button onClick={handleCopy} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-800 font-semibold px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition">
-                  {copied ? (
-                    <><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg><span className="text-emerald-700 font-bold">Copied!</span></>
-                  ) : (
-                    <><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</>
-                  )}
-                </button>
-              </div>
+              <>
+                <div className="mt-3 pt-2.5 border-t border-gray-200 flex items-center gap-3">
+                  <DownloadMenu content={message.content} filenamePrefix="hdfc-doc-intelligence" />
+                  <button onClick={handleCopy} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-800 font-semibold px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition">
+                    {copied ? (
+                      <><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg><span className="text-emerald-700 font-bold">Copied!</span></>
+                    ) : (
+                      <><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</>
+                    )}
+                  </button>
+                </div>
+                <AIOutputReviewPanel
+                  content={message.content}
+                  originalPrompt={originalPrompt ?? ''}
+                />
+              </>
             )}
           </>
         ) : (

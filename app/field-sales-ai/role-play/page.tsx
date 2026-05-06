@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Markdown from '@/components/Markdown';
 import DownloadMenu from '@/components/DownloadMenu';
+import AIOutputReviewPanel from '@/components/AIOutputReviewPanel';
 import { ROLE_PLAY_PERSONAS } from '@/data/field-sales-advanced';
 
 const PERSONA_AVATARS: Record<string, string> = {
@@ -412,6 +413,10 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                         {!scoringInProgress && (
                           <div className="mt-3 pt-2 border-t border-gray-200">
                             <DownloadMenu content={scoreData} filenamePrefix="roleplay-score" />
+                            <AIOutputReviewPanel
+                              content={scoreData}
+                              originalPrompt="Score my role-play sales conversation performance"
+                            />
                           </div>
                         )}
                       </div>

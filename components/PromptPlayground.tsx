@@ -4,6 +4,7 @@ import { useRef, useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Markdown from './Markdown';
 import DownloadMenu from './DownloadMenu';
+import AIOutputReviewPanel from './AIOutputReviewPanel';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { LAB_EXPERIMENTS, PROMPT_LADDERS, DISCLAIMER_TEXT } from '@/data/prompt-templates';
 import { useDocuments } from '@/lib/document-context';
@@ -350,7 +351,7 @@ export default function PromptPlayground() {
                 </div>
               )}
               {transcript.map((msg, i) => (
-                <ChatBubble key={i} message={msg} isStreaming={streaming && msg.role === 'assistant' && i === transcript.length - 1} />
+                <ChatBubble key={i} message={msg} isStreaming={streaming && msg.role === 'assistant' && i === transcript.length - 1} originalPrompt={msg.role === 'assistant' ? transcript[i - 1]?.content : undefined} />
               ))}
               {streaming && !streamBuffer && (
                 <div className="px-4 py-3 space-y-2">
@@ -699,7 +700,7 @@ export default function PromptPlayground() {
   );
 }
 
-function ChatBubble({ message, isStreaming }: { message: ChatMessage; isStreaming: boolean }) {
+function ChatBubble({ message, isStreaming, originalPrompt }: { message: ChatMessage; isStreaming: boolean; originalPrompt?: string }) {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -736,14 +737,20 @@ function ChatBubble({ message, isStreaming }: { message: ChatMessage; isStreamin
               </div>
             )}
             {!isStreaming && message.content && (
-              <div className="mt-3 pt-2.5 border-t border-gray-200 flex items-center gap-3">
-                <DownloadMenu content={message.content} filenamePrefix="hdfc-analysis" />
-                <button onClick={handleCopy} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-800 font-semibold px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition">
-                  {copied ? <span className="text-emerald-700 font-bold">Copied!</span> : <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy
-                  </>}
-                </button>
-              </div>
+              <>
+                <div className="mt-3 pt-2.5 border-t border-gray-200 flex items-center gap-3">
+                  <DownloadMenu content={message.content} filenamePrefix="hdfc-analysis" />
+                  <button onClick={handleCopy} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-800 font-semibold px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition">
+                    {copied ? <span className="text-emerald-700 font-bold">Copied!</span> : <>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy
+                    </>}
+                  </button>
+                </div>
+                <AIOutputReviewPanel
+                  content={message.content}
+                  originalPrompt={originalPrompt ?? ''}
+                />
+              </>
             )}
           </>
         ) : (
