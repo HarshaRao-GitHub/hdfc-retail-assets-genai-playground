@@ -126,7 +126,7 @@ export default function FieldSalesSalesGrowthPage() {
           <div className="max-w-7xl mx-auto px-6 pt-3 pb-5">
             <Link href="/field-sales-ai" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-[11px] font-medium mb-3 transition group">
               <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Back to Field Sales AI
+              Back to Retail Assets AI
             </Link>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -136,7 +136,7 @@ export default function FieldSalesSalesGrowthPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
                     <span className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
-                    Field Sales — Sales &amp; Growth AI
+                    Retail Assets AI — Sales &amp; Growth AI
                   </div>
                   <h1 className="text-2xl font-bold tracking-tight text-white">Sales & Growth AI Engine</h1>
                   <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
@@ -388,7 +388,7 @@ export default function FieldSalesSalesGrowthPage() {
                 <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Send</button>
               </div>
               <div className="flex items-center justify-between mt-2">
-                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales AI — prospect research, objection handling, deal closing, pitch personalization for HDFC retail assets" />
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Retail Assets AI — prospect research, objection handling, deal closing, pitch personalization for HDFC retail assets" />
                 <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function FieldSalesSalesGrowthPage() {
       </div>
       <footer className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 text-[10px] text-gray-500 text-center">
-          HDFC Retail Assets — Field Sales &amp; Growth AI &middot; Synthetic Data Only
+          HDFC Retail Assets — Retail Assets AI &amp; Growth &middot; Synthetic Data Only
         </div>
       </footer>
     </>

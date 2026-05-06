@@ -107,12 +107,12 @@ export default function FieldSalesAIPage() {
             <div className="flex items-center gap-3 mb-4">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white/90">
                 <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                Field Sales AI Enablement
+                Retail Assets AI Enablement
               </div>
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 border border-red-400/40 text-red-300 font-bold">OUTWARD-LOOKING</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Field Sales AI — Retail Asset Sales Enablement
+              Retail Assets AI — Sales Enablement
             </h1>
             <p className="mt-3 text-white/70 max-w-3xl text-[15px] leading-relaxed">
               Make yourself a more enhanced sales professional using AI. Research prospects, understand industries,
@@ -302,7 +302,7 @@ export default function FieldSalesAIPage() {
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 text-[10px] text-gray-500 text-center">
-          HDFC Retail Assets — Field Sales AI Enablement &middot; Synthetic Data Only &middot; Not for Production Use
+          HDFC Retail Assets — Retail Assets AI Enablement &middot; Synthetic Data Only &middot; Not for Production Use
         </div>
       </footer>
     </>

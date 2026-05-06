@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import { USE_CASES, USE_CASE_CATEGORIES } from '@/data/use-cases';
 
@@ -20,13 +21,13 @@ export default function Dashboard() {
                 HDFC Retail Assets &middot; GenAI Leadership Playground
               </div>
               <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-                GenAI for Mortgage
+                GenAI for Retail Assets
                 <br />
                 <span className="text-hdfc-red">Business Leaders.</span>
               </h1>
               <p className="mt-4 text-white/75 max-w-2xl text-[15px] leading-relaxed">
-                Hands-on GenAI playground for n-1, n-2 leaders across Sales, Product, Portfolio &amp; Service.
-                {totalUseCases} use cases, prompt engineering lab, document intelligence, and AI-powered sales tools &mdash;
+                Hands-on GenAI playground for leaders across Sales, Product, Portfolio &amp; Service.
+                30+ use cases, prompt engineering lab, document intelligence, and AI-powered sales tools &mdash;
                 all with synthetic data within bank policy guardrails.
               </p>
               <p className="mt-2 text-hdfc-red font-semibold italic text-[15px]">
@@ -45,13 +46,22 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              <Stat n={String(totalUseCases)} label="Use Cases" />
-              <Stat n={String(handsOnCount)} label="Hands-on" />
-              <Stat n={String(demoCount)} label="Demo + Discussion" />
-              <Stat n="4" label="Audience Groups" />
-              <Stat n="3" label="Lab Experiments" />
-              <Stat n="10" label="Prompt Ladders" />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <Image
+                src="/personas/hdfc-leader-ai-hero.png"
+                alt="HDFC Leader working with AI"
+                width={700}
+                height={467}
+                className="w-full h-auto object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/10 backdrop-blur-md rounded-lg px-4 py-2.5 border border-white/20">
+                  <p className="text-white text-[12px] font-semibold">AI-Powered Banking Intelligence</p>
+                  <p className="text-white/70 text-[10px] mt-0.5">Empowering leaders with GenAI for smarter decisions</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -68,6 +78,14 @@ export default function Dashboard() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
+              {
+                href: '/field-sales-ai',
+                icon: '🚀',
+                title: 'Retail Assets AI',
+                description: 'Outward-looking sales enablement — prospect research, competitive positioning, objection handling, pitch personalization & deal closing.',
+                color: '#2563EB',
+                badge: 'NEW'
+              },
               {
                 href: '/prompt-lab',
                 icon: '💬',
@@ -99,14 +117,6 @@ export default function Dashboard() {
                 description: `Browse all ${totalUseCases} use cases organized by category, audience, and day. Each with a ready-to-run prompt.`,
                 color: '#D97706',
                 badge: `${totalUseCases} CASES`
-              },
-              {
-                href: '/field-sales-ai',
-                icon: '🚀',
-                title: 'Field Sales AI',
-                description: 'Outward-looking sales enablement — prospect research, competitive positioning, objection handling, pitch personalization & deal closing.',
-                color: '#2563EB',
-                badge: 'NEW'
               }
             ].map(card => (
               <Link
@@ -246,15 +256,6 @@ export default function Dashboard() {
         </div>
       </footer>
     </>
-  );
-}
-
-function Stat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur">
-      <div className="text-2xl md:text-3xl font-bold text-hdfc-red">{n}</div>
-      <div className="text-[11px] uppercase tracking-wider text-white/60 mt-1">{label}</div>
-    </div>
   );
 }
 

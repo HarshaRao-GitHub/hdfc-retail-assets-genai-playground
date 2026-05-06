@@ -48,14 +48,12 @@ export default function Header() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6">
           <nav className="hidden md:flex items-center justify-center gap-3 py-2">
+            <ModeLink href="/field-sales-ai" icon="🚀" label="Retail Assets AI" highlight />
+            <span className="w-px h-6 bg-white/20 mx-1" />
             <ModeLink href="/prompt-lab" icon="💬" label="Prompt Lab" />
             <ModeLink href="/doc-intelligence" icon="📄" label="Doc Intelligence" />
             <ModeLink href="/sales-ai" icon="📈" label="Sales & Growth AI" />
             <ModeLink href="/use-cases" icon="🎯" label="Use Case Library" />
-            <ModeLink href="/field-sales-ai" icon="🚀" label="Retail Assets/Field Sales AI" />
-          </nav>
-          <nav className="hidden md:flex items-center justify-center gap-1 pb-2 -mt-0.5">
-            <NavLink href="/dashboard">Dashboard</NavLink>
           </nav>
         </div>
       </div>
@@ -63,25 +61,18 @@ export default function Header() {
   );
 }
 
-function ModeLink({ href, icon, label }: { href: string; icon: string; label: string }) {
+function ModeLink({ href, icon, label, highlight }: { href: string; icon: string; label: string; highlight?: boolean }) {
   return (
     <Link
       href={href}
-      className="px-4 py-1.5 rounded-lg text-[13px] font-semibold text-white/85 hover:text-white bg-white/5 hover:bg-white/15 transition flex items-center gap-1.5 border border-white/10 hover:border-white/25"
+      className={`px-4 py-1.5 rounded-lg text-[13px] font-semibold transition flex items-center gap-1.5 border ${
+        highlight
+          ? 'text-white bg-hdfc-red/80 hover:bg-hdfc-red border-hdfc-red/60 hover:border-hdfc-red shadow-sm'
+          : 'text-white/85 hover:text-white bg-white/5 hover:bg-white/15 border-white/10 hover:border-white/25'
+      }`}
     >
       <span>{icon}</span>
       {label}
-    </Link>
-  );
-}
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="px-2.5 py-1 rounded-md text-[12px] text-white/70 hover:text-white hover:bg-white/10 transition font-medium"
-    >
-      {children}
     </Link>
   );
 }

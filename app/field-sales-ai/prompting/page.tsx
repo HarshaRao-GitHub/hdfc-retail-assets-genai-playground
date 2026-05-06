@@ -10,7 +10,6 @@ import EnhanceToCraft from '@/components/EnhanceToCraft';
 import { useDocuments } from '@/lib/document-context';
 import { saveChatHistory, loadChatHistory, clearChatHistory, CHAT_KEYS } from '@/lib/chat-history';
 import { FIELD_SALES_LAB_EXPERIMENTS, FIELD_SALES_DISCLAIMER } from '@/data/field-sales-prompts';
-import SalesDocumentsPanel from '@/components/SalesDocumentsPanel';
 import HallucinationDetector from '@/components/HallucinationDetector';
 
 const LEVEL_PERSONAS = [
@@ -61,7 +60,7 @@ export default function FieldSalesPromptingPage() {
     setStreamBuffer('');
     setTimeout(scrollToBottom, 50);
 
-    const context = 'This is the Field Sales AI Prompt Engineering Lab. The focus is OUTWARD-LOOKING sales enablement — helping HDFC Bank retail asset sales professionals become more effective at prospect research, competitive positioning, objection handling, pitch personalization, and deal closing. Product lines: Personal Loans, Business Loans, Auto Loans, Tractor Finance, Commercial Vehicle Loans, Home Loans, LAP, Credit Cards, Merchant Acquiring, Payment Gateway. The anchor scenario is: "I am sitting in the client\'s reception lobby, hoping to onboard them today." Every response should help the sales professional be more prepared, more credible, and more persuasive.';
+    const context = 'This is the Retail Assets AI Prompt Engineering Lab. The focus is OUTWARD-LOOKING sales enablement — helping HDFC Bank retail asset sales professionals become more effective at prospect research, competitive positioning, objection handling, pitch personalization, and deal closing. Product lines: Personal Loans, Business Loans, Auto Loans, Tractor Finance, Commercial Vehicle Loans, Home Loans, LAP, Credit Cards, Merchant Acquiring, Payment Gateway. The anchor scenario is: "I am sitting in the client\'s reception lobby, hoping to onboard them today." Every response should help the sales professional be more prepared, more credible, and more persuasive.';
 
     try {
       const docPayload = documents.length > 0 ? documents.map(d => ({ filename: d.filename, text: d.text })) : undefined;
@@ -127,7 +126,7 @@ export default function FieldSalesPromptingPage() {
           <div className="max-w-7xl mx-auto px-6 pt-3 pb-5">
             <Link href="/field-sales-ai" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-[11px] font-medium mb-3 transition group">
               <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Back to Field Sales AI
+              Back to Retail Assets AI
             </Link>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -137,7 +136,7 @@ export default function FieldSalesPromptingPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
                     <span className="w-2 h-2 bg-blue-300 rounded-full animate-pulse" />
-                    Field Sales — Prompt Engineering Lab
+                    Retail Assets AI — Prompt Engineering Lab
                   </div>
                   <h1 className="text-2xl font-bold tracking-tight text-white">Sales Prompt Engineering Lab</h1>
                   <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
@@ -219,16 +218,13 @@ export default function FieldSalesPromptingPage() {
             </div>
           </div>
 
-          {/* Sales Reference Documents */}
-          <SalesDocumentsPanel />
-
           {/* Chat */}
           <div className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col" style={{ minHeight: '500px' }}>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {transcript.length === 0 && !streaming && (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
                   <div className="text-5xl mb-3">💬</div>
-                  <h3 className="text-lg font-bold text-gray-800">Field Sales Prompt Lab</h3>
+                  <h3 className="text-lg font-bold text-gray-800">Retail Assets AI Prompt Lab</h3>
                   <p className="text-sm text-gray-500 max-w-md mt-2">
                     Select a prompt level above to see how the same scenario produces dramatically different AI outputs as prompt quality improves. Or type your own field-sales scenario.
                   </p>
@@ -242,7 +238,7 @@ export default function FieldSalesPromptingPage() {
                     <div className="max-w-[95%] w-full bg-slate-50 border border-gray-200 rounded-2xl rounded-tl-md px-5 py-4 text-sm shadow-sm">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="w-2 h-2 bg-blue-600 rounded-full" />
-                        <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Field Sales AI</span>
+                        <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Retail Assets AI</span>
                       </div>
                       <div className="text-gray-900 leading-relaxed"><Markdown isStreaming={streaming && i === transcript.length - 1}>{msg.content}</Markdown></div>
                       {!streaming && msg.content && (
@@ -277,7 +273,7 @@ export default function FieldSalesPromptingPage() {
                 <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Send</button>
               </div>
               <div className="flex items-center justify-between mt-2">
-                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales AI — prospect research, objection handling, pitch personalization for HDFC retail asset sales" />
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Retail Assets AI — prospect research, objection handling, pitch personalization for HDFC retail asset sales" />
                 <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
               </div>
             </div>
@@ -286,7 +282,7 @@ export default function FieldSalesPromptingPage() {
       </div>
       <footer className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 text-[10px] text-gray-500 text-center">
-          HDFC Retail Assets — Field Sales Prompt Lab &middot; Synthetic Data Only
+          HDFC Retail Assets — Retail Assets AI Prompt Lab &middot; Synthetic Data Only
         </div>
       </footer>
     </>

@@ -152,7 +152,7 @@ IMPORTANT: All data is SYNTHETIC. Generate realistic but fictional details.`;
           <div className="max-w-7xl mx-auto px-6 pt-3 pb-5">
             <Link href="/field-sales-ai" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-[11px] font-medium mb-3 transition group">
               <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Back to Field Sales AI
+              Back to Retail Assets AI
             </Link>
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-lg shrink-0 hidden sm:block">
@@ -161,7 +161,7 @@ IMPORTANT: All data is SYNTHETIC. Generate realistic but fictional details.`;
               <div>
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
                   <span className="w-2 h-2 bg-cyan-300 rounded-full animate-pulse" />
-                  Field Sales — Post-Meeting Debrief
+                  Retail Assets AI — Post-Meeting Debrief
                 </div>
                 <h1 className="text-2xl font-bold tracking-tight text-white">Post-Meeting AI Debrief</h1>
                 <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">

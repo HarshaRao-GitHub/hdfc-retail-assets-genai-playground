@@ -65,7 +65,7 @@ function FieldSalesUseCasesContent() {
     setStreamBuffer('');
     setTimeout(scrollToBottom, 50);
 
-    const context = 'This is the Field Sales AI Use Case Library. Focus on OUTWARD-LOOKING sales enablement for HDFC Bank retail asset sales professionals. Help them with prospect research, competitive positioning, objection handling, pitch personalization, cross-selling, deal closing, industry research, and post-meeting follow-through. Product lines: Personal Loans, Business Loans, Auto Loans, Tractor Finance, Commercial Vehicle Loans, Home Loans, Loan Against Property, Credit Cards, Merchant Acquiring, Payment Gateway. Every response should make the sales professional more prepared, credible, and effective at closing deals.';
+    const context = 'This is the Retail Assets AI Use Case Library. Focus on OUTWARD-LOOKING sales enablement for HDFC Bank retail asset sales professionals. Help them with prospect research, competitive positioning, objection handling, pitch personalization, cross-selling, deal closing, industry research, and post-meeting follow-through. Product lines: Personal Loans, Business Loans, Auto Loans, Tractor Finance, Commercial Vehicle Loans, Home Loans, Loan Against Property, Credit Cards, Merchant Acquiring, Payment Gateway. Every response should make the sales professional more prepared, credible, and effective at closing deals.';
 
     try {
       const docPayload = documents.length > 0 ? documents.map(d => ({ filename: d.filename, text: d.text })) : undefined;
@@ -129,15 +129,15 @@ function FieldSalesUseCasesContent() {
           <div className="max-w-7xl mx-auto px-6 pt-3 pb-5">
             <Link href="/field-sales-ai" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-[11px] font-medium mb-3 transition group">
               <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Back to Field Sales AI
+              Back to Retail Assets AI
             </Link>
             <div className="flex items-center justify-between">
               <div>
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white mb-2">
                   <span className="w-2 h-2 bg-amber-300 rounded-full animate-pulse" />
-                  Field Sales — Use Case Library
+                  Retail Assets AI — Use Case Library
                 </div>
-                <h1 className="text-2xl font-bold tracking-tight text-white">Field Sales Use Case Library</h1>
+                <h1 className="text-2xl font-bold tracking-tight text-white">Retail Assets AI Use Case Library</h1>
                 <p className="mt-1.5 text-white/80 text-sm max-w-xl leading-relaxed">
                   {FIELD_SALES_USE_CASES.length} use cases across {FIELD_SALES_USE_CASE_CATEGORIES.length} categories — from pre-meeting research to post-meeting follow-through. Each with a ready-to-use prompt.
                 </p>
@@ -203,7 +203,7 @@ function FieldSalesUseCasesContent() {
               {transcript.length === 0 && !streaming && (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
                   <div className="text-5xl mb-3">🎯</div>
-                  <h3 className="text-lg font-bold text-gray-800">Field Sales Use Case Library</h3>
+                  <h3 className="text-lg font-bold text-gray-800">Retail Assets AI Use Case Library</h3>
                   <p className="text-sm text-gray-500 max-w-md mt-2">
                     Browse categories above and click a use case to load its prompt. Each use case is anchored to a real field-selling scenario with specific product context.
                   </p>
@@ -217,7 +217,7 @@ function FieldSalesUseCasesContent() {
                     <div className="max-w-[95%] w-full bg-slate-50 border border-gray-200 rounded-2xl rounded-tl-md px-5 py-4 text-sm shadow-sm">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="w-2 h-2 bg-amber-600 rounded-full" />
-                        <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">Field Sales AI</span>
+                        <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">Retail Assets AI</span>
                       </div>
                       <div className="text-gray-900 leading-relaxed"><Markdown isStreaming={streaming && i === transcript.length - 1}>{msg.content}</Markdown></div>
                       {!streaming && msg.content && (
@@ -252,7 +252,7 @@ function FieldSalesUseCasesContent() {
                 <button onClick={() => send()} disabled={streaming || !input.trim()} className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 rounded-lg disabled:opacity-30 transition text-sm shadow-md">Send</button>
               </div>
               <div className="flex items-center justify-between mt-2">
-                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Field Sales Use Case Library — HDFC retail asset sales enablement" />
+                <EnhanceToCraft prompt={input} onEnhanced={setInput} disabled={streaming} pageContext="Retail Assets AI Use Case Library — HDFC retail asset sales enablement" />
                 <p className="text-[10px] text-gray-400 font-mono">Ctrl/Cmd + Enter to send</p>
               </div>
             </div>
@@ -261,7 +261,7 @@ function FieldSalesUseCasesContent() {
       </div>
       <footer className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 text-[10px] text-gray-500 text-center">
-          HDFC Retail Assets — Field Sales Use Case Library &middot; {FIELD_SALES_USE_CASES.length} Use Cases &middot; Synthetic Data Only
+          HDFC Retail Assets — Retail Assets AI Use Case Library &middot; {FIELD_SALES_USE_CASES.length} Use Cases &middot; Synthetic Data Only
         </div>
       </footer>
     </>
