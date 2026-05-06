@@ -137,7 +137,7 @@ export default function FieldSalesAIPage() {
 
             {/* Product Lines */}
             <div className="mt-6 flex flex-wrap gap-2">
-              {['Personal Loans', 'Business Loans', 'Auto Loans', 'Tractor Finance', 'CV Loans', 'Home Loans', 'LAP', 'Credit Cards', 'Merchant Acquiring', 'Payment Gateway'].map(p => (
+              {['Personal Loans', 'Home Loans', 'LAP', 'LAS & Education Loans', 'Business Loans', 'Auto Loans', 'CV Loans', 'Tractor Finance', 'Credit Cards & CPS', 'ECOM & Payment Gateway', 'Merchant Services', 'Digital Banking & BankOne', 'DPPS & Prepaid', 'ABCP & Partnerships', 'Liabilities & Salary', 'Infrastructure Finance'].map(p => (
                 <span key={p} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/15">{p}</span>
               ))}
             </div>

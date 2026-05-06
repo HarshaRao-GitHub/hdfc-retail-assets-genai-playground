@@ -183,6 +183,56 @@ export const FIELD_OBJECTION_SCENARIOS: FieldObjectionScenario[] = [
     suggestedApproach: 'Don\'t propose full migration — offer "dual salary" approach: (a) new joiners start with HDFC, (b) existing employees given choice with incentive to switch (credit card pre-approved, higher OD limit), (c) dedicated migration desk handles NACH/mandate transfers, (d) 90-day parallel run where salary goes to both accounts, (e) show Kotak failure was due to no migration support — HDFC provides dedicated SPOC team'
   },
   {
+    id: 'obj-pl-instant',
+    icon: '⚡',
+    category: 'competitor',
+    product: 'Personal Loan',
+    objection: 'Bajaj Finance approved me in 10 minutes on my phone. Your branch process takes 2 days and I need to submit physical documents. In 2025, why should I wait?',
+    customerContext: 'IT professional, 22 LPA, needs 8L for home renovation, pre-approved by Bajaj at 12.5% on app. HDFC rate would be 11% but process is slower.',
+    competitorMentioned: 'Bajaj Finance (10-minute digital approval)',
+    suggestedApproach: 'Show rate savings over tenure (₹42K on 8L over 5 years) + our pre-approved digital journey for existing salary account holders + no hidden insurance bundling that Bajaj adds + relationship benefits (future home loan/CC eligibility)'
+  },
+  {
+    id: 'obj-infra-cashflow',
+    icon: '🏗️',
+    category: 'timing',
+    product: 'Infrastructure / Equipment Finance',
+    objection: 'NHAI payments come 120 days after milestone. If I take your EMI starting immediately, I will default in month 2. Srei used to give me moratorium until first payment — can you?',
+    customerContext: 'Highway contractor, 15 tippers + 3 excavators needed, active NHAI contract worth ₹200 Cr, strong track record but lumpy cash flow.',
+    competitorMentioned: 'Srei Equipment Finance (moratorium + milestone EMI)',
+    suggestedApproach: 'Offer balloon/step-up EMI structure linked to NHAI milestones + show that Srei is defunct (post-NCLT) so comparison is moot + government receivable discounting facility + fleet package pricing including fuel cards'
+  },
+  {
+    id: 'obj-lap-valuation',
+    icon: '🏘️',
+    category: 'product',
+    product: 'Loan Against Property',
+    objection: 'ICICI valued my property at ₹4.2 Cr and your valuer says ₹3.6 Cr. That is a ₹36 lakh difference in what I can borrow. Either match their valuation or I go to ICICI.',
+    customerContext: 'CA with 2 commercial properties in Delhi NCR, needs ₹2.5 Cr LAP, frustrated by conservative bank valuations.',
+    competitorMentioned: 'ICICI Bank (higher property valuation)',
+    suggestedApproach: 'Offer second property as additional collateral to bridge the gap + show our lower interest rate (9.5% vs 10.25%) saves ₹5L+ over tenure + OD facility option (interest on utilized only) + fast-track revaluation with empaneled valuer of choice'
+  },
+  {
+    id: 'obj-abcp-volume',
+    icon: '🤝',
+    category: 'trust',
+    product: 'ABCP / Channel Partnership',
+    objection: 'ICICI guarantees us 50,000 leads per quarter from their branch network. Your proposal just says "best efforts." I need committed volumes, not promises.',
+    customerContext: 'Insurance company evaluating bank distribution partners for FY27, needs guaranteed lead pipeline to justify partnership investment.',
+    competitorMentioned: 'ICICI Bank (50K guaranteed leads/quarter)',
+    suggestedApproach: 'Propose tiered commitment model (30K Q1, scaling to 50K by Q3 as processes mature) + show our higher conversion rate (HDFC quality leads convert 2x vs ICICI volume) + salary account base access for group insurance + digital shelf on HDFC app + dedicated training for branch staff'
+  },
+  {
+    id: 'obj-lpg-fd-rate',
+    icon: '💰',
+    category: 'rate',
+    product: 'Fixed Deposits / Liabilities',
+    objection: 'SBI is giving 7.5% on 1-year FD. Your rate is 7.1%. On ₹200 Cr, that is ₹80 lakh less interest per year. My board will never approve moving to lower rates.',
+    customerContext: 'Corporate treasury head, parks ₹200 Cr in short-term FDs, reviewing banking partners for better returns.',
+    competitorMentioned: 'SBI (7.5% FD rate on 1-year)',
+    suggestedApproach: 'Pitch sweep-in FD (higher effective yield through auto-breakage optimization) + overnight FD for idle funds + flexi FD with partial withdrawal + show that net yield after considering salary account float, prepaid card settlement, and overall treasury dashboard value exceeds SBI pure FD return'
+  },
+  {
     id: 'obj-dbc-compliance',
     icon: '🔒',
     category: 'trust',
@@ -316,6 +366,72 @@ export const PROSPECT_RESEARCH_SCENARIOS: ProspectResearchScenario[] = [
     meetingContext: 'Annual banking review — Group CFO consolidating treasury operations. RFP for salary banking.',
     researchPrompt: 'Vikram Group (Delhi, 12,000 employees, 5 subsidiaries) is consolidating from 3 salary banks to 1-2. Group CFO meeting in 2 hours. They pay 1,200 Cr annual salaries, park 200 Cr in short-term FDs, and issue 500 prepaid cards/quarter for vendor advances. Prepare: (1) HDFC Salary Account program — benefits by employee grade (junior/mid/senior/CXO), (2) Competitive comparison with SBI and ICICI salary programs, (3) Prepaid card for vendor advance payments — controls, limits, reconciliation, (4) Treasury products — sweep-in FD, flexi FD, overnight FD rates, (5) Single dashboard for multi-subsidiary HR payroll, (6) Employee retention impact of premium salary account (home loan preferential, insurance, credit card pre-approved), (7) Migration plan for 12,000 accounts with zero payroll disruption.'
   },
+  {
+    id: 'pr-pl-corporate-tieup',
+    icon: '💰',
+    category: 'corporate',
+    title: 'IT Company — Bulk Personal Loan Corporate Tie-up',
+    description: 'Prepare for a salary-linked personal loan bulk deal with a large IT employer',
+    customerProfile: 'Infosys BPO, Pune, 4,000 employees in zone, current PL partner is Bajaj Finance, annual PL demand ~500 applications',
+    productFocus: 'Personal Loans (salary-linked bulk) + Credit Cards + Salary Account Cross-Pollination',
+    meetingContext: 'Meeting Zonal HR Head to propose exclusive PL tie-up replacing Bajaj Finance.',
+    researchPrompt: 'Infosys BPO Pune zone (4,000 employees, avg salary 8-25 LPA) currently uses Bajaj Finance for employee personal loans. Bajaj offers instant approval but at 12-14% rates with compulsory insurance. Meeting Zonal HR Head. Prepare: (1) Salary-linked PL program features — pre-approved limits, salary deduction EMI, zero processing for bulk, (2) Rate advantage analysis: HDFC 10.5-11.5% vs Bajaj 12-14% savings per employee, (3) Cross-pollination opportunity: PL → credit card → salary account → home loan funnel, (4) Employee benefit page/portal integration approach, (5) Bajaj Pain points: hidden insurance cost, aggressive recovery tactics, no relationship banking.'
+  },
+  {
+    id: 'pr-infra-equipment',
+    icon: '🏗️',
+    category: 'corporate',
+    title: 'Infrastructure Company — Equipment + Fleet Finance',
+    description: 'Research a highway contractor for construction equipment and fleet financing',
+    customerProfile: 'Patel Infrastructure Ltd, Ahmedabad, 800 Cr revenue, active NHAI contracts, fleet of 150 vehicles, banks with L&T Finance',
+    productFocus: 'CV Loans (tippers/tankers) + Construction Equipment Finance + LAP (warehouse) + Business Loan',
+    meetingContext: 'Meeting CFO — company expanding fleet by 30 vehicles and 5 excavators for new highway project.',
+    researchPrompt: 'Patel Infrastructure (Ahmedabad, 800 Cr, highway construction, 150-vehicle fleet) has won 2 new NHAI contracts worth ₹500 Cr. Needs 30 tippers + 5 excavators. Banks with L&T Finance (CV loans) and Union Bank (working capital). Meeting CFO in 1 hour. Prepare: (1) Infrastructure sector lending landscape — who finances what, (2) NHAI payment cycle challenges and how to structure EMIs around them, (3) Equipment finance vs lease comparison, (4) Why HDFC over L&T Finance for fleet expansion (better rates, multi-product relationship), (5) Cross-sell: fuel cards for 150 vehicles, LAP on warehouse property, corporate credit cards for procurement.'
+  },
+  {
+    id: 'pr-lap-professional',
+    icon: '🏠',
+    category: 'individual',
+    title: 'Self-Employed Professional — Multi-Property LAP',
+    description: 'Prepare for a chartered accountant seeking LAP with multiple properties as collateral',
+    customerProfile: 'Rajesh Gupta, 48, CA with practice in Delhi, 3 commercial properties worth ₹6 Cr, needs ₹3.5 Cr for office expansion + client advances',
+    productFocus: 'Loan Against Property (OD facility) + Business Loan + Professional Indemnity Insurance',
+    meetingContext: 'Walk-in at branch — comparing LAP terms from ICICI, Axis, and HDFC.',
+    researchPrompt: 'CA Rajesh Gupta (48, Delhi, 3 commercial properties worth ₹6 Cr) needs ₹3.5 Cr LAP. ICICI offers 60% LTV at 10.25%, Axis offers 55% at 10%. Our standard: 65% LTV at 9.75% on approved properties. He wants OD facility, not term loan. Prepare: (1) Multi-property LAP structuring — how to combine properties for higher eligible amount, (2) OD vs term loan math showing interest savings for a CA who draws down irregularly, (3) ICICI/Axis comparison table (LTV, rate, processing, valuation approach), (4) Professional segment benefits — GST-registered fast-track, digital valuation, no physical visits, (5) Cross-sell: business loan top-up, professional indemnity insurance.'
+  },
+  {
+    id: 'pr-abcp-partnership',
+    icon: '🤝',
+    category: 'corporate',
+    title: 'Insurance Company — ABCP Distribution Alliance',
+    description: 'Research an insurance company seeking bank distribution partnership',
+    customerProfile: 'HDFC Life (strategic alliance renewal), wants expanded branch access, co-branded product launch, salary base for group insurance',
+    productFocus: 'ABCP Co-branded Products + Distribution Alliance + Digital Shelf Access + Group Insurance via Salary Base',
+    meetingContext: 'Annual partnership review — they want expanded scope, we want higher commission and exclusivity.',
+    researchPrompt: 'Annual review with insurance partner seeking expanded distribution. They want: (a) access to 5,000 branches (up from 3,500), (b) co-branded term plan for salary account holders, (c) group insurance access for corporate salary accounts. Prepare: (1) Distribution economics — revenue per branch per month, conversion rates by channel, (2) Co-branded product structure and regulatory requirements (IRDAI norms), (3) Salary account base segmentation for group insurance targeting, (4) Competitive landscape — what ICICI/SBI/Kotak offer their insurance partners, (5) Negotiation framework: branch access in exchange for exclusivity + higher commission + lead quality guarantees.'
+  },
+  {
+    id: 'pr-lpg-salary-migration',
+    icon: '🏢',
+    category: 'corporate',
+    title: 'Retail Chain — Salary Banking + FD Migration',
+    description: 'Research a large retailer for salary account bulk acquisition and FD book migration',
+    customerProfile: 'Future Group Retail, Mumbai, 15,000 employees, 500 stores, ₹300 Cr FD book, currently SBI + Kotak salary split',
+    productFocus: 'Salary Accounts (bulk) + Corporate FD + Savings Bank + Salary Advance + Zero-Balance for Contractual',
+    meetingContext: 'Invited to present by Group Treasury Head after competitor (Kotak) service failure.',
+    researchPrompt: 'Future Group Retail (15,000 employees, 500 stores, ₹300 Cr FD book) is reviewing salary banking after poor Kotak experience (app crashes, delayed NACH processing, no WhatsApp banking). Currently split SBI/Kotak. Meeting Group Treasury Head. Prepare: (1) Salary account program by employee tier (store staff/middle management/senior/CXO), (2) Zero-balance salary account for 3,000 contractual workers, (3) FD book migration: sweep-in vs flexi vs overnight FD comparison, (4) Salary advance facility for frontline staff (festive season demand), (5) WhatsApp banking and digital-first features comparison, (6) Migration plan: phased approach with zero payroll disruption guarantee.'
+  },
+  {
+    id: 'pr-dbc-embedded',
+    icon: '📱',
+    category: 'corporate',
+    title: 'Digital Platform — Embedded Banking Partnership',
+    description: 'Research a digital platform seeking to embed banking products via API',
+    customerProfile: 'MobiWallet Technologies, Bangalore, Series C, 8M users, wants embedded FD + lending + cards in their app',
+    productFocus: 'BankOne API + Embedded Lending API + FD-in-App + Co-branded Virtual Cards + UPI PSP',
+    meetingContext: 'Strategic pitch to CEO and CTO — they just ended partnership with a small bank.',
+    researchPrompt: 'MobiWallet (Bangalore, 8M users, Series C, ₹400 Cr monthly UPI volume) ended partnership with a small bank after regulatory issues. Want a tier-1 bank for: embedded FD, in-app lending, co-branded virtual debit card, and UPI PSP. Meeting CEO + CTO. Prepare: (1) HDFC BankOne API platform capabilities vs what small banks offered, (2) Embedded FD product: how users open HDFC FD within MobiWallet app, revenue share, (3) Lending API: HDFC pre-approved loans surfaced in partner app, FLDG structure, (4) Co-branded virtual card launch timeline and economics, (5) Regulatory framework: how tier-1 bank partnership is more stable than small bank, (6) Uptime SLA and contractual protections they need.'
+  },
 ];
 
 export const CLOSING_SCENARIOS: ClosingScenario[] = [
@@ -399,6 +515,60 @@ export const CLOSING_SCENARIOS: ClosingScenario[] = [
     products: ['Salary Accounts', 'Corporate Prepaid Cards', 'Fixed Deposits', 'Direct Payment Products'],
     challenge: 'Risk-averse Group HR Head fears migration disruption. Group CFO wants better treasury returns. Two different stakeholders, two agendas.',
     prompt: 'Close a 12,000-employee salary account deal + treasury consolidation. Vikram Industries splits across SBI/ICICI/Kotak. Group CFO wants: better FD rates, single treasury dashboard, prepaid card controls. Group HR Head wants: zero payroll disruption, no employee complaints (burned by failed Kotak migration). Create: (1) Dual-stakeholder strategy — how to align CFO (money) and HR (risk) interests, (2) Zero-disruption migration plan: new joinees on HDFC immediately, existing employees voluntary switch with incentives, 90-day parallel run, (3) Treasury value: sweep-in FD rates vs competitors, overnight FD option, liquidity management, (4) Prepaid card for vendor advances: instant issuance, spend controls, auto-reconciliation, (5) Salary account benefits by grade (junior/mid/senior/CXO tier) — credit card pre-approved, home loan preferential, insurance bundle, (6) The "earn more, risk nothing" positioning, (7) ROI model: annual savings from treasury optimization + reduced employee attrition from premium salary benefits.'
+  },
+  {
+    id: 'close-pl-corporate-bulk',
+    icon: '💰',
+    title: 'IT Company — Bulk Personal Loan Tie-up (4,000 employees)',
+    situation: 'TechVista Solutions (4,000 employees, Pune zone) currently with Bajaj Finance for PL. 500 applications/year at 12.5%. HDFC can offer 10.5-11% salary-linked with zero processing for 50+/month. HR Head wants single-window experience.',
+    products: ['Personal Loans (salary-linked)', 'Credit Cards', 'Salary Accounts'],
+    challenge: 'Bajaj Finance embedded in HR portal with 10-minute approval. How to win on rate + relationship despite slower TAT?',
+    prompt: 'Close a bulk PL corporate tie-up replacing Bajaj Finance. TechVista (4,000 employees) processes 500 PL applications/year through Bajaj at 12.5%. We offer 10.5-11% with salary deduction EMI. HR Head concern: "Bajaj approves in 10 minutes. Your process takes 2 days." Create: (1) Per-employee savings calculation (₹42K saved per 8L loan over 5 years), (2) Pre-approved limits solution — load limits on salary accounts so approval is instant, (3) Cross-pollination roadmap: PL → CC pre-approved → salary migration → home loan funnel, (4) HR portal integration proposal (employee self-service), (5) Volume commitment: 50+ applications/month = zero processing guarantee.'
+  },
+  {
+    id: 'close-infra-equipment-fleet',
+    icon: '🏗️',
+    title: 'Highway Contractor — 30 Vehicles + 5 Equipment Against L&T Finance',
+    situation: 'Patel Infrastructure (800 Cr, 2 NHAI contracts) needs 30 tippers + 5 excavators. L&T Finance offers equipment lease at 11%. Our CV loan at 10.2%. But NHAI pays 120 days after milestone — needs moratorium/step-up EMI.',
+    products: ['CV Loans', 'Equipment Finance', 'LAP', 'Fuel Cards'],
+    challenge: 'Lumpy cash flow from government contracts. Standard EMI structure will cause defaults. How to structure for infrastructure clients?',
+    prompt: 'Close a ₹15 Cr infrastructure finance deal (30 tippers + 5 excavators) against L&T Finance. Patel Infrastructure has NHAI contracts but payments come 120 days after milestones. They need EMI flexibility. Create: (1) Milestone-linked EMI structure (step-up EMI post first NHAI payment), (2) Equipment finance vs lease comparison showing our ownership advantage, (3) Fleet package: CV + equipment + fuel cards (150 existing vehicles) + LAP on warehouse, (4) L&T counter-positioning (L&T is equipment-only, we offer full relationship), (5) NHAI receivable discounting as bridge finance between milestones, (6) Speed commitment: sanction in 7 days for existing customer.'
+  },
+  {
+    id: 'close-lap-professional',
+    icon: '🏘️',
+    title: 'CA — ₹3.5 Cr LAP with OD Facility Against ICICI/Axis',
+    situation: 'CA Rajesh Gupta has 3 commercial properties (₹6 Cr). ICICI offers 60% LTV at 10.25%, Axis 55% at 10%. HDFC: 65% LTV at 9.75% but lower valuation. He needs OD, not term loan.',
+    products: ['Loan Against Property (OD)', 'Business Loan', 'Professional Indemnity Insurance'],
+    challenge: 'Valuation gap between banks. Customer disputes our lower valuation. How to bridge the gap and win on total proposition?',
+    prompt: 'Close a ₹3.5 Cr LAP deal for a CA with 3 properties. Our valuation is ₹5.2 Cr vs ICICI at ₹6 Cr. But our LTV is 65% (₹3.38 Cr) vs ICICI 60% (₹3.6 Cr). Gap: ₹22L. Create: (1) Bridge solution: add second property or accept top-up business loan for remaining ₹12L at blended rate, (2) OD advantage math: show ₹4-6L/year interest savings vs term loan for irregular usage pattern (CAs draw down 40-60% on average), (3) Rate advantage: 9.75% vs 10.25% = ₹1.75L/year savings on ₹3.5 Cr, (4) Professional segment fast-track: GST-registered, no physical visit, digital valuation, (5) Revaluation option: request revaluation with mutually agreed empaneled valuer, (6) Closing sweetener: zero processing + immediate OD activation.'
+  },
+  {
+    id: 'close-abcp-distribution',
+    icon: '🤝',
+    title: 'Insurance Company — Exclusive Distribution Partnership (5,000 branches)',
+    situation: 'Max Life wants exclusive HDFC distribution for term insurance + ULIP. Currently with ICICI (50K guaranteed leads/quarter). HDFC offers higher conversion quality. Annual deal worth ₹80 Cr in premium.',
+    products: ['ABCP Distribution', 'Co-branded Products', 'Salary Base Access', 'Digital Shelf'],
+    challenge: 'ICICI offers guaranteed volume. We offer quality. How to win when the partner demands numbers?',
+    prompt: 'Close a ₹80 Cr annual insurance distribution partnership against ICICI. Max Life wants guaranteed 50K leads/quarter. ICICI promises this. Our strength: higher conversion (3.2% vs 1.8%) and salary account base. Create: (1) Quality vs quantity math: 30K HDFC leads at 3.2% = 960 policies vs 50K ICICI leads at 1.8% = 900 policies, (2) Salary account employee base: 2M salary accounts for group insurance cross-sell, (3) Co-branded term plan for home loan customers (natural cross-sell at loan disbursal), (4) Digital shelf on HDFC app reaching 40M MAU, (5) Tiered volume commitment: 30K → 40K → 50K over 3 quarters as processes mature, (6) Exclusive territory proposal for 500 branches in top-10 cities.'
+  },
+  {
+    id: 'close-lpg-treasury',
+    icon: '🏢',
+    title: 'Retailer — 15,000 Salary Accounts + ₹300 Cr FD Migration',
+    situation: 'Future Retail (15K employees, ₹300 Cr FD book) unhappy with Kotak. SBI is incumbent for 60% of salary accounts. Group Treasury wants better FD returns + digital experience for store staff.',
+    products: ['Salary Accounts', 'Corporate FD', 'Salary Advance', 'Zero-Balance Contractual'],
+    challenge: 'Risk-averse HR Head fears migration chaos. Treasury wants better rates. Two stakeholders, conflicting priorities.',
+    prompt: 'Close a 15,000-employee salary account deal + ₹300 Cr FD migration from SBI/Kotak. Group Treasury wants higher FD returns (SBI at 7.5%, Kotak at 7.3%). HR wants zero disruption. Create: (1) Dual-stakeholder strategy: Treasury (money) and HR (risk) alignment, (2) FD value proposition: sweep-in FD effective yield 7.6% + overnight FD + flexi partial withdrawal, (3) Salary tiering: store staff (zero-balance + salary advance) / middle mgmt (savings + CC) / senior (premium + PB), (4) Migration plan: new joiners on HDFC immediately, voluntary switch with incentives for existing, 90-day parallel run, (5) WhatsApp banking for 10,000 store-level employees who rarely visit branches, (6) ROI model: FD yield improvement + reduced attrition from premium salary benefits = ₹2.4 Cr annual value.'
+  },
+  {
+    id: 'close-dbc-embedded',
+    icon: '📱',
+    title: 'Fintech — Full-Stack Embedded Banking Partnership (8M Users)',
+    situation: 'MobiWallet (8M users, ₹400 Cr/month UPI) left small bank partner. Wants HDFC for embedded FD + lending + cards. CTO needs 99.99% uptime + sandbox. CEO needs revenue share model.',
+    products: ['BankOne API', 'Embedded Lending', 'Co-branded Cards', 'FD-in-App', 'UPI PSP'],
+    challenge: 'Previous bank pulled plug with 7 days notice. They need contractual protection + technology proof before committing.',
+    prompt: 'Close an embedded banking partnership with MobiWallet (8M users). They are scarred by previous bank dumping them with 7-day notice. Create: (1) Contractual protection: 12-month wind-down clause, 6-month notice period, data portability guarantee, (2) Technology proof: sandbox environment with production-like data available in 72 hours, (3) Product launch sequencing: Month 1 (FD-in-app) → Month 3 (lending API) → Month 6 (co-branded virtual card), (4) Revenue model: FD (margin share), lending (commission per disbursement), cards (interchange share), (5) Regulatory positioning: tier-1 bank partnership = RBI comfort, no FLDG issues, (6) Uptime SLA: 99.99% with penalty clause + dedicated tech SPOC, (7) Growth pitch: as they scale to 20M users, bank infrastructure is the only scalable path.'
   },
 ];
 
