@@ -336,6 +336,13 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                             <div>
                               <p className="text-[9px] text-gray-400 mb-0.5 font-medium">{persona.name.split(' — ')[0]}</p>
                               <div className="bg-rose-50 border border-rose-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm text-gray-900 leading-relaxed shadow-sm whitespace-pre-wrap">{msg.content}</div>
+                              {!streaming && msg.content && (
+                                <AIOutputReviewPanel
+                                  content={msg.content}
+                                  originalPrompt=""
+                                  context={`HDFC Role-Play - ${persona.name}`}
+                                />
+                              )}
                             </div>
                           </div>
                         )}
