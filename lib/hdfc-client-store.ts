@@ -21,7 +21,7 @@ export interface StageResult {
   usageStats: Record<string, unknown> | null;
   hitlEvent: Record<string, unknown> | null;
   hitlDecision: string | null;
-  mode: 'live' | null;
+  mode: 'live' | 'mock' | null;
   completedAt: string;
 }
 

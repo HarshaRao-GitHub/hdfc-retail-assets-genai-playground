@@ -16,8 +16,8 @@ export default function HdfcStagePageClient({ stage }: { stage: Stage }) {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-          <div className="text-[13px] text-slate-500">Loading workflow state...</div>
+          <div className="w-8 h-8 border-2 border-hdfc-red border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <div className="text-[13px] text-hdfc-slate">Loading workflow state...</div>
         </div>
       </div>
     );
@@ -29,22 +29,22 @@ export default function HdfcStagePageClient({ stage }: { stage: Stage }) {
       <div className="flex items-center justify-center py-20">
         <div className="text-center max-w-md">
           <div className="text-5xl mb-4">🔒</div>
-          <h2 className="text-xl font-bold text-slate-800 mb-2">Stage Locked</h2>
-          <p className="text-[14px] text-slate-600 leading-relaxed mb-4">
+          <h2 className="text-xl font-bold text-hdfc-navy mb-2">Stage Locked</h2>
+          <p className="text-[14px] text-hdfc-slate leading-relaxed mb-4">
             <strong>Stage {stage.number}: {stage.title}</strong> is locked because the previous stage
             has not been completed and approved yet.
           </p>
-          <p className="text-[13px] text-slate-500 mb-6">
+          <p className="text-[13px] text-hdfc-slate mb-6">
             The HITL (Human-in-the-Loop) approval for Stage {stage.number - 1} must be granted
             before this stage becomes available. This enforces the governance principle:
-            <em className="text-blue-700"> &ldquo;AI does the work, humans make the calls.&rdquo;</em>
+            <em className="text-hdfc-redDeep"> &ldquo;AI does the work, humans make the calls.&rdquo;</em>
           </p>
           {prevStage && (
             <Link
               href={`/agentic-ai/workflow/${prevStage.slug}`}
-              className="inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition"
+              className="inline-block bg-hdfc-red text-white font-semibold px-5 py-2.5 rounded-md hover:bg-hdfc-redDeep transition"
             >
-              Go to Stage {stage.number - 1}: {prevStage.title} →
+              Go to Stage {stage.number - 1}: {prevStage.title} &rarr;
             </Link>
           )}
         </div>
