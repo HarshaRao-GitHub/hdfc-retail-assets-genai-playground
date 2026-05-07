@@ -48,6 +48,8 @@ export default function Header() {
             <ModeLink href="/doc-intelligence" icon="📄" label="Doc Intelligence" />
             <ModeLink href="/sales-ai" icon="📈" label="Sales & Growth AI" />
             <ModeLink href="/use-cases" icon="🎯" label="Use Case Library" />
+            <span className="w-px h-6 bg-white/20 mx-1" />
+            <ModeLink href="/agentic-ai" icon="🤖" label="Agentic AI" highlight />
           </nav>
         </div>
       </div>

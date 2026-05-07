@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { DocumentProvider } from '@/lib/document-context';
+import { HdfcWorkflowProvider } from './HdfcWorkflowContext';
 import DocumentTray from './DocumentTray';
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
@@ -10,8 +11,10 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <DocumentProvider>
-      {children}
-      {!isRootSelector && <DocumentTray />}
+      <HdfcWorkflowProvider>
+        {children}
+        {!isRootSelector && <DocumentTray />}
+      </HdfcWorkflowProvider>
     </DocumentProvider>
   );
 }
