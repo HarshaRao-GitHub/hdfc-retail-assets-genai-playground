@@ -29,6 +29,7 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
   const [hitlEvent, setHitlEvent] = useState<HitlEvent | null>(null);
   const [hitlDecision, setHitlDecision] = useState<string | null>(null);
   const [restored, setRestored] = useState(false);
+  const [customStarterPrompt, setCustomStarterPrompt] = useState(stage.starterPrompt);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -329,8 +330,8 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
         {/* System Prompt Viewer */}
         <SystemPromptViewer prompt={stage.systemPrompt} agentName={stage.agent.name} />
 
-        {/* User Prompt Viewer */}
-        <UserPromptViewer prompt={stage.starterPrompt} agentName={stage.agent.name} />
+        {/* User Prompt Editor */}
+        <UserPromptEditor defaultPrompt={stage.starterPrompt} agentName={stage.agent.name} onChange={setCustomStarterPrompt} />
 
         {/* Header bar */}
         <div className="flex items-center justify-between px-5 py-3 border-b border-hdfc-line">
@@ -407,7 +408,7 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
         {/* Composer */}
         <div className="border-t border-hdfc-line p-4">
           <div className="flex flex-wrap gap-2 mb-2">
-            <button onClick={() => send(stage.starterPrompt)} disabled={streaming}
+            <button onClick={() => send(customStarterPrompt)} disabled={streaming}
               className="text-[11px] font-semibold bg-hdfc-navy text-white px-3 py-1.5 rounded-md hover:bg-hdfc-blueDeep disabled:opacity-40">
               Run {stage.title} Agent
             </button>
@@ -640,10 +641,26 @@ function SystemPromptViewer({ prompt, agentName }: { prompt: string; agentName: 
   );
 }
 
-// ═══ USER PROMPT VIEWER ═══
+// ═══ USER PROMPT EDITOR ═══
 
-function UserPromptViewer({ prompt, agentName }: { prompt: string; agentName: string }) {
+function UserPromptEditor({ defaultPrompt, agentName, onChange }: { defaultPrompt: string; agentName: string; onChange: (prompt: string) => void }) {
   const [open, setOpen] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(defaultPrompt);
+  const [isModified, setIsModified] = useState(false);
+
+  function handleSave() {
+    onChange(draft);
+    setEditing(false);
+    setIsModified(draft !== defaultPrompt);
+  }
+
+  function handleReset() {
+    setDraft(defaultPrompt);
+    onChange(defaultPrompt);
+    setEditing(false);
+    setIsModified(false);
+  }
 
   return (
     <div className="bg-hdfc-blueDeep text-white overflow-hidden border-t border-white/10">
@@ -654,14 +671,58 @@ function UserPromptViewer({ prompt, agentName }: { prompt: string; agentName: st
         <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-white/80">
           <span className="text-emerald-400">▶</span>
           User Prompt (Starter query for {agentName})
+          {isModified && (
+            <span className="text-[9px] bg-hdfc-red text-white px-1.5 py-0.5 rounded normal-case tracking-normal font-sans font-semibold">
+              EDITED
+            </span>
+          )}
         </div>
         <span className="text-[10px] font-semibold text-emerald-400 tracking-wide">
           {open ? 'CLICK TO HIDE ▲' : 'CLICK TO VIEW ▼'}
         </span>
       </button>
       {open && (
-        <div className="px-5 pb-4 max-h-[200px] overflow-y-auto bg-hdfc-navy/80">
-          <pre className="text-[11px] text-white/80 font-mono whitespace-pre-wrap leading-relaxed">{prompt}</pre>
+        <div className="bg-hdfc-navy/80">
+          {editing ? (
+            <div className="p-4">
+              <textarea
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                rows={6}
+                className="w-full bg-hdfc-navy border border-white/20 rounded-lg px-3 py-2.5 text-[12px] font-mono text-white/90 resize-y focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/40"
+              />
+              <div className="flex items-center gap-2 mt-3">
+                <button
+                  onClick={handleSave}
+                  className="bg-hdfc-red text-white text-[11px] font-semibold px-4 py-1.5 rounded-md hover:bg-hdfc-redDeep"
+                >
+                  Save Changes
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="text-white/60 text-[11px] font-semibold px-4 py-1.5 rounded-md hover:text-white border border-white/20 hover:border-white/40"
+                >
+                  Reset to Default
+                </button>
+                <button
+                  onClick={() => { setDraft(isModified ? draft : defaultPrompt); setEditing(false); }}
+                  className="text-white/40 text-[11px] px-3 py-1.5 hover:text-white/70"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="relative px-5 pb-4 max-h-[200px] overflow-y-auto">
+              <pre className="text-[11px] text-white/80 font-mono whitespace-pre-wrap leading-relaxed">{draft}</pre>
+              <button
+                onClick={() => setEditing(true)}
+                className="absolute top-1 right-5 bg-hdfc-red/90 hover:bg-hdfc-red text-white text-[11px] font-semibold px-3 py-1.5 rounded-md transition"
+              >
+                ✏️ Edit Prompt
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>
