@@ -341,6 +341,7 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                                   content={msg.content}
                                   originalPrompt=""
                                   context={`HDFC Role-Play - ${persona.name}`}
+                                  compact
                                 />
                               )}
                             </div>
@@ -423,6 +424,7 @@ Based on this conversation so far: **[X]%** chance of converting this prospect.`
                             <AIOutputReviewPanel
                               content={scoreData}
                               originalPrompt="Score my role-play sales conversation performance"
+                              compact
                             />
                           </div>
                         )}

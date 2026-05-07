@@ -39,6 +39,7 @@ interface AIOutputReviewPanelProps {
   content: string;
   originalPrompt: string;
   context?: string;
+  compact?: boolean;
   onRegenerate?: (instructions: string) => void;
   onContentCleaned?: (cleanedContent: string) => void;
 }
@@ -115,8 +116,11 @@ function TrustRing({ score, riskLevel }: { score: number; riskLevel: string }) {
 }
 
 export default function AIOutputReviewPanel({
-  content, originalPrompt, context, onRegenerate, onContentCleaned,
+  content, originalPrompt, context, compact = false, onRegenerate, onContentCleaned,
 }: AIOutputReviewPanelProps) {
+
+  // Compact mode expand
+  const [compactExpanded, setCompactExpanded] = useState(false);
 
   // Section expand states
   const [expandedSection, setExpandedSection] = useState<'hallucination' | 'bias' | 'critical' | null>(null);
@@ -262,8 +266,75 @@ export default function AIOutputReviewPanel({
     );
   }
 
+  // ── Compact mode rendering ──
+  if (compact && !compactExpanded) {
+    const isIdle = halStatus === 'idle' && biasStatus === 'idle' && critStatus === 'idle';
+    const isChecking = halStatus === 'checking' || biasStatus === 'checking' || critStatus === 'checking';
+
+    return (
+      <div className="mt-1.5 flex items-center gap-1">
+        {isIdle ? (
+          <button
+            onClick={(e) => { e.stopPropagation(); runAllChecks(); }}
+            className="flex items-center gap-1 px-2 py-0.5 text-[8px] font-bold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-full transition"
+            title="Run HITL Checks (Hallucination + Bias + Critical Factors)"
+          >
+            <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+            HITL
+          </button>
+        ) : isChecking ? (
+          <span className="flex items-center gap-1 px-2 py-0.5 text-[8px] font-bold text-blue-600 bg-blue-50 border border-blue-200 rounded-full">
+            <span className="w-2 h-2 border border-blue-500 border-t-transparent rounded-full animate-spin" />
+            Checking...
+          </span>
+        ) : (
+          <>
+            {[
+              { label: 'H', status: getEffectiveStatus(halStatus, halMitigated), title: 'Hallucination' },
+              { label: 'B', status: getEffectiveStatus(biasStatus, biasMitigated), title: 'Bias' },
+              { label: 'C', status: getEffectiveStatus(critStatus, critMitigated), title: 'Critical Factors' },
+            ].map(c => {
+              const ok = c.status === 'passed' || c.status === 'mitigated';
+              const iss = c.status === 'issues';
+              return (
+                <span key={c.label} title={`${c.title}: ${c.status}`} className={`inline-flex items-center justify-center w-4 h-4 text-[7px] font-black rounded-full border ${ok ? 'bg-emerald-100 border-emerald-300 text-emerald-700' : iss ? 'bg-orange-100 border-orange-300 text-orange-700' : 'bg-red-100 border-red-300 text-red-700'}`}>
+                  {c.label}
+                </span>
+              );
+            })}
+            <button
+              onClick={(e) => { e.stopPropagation(); setCompactExpanded(true); }}
+              className="text-[7px] font-bold text-indigo-500 hover:text-indigo-700 ml-0.5 transition"
+              title="Expand HITL details"
+            >
+              Details
+            </button>
+          </>
+        )}
+
+        {decision !== 'pending' && (
+          <span className={`text-[7px] font-black px-1.5 py-0.5 rounded-full ${decision === 'approved' ? 'bg-emerald-100 text-emerald-700 border border-emerald-300' : 'bg-red-100 text-red-700 border border-red-300'}`}>
+            {decision === 'approved' ? '✓' : '✗'}
+          </span>
+        )}
+      </div>
+    );
+  }
+
+  // If compact mode was expanded, add a collapse button wrapper
+  const compactCollapseBar = compact ? (
+    <button
+      onClick={() => setCompactExpanded(false)}
+      className="w-full flex items-center justify-center gap-1 py-1 text-[9px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50/50 border-b border-indigo-200 transition"
+    >
+      <svg className="w-3 h-3 rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+      Collapse HITL Panel
+    </button>
+  ) : null;
+
   return (
-    <div className="mt-4 border-2 border-indigo-300 bg-gradient-to-br from-slate-50 to-indigo-50/30 rounded-2xl overflow-hidden shadow-lg">
+    <div className={`${compact ? 'mt-2' : 'mt-4'} border-2 border-indigo-300 bg-gradient-to-br from-slate-50 to-indigo-50/30 rounded-2xl overflow-hidden shadow-lg`}>
+      {compactCollapseBar}
       {/* ─── Master Header ─── */}
       <div className="px-5 py-3.5 bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-800 flex items-center justify-between">
         <div className="flex items-center gap-3">
