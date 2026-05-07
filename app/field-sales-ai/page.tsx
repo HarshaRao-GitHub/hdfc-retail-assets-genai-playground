@@ -220,6 +220,43 @@ export default function FieldSalesAIPage() {
           </div>
         </div>
 
+        {/* Process Automation — AI Apps */}
+        <div className="max-w-7xl mx-auto px-6 pb-8">
+          <Link
+            href="/field-sales-ai/process-automation"
+            className="group block relative bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900 rounded-2xl p-6 overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-0.5"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.25),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.15),transparent_50%)]" />
+            <div className="relative">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-3xl shrink-0 border border-white/20 shadow-lg group-hover:scale-105 transition-transform">
+                  ⚡
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-[9px] font-black px-2.5 py-0.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white tracking-wider">NEW</span>
+                    <span className="text-[9px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-white/80 border border-white/20">10 END-TO-END APPS</span>
+                  </div>
+                  <h3 className="text-[18px] font-extrabold text-white group-hover:text-indigo-200 transition">Process Automation — AI Apps</h3>
+                  <p className="text-[12px] text-white/60 mt-1 leading-relaxed max-w-xl">
+                    One-click inter-departmental process automation. Each app auto-loads documents, runs a multi-stage AI pipeline across departments, and produces board-ready outputs.
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                    {['🏦 Loan Origination', '⚠️ NPA Recovery', '📜 Regulatory Impact', '🔧 Complaint Resolution', '🚨 Fraud Detection', '🛡️ Retention', '📊 Board Pack', '🚀 Product Launch', '📈 Branch Turnaround', '🔍 Audit Remediation'].map(app => (
+                      <span key={app} className="text-[8px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/70 border border-white/15">{app}</span>
+                    ))}
+                  </div>
+                  <div className="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-indigo-300 group-hover:gap-2.5 transition-all">
+                    Explore All 10 Apps
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
         {/* Industry News Pulse */}
         <div className="max-w-7xl mx-auto px-6 pb-8">
           <IndustryNewsPulse />
