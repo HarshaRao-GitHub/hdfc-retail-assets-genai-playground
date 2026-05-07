@@ -6,8 +6,9 @@ import Header from '@/components/Header';
 import ProcessAutomationEngine from '@/components/ProcessAutomationEngine';
 import { getProcessById } from '@/data/process-automation-config';
 
-export default function ProcessAppPage({ params }: { params: Promise<{ appId: string }> }) {
-  const { appId } = use(params);
+export default function ProcessAppPage({ params }: { params: { appId: string } | Promise<{ appId: string }> }) {
+  const resolved = params instanceof Promise ? use(params) : params;
+  const { appId } = resolved;
   const process = getProcessById(appId);
 
   if (!process) {
