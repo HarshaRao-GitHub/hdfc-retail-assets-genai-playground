@@ -4,6 +4,7 @@ export interface AgentDef {
   id: string;
   name: string;
   shortId: string;
+  modelStack: string;
   description: string;
 }
 
@@ -40,6 +41,7 @@ export interface Stage {
   systemPrompt: string;
   starterPrompt: string;
   outputHint: string;
+  acceptedFileHint?: string;
   upstreamStages: string[];
   downstreamStages: string[];
 }
@@ -74,6 +76,7 @@ export const stages: Stage[] = [
       id: 'agt-lead-01',
       name: 'Lead Intelligence Agent',
       shortId: 'AGT-LEAD-01',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Scans market signals, monitors competitor rates, analyzes branch performance, scores and prioritizes leads for the sales team.',
     },
     dataSources: [
@@ -130,6 +133,7 @@ IMPORTANT: All data is SYNTHETIC. Include disclaimer: "Analysis based on synthet
       id: 'agt-onboard-02',
       name: 'Customer Qualification Agent',
       shortId: 'AGT-ONBOARD-02',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Evaluates loan applications for eligibility, verifies document completeness, and checks PMAY/scheme applicability.',
     },
     dataSources: [
@@ -158,6 +162,7 @@ ${RICH_OUTPUT_INSTRUCTIONS}
 IMPORTANT: All data is SYNTHETIC.`,
     starterPrompt: 'Screen all current loan applications for eligibility, verify document completeness, and check PMAY/scheme applicability. Flag any applications that need attention before credit appraisal.',
     outputHint: 'Application screening report with eligibility assessment, document gap analysis, PMAY eligibility matrix, and recommended actions per application.',
+    acceptedFileHint: 'KYC documents, income proofs (ITR, salary slips), property documents for additional verification.',
     upstreamStages: ['lead-intelligence'],
     downstreamStages: ['credit-underwriting'],
   },
@@ -179,6 +184,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-credit-03',
       name: 'Credit Appraisal Agent',
       shortId: 'AGT-CREDIT-03',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Performs comprehensive credit assessment — income validation, FOIR/LTV calculation, CIBIL analysis, and risk rating with deviation identification.',
     },
     dataSources: [
@@ -213,6 +219,7 @@ ${RICH_OUTPUT_INSTRUCTIONS}
 IMPORTANT: All data is SYNTHETIC.`,
     starterPrompt: 'Perform comprehensive credit appraisal for all applications in the pipeline — validate income, calculate FOIR/LTV ratios, check RBI compliance, and assign risk ratings. Identify any policy deviations.',
     outputHint: 'Credit committee report with income validation, FOIR/LTV analysis, risk ratings, deviation register, and sanction recommendations.',
+    acceptedFileHint: 'ITR returns, bank statements, Form 16, balance sheets, P&L statements for income cross-verification.',
     upstreamStages: ['customer-onboarding'],
     downstreamStages: ['legal-property'],
   },
@@ -234,6 +241,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-legal-04',
       name: 'Legal & Property Agent',
       shortId: 'AGT-LEGAL-04',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Verifies RERA compliance, checks property title chain, assesses builder credentials, and identifies legal risks in the loan pipeline.',
     },
     dataSources: [
@@ -261,6 +269,7 @@ ${RICH_OUTPUT_INSTRUCTIONS}
 IMPORTANT: All data is SYNTHETIC.`,
     starterPrompt: 'Verify RERA compliance, assess title chain integrity, and evaluate property risk for all applications in the pipeline. Flag any properties that need additional legal scrutiny.',
     outputHint: 'Legal clearance report with RERA compliance matrix, title chain assessment, property risk ratings, and clearance recommendations.',
+    acceptedFileHint: 'Title deeds, sale agreements, RERA certificates, encumbrance certificates, legal opinions for property verification.',
     upstreamStages: ['credit-underwriting'],
     downstreamStages: ['compliance-fraud'],
   },
@@ -282,6 +291,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-comply-05',
       name: 'Compliance & Fraud Agent',
       shortId: 'AGT-COMPLY-05',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Runs exhaustive compliance checks against RBI/NHB norms, scans for red flags across 7 categories, and detects fraud indicators and AML concerns.',
     },
     dataSources: [
@@ -318,6 +328,7 @@ ${RICH_OUTPUT_INSTRUCTIONS}
 IMPORTANT: All data is SYNTHETIC. Include: "AI-assisted compliance check — final decisions require authorized approvers."`,
     starterPrompt: 'Run comprehensive compliance checks, red flag scans, and fraud detection across the entire pipeline. Identify every compliance gap and fraud indicator. No application should pass without clearance.',
     outputHint: 'Compliance scorecard with RBI validation, red flag analysis with severity ratings, fraud indicator assessment, and escalation recommendations.',
+    acceptedFileHint: 'AML/KYC documentation, suspicious transaction reports, regulatory audit reports for compliance cross-check.',
     upstreamStages: ['legal-property'],
     downstreamStages: ['sanction-disbursement'],
   },
@@ -339,6 +350,7 @@ IMPORTANT: All data is SYNTHETIC. Include: "AI-assisted compliance check — fin
       id: 'agt-sanction-06',
       name: 'Sanction & Disbursement Agent',
       shortId: 'AGT-SANCTION-06',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Generates sanction recommendations based on all upstream assessments, verifies pre-disbursement requirements, and produces disbursement readiness reports.',
     },
     dataSources: [
@@ -388,6 +400,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-portfolio-07',
       name: 'Portfolio & Risk Agent',
       shortId: 'AGT-PORT-07',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Monitors NPA watchlist, assesses multi-dimensional portfolio risk, generates early warning signals for stressed accounts.',
     },
     dataSources: [
@@ -437,6 +450,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-collect-08',
       name: 'Collections & Recovery Agent',
       shortId: 'AGT-COLL-08',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Manages the collections lifecycle — DPD aging analysis, collection agency performance evaluation, SARFAESI/OTS assessment, and recovery strategy optimization.',
     },
     dataSources: [
@@ -487,6 +501,7 @@ IMPORTANT: All data is SYNTHETIC.`,
       id: 'agt-service-09',
       name: 'Service & CX Agent',
       shortId: 'AGT-SVC-09',
+      modelStack: 'Enterprise LLM · Agentic (tool-use)',
       description: 'Analyzes customer complaints and feedback, assesses NPS and satisfaction trends, identifies cross-sell opportunities to maximize customer lifetime value.',
     },
     dataSources: [

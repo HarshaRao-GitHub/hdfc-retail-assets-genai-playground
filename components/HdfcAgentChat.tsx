@@ -236,7 +236,7 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
           <div className="space-y-1.5 text-[12px]">
             <Field label="Agent" value={stage.agent.name} />
             <Field label="ID" value={stage.agent.shortId} mono />
-            <Field label="Model" value="Enterprise LLM" mono />
+            <Field label="Model" value={stage.agent.modelStack} mono />
             <Field label="Mode" value="Agentic (tool-use)" />
           </div>
           <p className="text-[11px] text-hdfc-slate mt-2 leading-snug">
@@ -274,6 +274,7 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
                   <span className="text-hdfc-navy font-semibold text-[11px]">{ds.label}</span>
                   <span className="text-hdfc-redDeep font-mono font-bold text-[10px]">{ds.rowEstimate} rows</span>
                 </div>
+                <div className="text-[10px] font-mono text-hdfc-blue/70 mb-0.5">{ds.file}</div>
                 <div className="text-hdfc-slate text-[10px] leading-snug">{ds.description}</div>
               </div>
             ))}
@@ -285,6 +286,17 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
           <h3 className="text-[11px] font-bold uppercase tracking-wider text-hdfc-slate mb-2">
             Upload Documents {uploadedFiles.length > 0 && <span className="text-hdfc-red">({uploadedFiles.length})</span>}
           </h3>
+          {stage.acceptedFileHint && (
+            <div className="mb-2 p-2 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="flex items-start gap-1.5">
+                <span className="text-blue-600 text-[11px] mt-px shrink-0">ℹ️</span>
+                <div>
+                  <div className="text-[10px] font-semibold text-blue-800 mb-0.5">This agent accepts:</div>
+                  <div className="text-[10px] text-blue-700 leading-snug">{stage.acceptedFileHint}</div>
+                </div>
+              </div>
+            </div>
+          )}
           <input ref={fileInputRef} type="file" multiple accept=".txt,.md,.csv,.tsv,.log,.json" onChange={handleFileUpload}
             className="text-[11px] file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:bg-hdfc-navy file:text-white file:font-semibold hover:file:bg-hdfc-blueDeep file:cursor-pointer w-full" />
           <p className="text-[10px] text-hdfc-slate mt-1">Select multiple files at once or upload in batches</p>
@@ -316,6 +328,9 @@ export default function HdfcAgentChat({ stage }: { stage: Stage }) {
       <section className="flex flex-col bg-white border border-hdfc-line rounded-xl shadow-card min-h-[640px]">
         {/* System Prompt Viewer */}
         <SystemPromptViewer prompt={stage.systemPrompt} agentName={stage.agent.name} />
+
+        {/* User Prompt Viewer */}
+        <UserPromptViewer prompt={stage.starterPrompt} agentName={stage.agent.name} />
 
         {/* Header bar */}
         <div className="flex items-center justify-between px-5 py-3 border-b border-hdfc-line">
@@ -619,6 +634,34 @@ function SystemPromptViewer({ prompt, agentName }: { prompt: string; agentName: 
       {open && (
         <div className="px-5 pb-4 max-h-[300px] overflow-y-auto bg-hdfc-blueDeep">
           <pre className="text-[11px] text-white/80 font-mono whitespace-pre-wrap leading-relaxed">{displayPrompt}</pre>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ═══ USER PROMPT VIEWER ═══
+
+function UserPromptViewer({ prompt, agentName }: { prompt: string; agentName: string }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="bg-hdfc-blueDeep text-white overflow-hidden border-t border-white/10">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-2.5 hover:bg-white/5 transition"
+      >
+        <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-white/80">
+          <span className="text-emerald-400">▶</span>
+          User Prompt (Starter query for {agentName})
+        </div>
+        <span className="text-[10px] font-semibold text-emerald-400 tracking-wide">
+          {open ? 'CLICK TO HIDE ▲' : 'CLICK TO VIEW ▼'}
+        </span>
+      </button>
+      {open && (
+        <div className="px-5 pb-4 max-h-[200px] overflow-y-auto bg-hdfc-navy/80">
+          <pre className="text-[11px] text-white/80 font-mono whitespace-pre-wrap leading-relaxed">{prompt}</pre>
         </div>
       )}
     </div>
